@@ -20,3 +20,4 @@ minima:
     github: mckellardw
 header_pages:
   - cv/cv.md
+  - album_lists/README.md
