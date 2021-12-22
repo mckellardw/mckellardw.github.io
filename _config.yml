@@ -1,11 +1,20 @@
 # Jekyll config
-name: David W. McKellar
+author:
+  name: David W. McKellar
+  email: "dwm269@cornell.edu"
 description: personal site
 url: "https://mckellardw.github.io/"
 markdown: kramdown
-remote_theme: pages-themes/midnight@v0.2.0
-plugins:
-  - jekyll-remote-theme
-#   - jekyll-include-cache
-# theme: minimal-mistakes-jekyll
 highlighter: rouge
+plugins:
+- jekyll-remote-theme
+- jekyll-feed
+- jekyll-seo-tag
+#   - jekyll-include-cache
+# remote_theme: pages-themes/minimal@v0.2.0
+theme: minima
+minima:
+  skin: dark
+  social_links:
+    twitter: dwmckellar
+    github: mckellardw
