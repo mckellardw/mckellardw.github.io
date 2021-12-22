@@ -2,8 +2,4 @@
 name: David W. McKellar
 description: personal site
 url: "https://mckellardw.github.io/"
-plugins:
-  - jekyll-remote-theme
-remote_theme: mmistakes/minimal-mistakes
 markdown: kramdown
-highlighter: rouge
