@@ -2,6 +2,6 @@
 name: David W. McKellar
 description: personal site
 url: "https://mckellardw.github.io/"
-theme: minimal-mistakes
+remote_theme: mmistakes/minimal-mistakes
 markdown: kramdown
 highlighter: rouge

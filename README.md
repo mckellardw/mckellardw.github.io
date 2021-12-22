@@ -3,7 +3,7 @@
 
 <img src="images/prof_pic.jpg"
      alt="On a walk somewhere in DC..."
-     style="float: left; margin-right: 10px;" />
+     style="float: left; margin-right: 10px; border-radius:42%;" />
 
 ### email: <dwm269@cornell.edu>
 ### github: [mckellardw](https://github.com/mckellardw)
