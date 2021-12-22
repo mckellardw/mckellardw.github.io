@@ -5,10 +5,13 @@
      alt="On a walk somewhere in DC..."
      style="float: left; margin-right: 10px; border-radius:42%;"
      width=200 />
+<br />
 
 ### email: <dwm269@cornell.edu>
 ### github: [mckellardw](https://github.com/mckellardw)
 ### twitter: [@dwmckellar](https://twitter.com/dwmckellar)
+<br />
+<br />
 <br />
 
 ### About:
