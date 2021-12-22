@@ -1,1 +1,7 @@
-theme: jekyll-theme-minimal
+# Jekyll config
+name: David W. McKellar
+description: personal site
+url: "https://mckellardw.github.io/"
+theme: minimal-mistake
+markdown: kramdown
+highlighter: rouge
