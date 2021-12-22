@@ -8,13 +8,12 @@ email: dwm269@cornell.edu | github: [mckellardw](https://github.com/mckellardw) 
 
 ###### Georgia Institute of Technology – Atlanta, GA; May 2016
 - Bachelor of Science with Honor in Biomedical Engineering, with a minor in Biology
-- Overall GPA: 3.28 | Major GPA: 3.46
 - Pacific Program Study Abroad – New Zealand, Australia, Fiji; Jan. 2014-May 2014
 - BME Galway Summer Program – NUI Galway, Galway, Ireland; May 2015-Jul. 2015
 
 ## **RESEARCH EXPERIENCE:**
 ###### **PhD Student** – Dept. of Biomedical Engineering, Cornell University; Ithaca, NY                    										Jul. 2018-Present
-- PIs: Benjamin Cosgrove, PhD & Iwijn De Vlaminck, PhD
+- PIs: **Benjamin Cosgrove, PhD** & **Iwijn De Vlaminck, PhD**
 - Large-scale computational analyses of single-cell RNA sequencing in skeletal muscle
 - Analysis of ncRNAs in muscle regeneration using single-cell and nascent RNA sequencing
 
@@ -23,18 +22,18 @@ email: dwm269@cornell.edu | github: [mckellardw](https://github.com/mckellardw) 
 - Characterized infiltrating immune populations in rheumatoid arthritis with single-cell RNA sequencing
 
 ###### **Postbaccalaureate Fellow** – National Human Genome Research Institute; Bethesda, MD; Jun. 2016-Jun. 2018
-- PI: P. Paul Liu, MD/PhD
+- PI: **P. Paul Liu, MD/PhD**
 - Identified pathogenic mutations in Familial Platelet Disorder (FPD) through analysis of whole exome sequencing
 - Established a model of the hematopoietic defects of FPD using directed differentiation of patient-specific iPSCs
 - Identified small molecule compounds that enhance the directed differentiation of iPSCs
 
 ###### **Undergraduate Research Assistant** – Dept. of Biomedical Engineering, Georgia Tech; Atlanta, GA; Jan. 2015-May 2016
-- PI: Manu O. Platt, PhD
+- PI: **Manu O. Platt, PhD**
 - Synthesis, purification, and molecular analysis of recombinant mutant proteases associated with breast cancer
 
 ## **PREPRINTS & PUBLICATIONS:**
-- #TODO Mantri et al, bioRxiv, 2021
-- #TODO **McKellar, DW**, Walter, LD, Song, LT, Mantri, M, Wang, MFZ, De Vlaminck, I, Cosgrove, BD (2020) Strength in numbers: Large-scale integration of single-cell transcriptomic data reveals rare, transient muscle progenitor cell states in muscle regeneration. bioRxiv 2020.12.01.407460. doi:10.1101/2020.12.01.407460
+- Mantri, M., Hinchman, M. M., **McKellar, D. W.**, Z Wang, M. F., L Parker, J. S., de Vlaminck, I. (2021). Spatiotemporal transcriptomics reveals pathogenesis of viral myocarditis. BioRxiv. https://doi.org/10.1101/2021.12.07.471659
+- **McKellar, D.W.**, Walter, L.D., Song, L.T. et al. Large-scale integration of single-cell transcriptomic data captures transitional progenitor states in mouse skeletal muscle regeneration. Commun Biol 4, 1280 (2021). https://doi.org/10.1038/s42003-021-02810-x
 - Wang, MFZ, Mantri M, Chou S-P, Scuderi GJ, **McKellar DW**, Butcher JT, Danko CG, De Vlaminck, I.  Uncovering transcriptional dark matter via gene annotation independent single-cell RNA sequencing analysis. Nat. Commun. 12, 2158 (2021).
 - Mantri, M., Scuderi, GJ, Abedini-Nassab, R, Wang, MFZ, **McKellar, DW**, Shi, H, Grodner, B, Butcher, JT, De Vlaminck, I. Spatiotemporal single-cell RNA sequencing of developing chicken hearts identifies interplay between cellular differentiation and morphogenesis. Nat. Commun. 12, 1771 (2021).
 
