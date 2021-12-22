@@ -3,8 +3,9 @@ name: David W. McKellar
 description: personal site
 url: "https://mckellardw.github.io/"
 markdown: kramdown
-plugins:
-  - jekyll-remote-theme
-  - jekyll-include-cache
-theme: minimal-mistakes-jekyll
+remote_theme: benbalter/retlab
+# plugins:
+#   - jekyll-remote-theme
+#   - jekyll-include-cache
+# theme: minimal-mistakes-jekyll
 highlighter: rouge
