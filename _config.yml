@@ -1,7 +1,7 @@
 # Jekyll config
-author:
-  name: David W. McKellar
-  email: "dwm269@cornell.edu"
+# author:
+name: David W. McKellar
+email: "dwm269@cornell.edu"
 description: personal site
 url: "https://mckellardw.github.io/"
 markdown: kramdown
@@ -18,3 +18,5 @@ minima:
   social_links:
     twitter: dwmckellar
     github: mckellardw
+header_pages:
+  - cv/cv.md
