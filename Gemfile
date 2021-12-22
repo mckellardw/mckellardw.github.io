@@ -1,3 +1,1 @@
-gem "jekyll-remote-theme"
-gem 'jekyll-include-cache'
-gem "minimal-mistakes-jekyll"
+gem "minima", git: "https://github.com/jekyll/minima"
