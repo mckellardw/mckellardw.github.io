@@ -1,7 +1,7 @@
 # **David W. McKellar**
 email: dwm269@cornell.edu | github: [mckellardw](https://github.com/mckellardw) | twitter: [@dwmckellar](https://twitter.com/dwmckellar)
 
-## **EDUCATION:**
+### **EDUCATION:**
 ###### Cornell University – Ithaca, NY; Jul. 2018-Present
 - PhD Student in Biomedical Engineering
 - Mentors: Benjamin Cosgrove, PhD & Iwijn De Vlaminck, PhD
@@ -11,8 +11,8 @@ email: dwm269@cornell.edu | github: [mckellardw](https://github.com/mckellardw) 
 - Pacific Program Study Abroad – New Zealand, Australia, Fiji; Jan. 2014-May 2014
 - BME Galway Summer Program – NUI Galway, Galway, Ireland; May 2015-Jul. 2015
 
-## **RESEARCH EXPERIENCE:**
-###### **PhD Student** – Dept. of Biomedical Engineering, Cornell University; Ithaca, NY                    										Jul. 2018-Present
+### **RESEARCH EXPERIENCE:**
+###### **PhD Student** – Dept. of Biomedical Engineering, Cornell University; Ithaca, NY; Jul. 2018-Present
 - PIs: **Benjamin Cosgrove, PhD** & **Iwijn De Vlaminck, PhD**
 - Large-scale computational analyses of single-cell RNA sequencing in skeletal muscle
 - Analysis of ncRNAs in muscle regeneration using single-cell and nascent RNA sequencing
@@ -31,7 +31,7 @@ email: dwm269@cornell.edu | github: [mckellardw](https://github.com/mckellardw) 
 - PI: **Manu O. Platt, PhD**
 - Synthesis, purification, and molecular analysis of recombinant mutant proteases associated with breast cancer
 
-## **PREPRINTS & PUBLICATIONS:**
+### **PREPRINTS & PUBLICATIONS:**
 - Mantri, M., Hinchman, M. M., **McKellar, D. W.**, Z Wang, M. F., L Parker, J. S., de Vlaminck, I. (2021). Spatiotemporal transcriptomics reveals pathogenesis of viral myocarditis. BioRxiv. https://doi.org/10.1101/2021.12.07.471659
 - **McKellar, D.W.**, Walter, L.D., Song, L.T. et al. Large-scale integration of single-cell transcriptomic data captures transitional progenitor states in mouse skeletal muscle regeneration. Commun Biol 4, 1280 (2021). https://doi.org/10.1038/s42003-021-02810-x
 - Wang, MFZ, Mantri M, Chou S-P, Scuderi GJ, **McKellar DW**, Butcher JT, Danko CG, De Vlaminck, I.  Uncovering transcriptional dark matter via gene annotation independent single-cell RNA sequencing analysis. Nat. Commun. 12, 2158 (2021).
@@ -59,7 +59,7 @@ email: dwm269@cornell.edu | github: [mckellardw](https://github.com/mckellardw) 
 ###### Georgia Tech InVenture Semi-Finals – Atlanta, GA; Feb. 2, 2016
 *Enabling Meniscal Root Repair*
 
-## **POSTER PRESENTATIONS:**
+### **POSTER PRESENTATIONS:**
 ###### The New York Stem Cell Foundation Conference – Online; Oct. 20, 2020
 *Large-scale integration of single-cell transcriptomic data reveals rare, transient muscle progenitor cell states critical for muscle regeneration*
 
@@ -84,7 +84,7 @@ email: dwm269@cornell.edu | github: [mckellardw](https://github.com/mckellardw) 
 ###### Georgia Tech Senior Design Expo – Atlanta, GA; Dec. 2, 2016
 *Cobra Guide for Meniscal Root Repair*
 
-## **HONORS, AWARDS, & SCHOLARSHIPS:**
+### **HONORS, AWARDS, & SCHOLARSHIPS:**
 - #TODO Immunoengineering T32
 - 1st Place, Stem Cell Symposium Virtual Poster Competition –Cornell Stem Cell Program; Jun. 14, 2021
 - NSF GRFP Honorable Mention –National Science Foundation; Apr. 8, 2019
@@ -97,20 +97,20 @@ email: dwm269@cornell.edu | github: [mckellardw](https://github.com/mckellardw) 
 - Zell Miller/HOPE Scholarship – Georgia Student Finance Commission; Aug. 2012-May 2016
 - Pattillo Scholarship Fund Scholarship – Community Foundation for Greater Atlanta; Atlanta, GA; Aug. 2012-May 2016
 
-## **TEACHING EXPERIENCE:**
+### **TEACHING EXPERIENCE:**
  Guest Lecturer – Dept. of Biomedical Engineering, Cornell University; Oct. 2019
 - *Stem Cell Bioengineering* (BME 6110); lead by Benjamin Cosgrove, PhD
 
 Teaching Assistant – Dept. of Biomedical Engineering, Georgia Institute Of Technology; Jan. 2015-May 2015
   - “Problems in Biomedical Engineering” (BME 1300); lead by Kathleen McNeeley Myers, PhD and Barbara Fasse, PhD
 
-## **LEADERSHIP ACTIVITIES:**
+### **LEADERSHIP ACTIVITIES:**
 - Communications Director – Biomedical Engineering Society; Cornell University; Dec. 2018-Dec. 2019
 - Developed programming for promoting the professional use of social media platforms in science
 Executive Vice President – Biomedical Research Opportunities Society; Georgia Tech; Aug. 2012-May 2014
 - Coordinated presentations from Georgia Tech investigators and workshops on how to get involved in research
 
-## **COMMUNITY SERVICE ACTIVITIES:**
+### **COMMUNITY SERVICE ACTIVITIES:**
 - New Visions Engineering– TST BOCES; Ithaca, NY; Sep. 2018-May 2019
 - Served as a mentor for high school students interested in engineering
 Linkages 2 Learning– EveryMind; Silver Spring, MD; Sep. 2017-Dec. 2017
