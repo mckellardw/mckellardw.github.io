@@ -22,6 +22,6 @@ minima:
   social_links:
     twitter: dwmckellar
     github: mckellardw
-header_pages:
-  - cv/cv.md
-  - album_lists/albums.md
+# header_pages:
+#   - cv/index.md
+#   - album_lists/index.md
