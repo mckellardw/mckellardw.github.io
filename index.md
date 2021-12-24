@@ -20,3 +20,4 @@ I'm a PhD candidate in the Biomedical Engineering Department at Cornell, co-advi
 ### **Links**:
 + My recent first author paper on building a single-cell reference dataset for skeletal muscle regeneration, published in Communications Biology: [link](https://www.nature.com/articles/s42003-021-02810-x)
 + Highlight from the BME Department at Cornell: [link](https://www.bme.cornell.edu/spotlights/david-mckellar-phd-student)
++ [CV](_posts/cv/cv.md)
