@@ -1,4 +1,6 @@
 # Jekyll config
+title: David W. McKellar
+description: Personal website for DWM
 owner:
   name: David W. McKellar
   email: "dwm269@cornell.edu"
@@ -15,16 +17,14 @@ plugins:
 - jekyll-feed
 - jekyll-seo-tag
 #   - jekyll-include-cache
-# remote_theme: pages-themes/minimal@v0.2.0
-theme: minima
-minima:
-  skin: dark
-  social_links:
-    twitter: dwmckellar
-    github: mckellardw
+remote_theme: pages-themes/minimal@v0.2.0
+# theme: minima
+# minima:
+#   skin: dark
+#   social_links:
+#     twitter: dwmckellar
+#     github: mckellardw
+
 # header_pages:
 #   - _posts/cv/cv.md
 #   - _posts/album_lists/index.md
-# layout: page
-# title: "CV"
-# permalink: /cv/

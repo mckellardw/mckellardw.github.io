@@ -1,6 +1,6 @@
-layout: page
-title: "CV"
-permalink: /CV/
+# layout: page
+# title: "CV"
+# permalink: /CV/
 
 # **David W. McKellar**
 email: dwm269@cornell.edu | github: [mckellardw](https://github.com/mckellardw) | twitter: [@dwmckellar](https://twitter.com/dwmckellar) | [google scholar](https://scholar.google.com/citations?user=Hta5xCcAAAAJ&hl=en&oi=ao)
