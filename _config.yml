@@ -22,6 +22,9 @@ minima:
   social_links:
     twitter: dwmckellar
     github: mckellardw
-header_pages:
-  - _posts/cv/cv.md
-  - _posts/album_lists/index.md
+# header_pages:
+#   - _posts/cv/cv.md
+#   - _posts/album_lists/index.md
+# layout: page
+# title: "CV"
+# permalink: /cv/
