@@ -1,3 +1,7 @@
+layout: page
+title: "CV"
+permalink: /CV/
+
 # **David W. McKellar**
 email: dwm269@cornell.edu | github: [mckellardw](https://github.com/mckellardw) | twitter: [@dwmckellar](https://twitter.com/dwmckellar) | [google scholar](https://scholar.google.com/citations?user=Hta5xCcAAAAJ&hl=en&oi=ao)
 
@@ -41,58 +45,49 @@ Jan. 2015-May 2016
 - **McKellar, D. W.**, Mantri, M., Hinchman, M., Parker, J. S. L., Sethupathy, P., Cosgrove, B. D., Vlaminck, I. de. (2022). In situ polyadenylation enables spatial mapping of the total transcriptome. *BioRxiv*, 2022.04.20.488964. https://doi.org/10.1101/2022.04.20.488964
 - Mantri, M., Hinchman, M. M., **McKellar, D. W.**, Z Wang, M. F., L Parker, J. S., de Vlaminck, I. (2021). Spatiotemporal transcriptomics reveals pathogenesis of viral myocarditis. *BioRxiv*. https://doi.org/10.1101/2021.12.07.471659
 - **McKellar, D.W.**, Walter, L.D., Song, L.T. et al. Large-scale integration of single-cell transcriptomic data captures transitional progenitor states in mouse skeletal muscle regeneration. *Commun Biol* 4, 1280 (2021). https://doi.org/10.1038/s42003-021-02810-x
-- Wang, MFZ, Mantri M, Chou S-P, Scuderi GJ, **McKellar DW**, Butcher JT, Danko CG, De Vlaminck, I.  Uncovering transcriptional dark matter via gene annotation independent single-cell RNA sequencing analysis. Nat. Commun. 12, 2158 (2021).
-- Mantri, M., Scuderi, GJ, Abedini-Nassab, R, Wang, MFZ, **McKellar, DW**, Shi, H, Grodner, B, Butcher, JT, De Vlaminck, I. Spatiotemporal single-cell RNA sequencing of developing chicken hearts identifies interplay between cellular differentiation and morphogenesis. Nat. Commun. 12, 1771 (2021).
+- Wang, MFZ, Mantri M, Chou S-P, Scuderi GJ, **McKellar DW**, Butcher JT, Danko CG, De Vlaminck, I.  Uncovering transcriptional dark matter via gene annotation independent single-cell RNA sequencing analysis. *Nat. Commun.* 12, 2158 (2021).
+- Mantri, M., Scuderi, GJ, Abedini-Nassab, R, Wang, MFZ, **McKellar, DW**, Shi, H, Grodner, B, Butcher, JT, De Vlaminck, I. Spatiotemporal single-cell RNA sequencing of developing chicken hearts identifies interplay between cellular differentiation and morphogenesis. *Nat. Commun.* 12, 1771 (2021).
 
-## **ORAL PRESENTATIONS:**
-###### Cornell BMES Symposium – Ithaca, NY; Aug. 20, 2021
+### **ORAL PRESENTATIONS:**
+- Gordon Research Conference, Single-Cell Genomics – Les Diablarets, Switzerland; May 3, 2022
+*Strength in Numbers: Exploring Muscle Regeneration Through Single-Cell and Spatial Transcriptomics*
+- Cornell BMES Symposium – Ithaca, NY; Aug. 20, 2021
 *Strength in numbers: Exploring rare cell states through large-scale integrative single-cell transcriptomics*
-
-###### Cornell Stem Cell Program, 8th Stem Cell Symposium – Online; Jun. 14, 2021
+- Cornell Stem Cell Program, 8th Stem Cell Symposium – Online; Jun. 14, 2021
 *Strength in numbers: Exploring rare cell states through large-scale integrative single-cell transcriptomics*
-
-###### Cornell Single-Cell Working Group Seminar – Online; May 20, 2020
+- Cornell Single-Cell Working Group Seminar – Online; May 20, 2020
 *Lessons learned from large-scale integration of single-cell RNA sequencing datasets*
-
-###### Cornell Stem Cell Program WIP Seminar – Ithaca, NY; Nov. 19, 2019
+- Cornell Stem Cell Program WIP Seminar – Ithaca, NY; Nov. 19, 2019
 *Integrating single-cell and nascent RNA sequencing to identify regulatory factors in myogenesis*
-
-###### NIH Postbac Seminar Series – Bethesda, MD; Oct. 17, 2017
+- NIH Postbac Seminar Series – Bethesda, MD; Oct. 17, 2017
 *Identification of germline mutations contributing to leukemogenesis in Familial Platelet Disorder*
-
-###### NHGRI Translational And Functional Genomics Branch Meeting – Bethesda, MD; May 26, 2017
+- NHGRI Translational And Functional Genomics Branch Meeting – Bethesda, MD; May 26, 2017
 *Modeling the hematopoietic defects of Familial Platelet Disorder with patient-specific iPSCs*
-
-###### Georgia Tech InVenture Semi-Finals – Atlanta, GA; Feb. 2, 2016
+- Georgia Tech InVenture Semi-Finals – Atlanta, GA; Feb. 2, 2016
 *Enabling Meniscal Root Repair*
 
 ### **POSTER PRESENTATIONS:**
-###### The New York Stem Cell Foundation Conference – Online; Oct. 20, 2020
+- Gordon Research Conference, Single-Cell Genomics – Les Diablarets, Switzerland; May 3, 2022
+*Strength in Numbers: Exploring Muscle Regeneration Through Single-Cell and Spatial Transcriptomics*
+- The New York Stem Cell Foundation Conference – Online; Oct. 20, 2020
 *Large-scale integration of single-cell transcriptomic data reveals rare, transient muscle progenitor cell states critical for muscle regeneration*
-
-###### 2019 BMES Annual Meeting – Philadelphia, PA; Oct. 18, 2019
+- 2019 BMES Annual Meeting – Philadelphia, PA; Oct. 18, 2019
 *Integrating Single-Cell and Nascent RNA Sequencing to Identify Regulatory Factors in Myogenesis*
-
-###### NIH Postbaccalaureate Poster Day 2018 – Bethesda, MD; May 2, 2018
+- NIH Postbaccalaureate Poster Day 2018 – Bethesda, MD; May 2, 2018
 *Establishment of RUNX1-reporter hiPSC lines to identify compounds that promote hematopoietic differentiation*
-
-###### 2017 NHGRI Symposium – Bethesda, MD; Oct. 26, 2017
+- 2017 NHGRI Symposium – Bethesda, MD; Oct. 26, 2017
 *Modeling the hematopoietic defects of Familial Platelet Disorder with patient-specific iPSCs*
-
-###### NIH Research Festival – Bethesda, MD; Sep. 15, 2017
+- NIH Research Festival – Bethesda, MD; Sep. 15, 2017
 *Modeling the hematopoietic defects of Familial Platelet Disorder with patient-specific iPSCs*
-
-###### NIH Postbaccalaureate Poster Day 2017 – Bethesda, MD; May 4, 2017
+- NIH Postbaccalaureate Poster Day 2017 – Bethesda, MD; May 4, 2017
 *High-throughput drug screening with iPSC differentiation models for the enhancement of hematopoietic stem cell development*
-
-###### The Georgia Tech Annual Undergraduate Research Spring Symposium – Atlanta, GA; Apr. 19, 2016
+- The Georgia Tech Annual Undergraduate Research Spring Symposium – Atlanta, GA; Apr. 19, 2016
 *Synthesis of mutant proteases for the study of feedback mechanisms in cancer metastasis and cardiovascular disease*
-
-###### Georgia Tech Senior Design Expo – Atlanta, GA; Dec. 2, 2016
+- Georgia Tech Senior Design Expo – Atlanta, GA; Dec. 2, 2016
 *Cobra Guide for Meniscal Root Repair*
 
 ### **HONORS, AWARDS, & SCHOLARSHIPS:**
-- #TODO Immunoengineering T32
+- T32 pre-doctoral training grant, "Immuno-Engineering: Integrated Engineering and Immunology Training"
 - 1st Place, Stem Cell Symposium Virtual Poster Competition –Cornell Stem Cell Program; Jun. 14, 2021
 - NSF GRFP Honorable Mention –National Science Foundation; Apr. 8, 2019
 - 2018 Postbac Poster Day Award –National Institutes of Health; Bethesda, MD; May 2, 2018
@@ -105,13 +100,14 @@ Jan. 2015-May 2016
 - Pattillo Scholarship Fund Scholarship – Community Foundation for Greater Atlanta; Atlanta, GA; Aug. 2012-May 2016
 
 ### **TEACHING EXPERIENCE:**
- Guest Lecturer – Dept. of Biomedical Engineering, Cornell University; Oct. 2019
+Guest Lecturer – Dept. of Biomedical Engineering, Cornell University; Oct. 2019
 - *Stem Cell Bioengineering* (BME 6110); lead by Benjamin Cosgrove, PhD
 
 Teaching Assistant – Dept. of Biomedical Engineering, Georgia Institute Of Technology; Jan. 2015-May 2015
   - “Problems in Biomedical Engineering” (BME 1300); lead by Kathleen McNeeley Myers, PhD and Barbara Fasse, PhD
 
 ### **LEADERSHIP ACTIVITIES:**
+- BME Representative – Cornell University College of Engineering Graduate Student Advisory Board (COE-GSAB); April 2022 - Present
 - Communications Director – Biomedical Engineering Society; Cornell University; Dec. 2018-Dec. 2019
 - Developed programming for promoting the professional use of social media platforms in science
 Executive Vice President – Biomedical Research Opportunities Society; Georgia Tech; Aug. 2012-May 2014
