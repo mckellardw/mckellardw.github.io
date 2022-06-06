@@ -12,7 +12,6 @@
 ### **twitter:** [@dwmckellar](https://twitter.com/dwmckellar)
 ### **Google Scholar**: [link](https://scholar.google.com/citations?user=Hta5xCcAAAAJ&hl=en&oi=ao)
 <br />
-<br />
 
 ## **About**:
 I'm a PhD candidate in the Biomedical Engineering Department at Cornell, co-advised by [Ben Cosgrove](https://cosgrovelab.bme.cornell.edu/) and [Iwijn De Vlaminck](https://devlaminck.bme.cornell.edu/). I work on computational and molecular strategies to understand single-cell and spatial biology, with particular interests in stem cells and noncoding RNAs.
