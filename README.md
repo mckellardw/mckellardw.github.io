@@ -1,5 +1,5 @@
-<h1 align="center"
-    style="color:#0076B6; font-weight: bold"> David W. McKellar </h1>
+<!-- <h1 align="center"
+    style="color:#0076B6; font-weight: bold"> David W. McKellar </h1> -->
 
 <img src="images/prof_pic.jpg"
      alt="On a walk somewhere in DC..."
