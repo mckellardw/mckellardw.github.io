@@ -35,6 +35,15 @@ plugins:
 
 minima:
   skin: dark
+  social_links:
+    twitter: dwmckellar
+    github: mckellardw
+    orcid: 0000-0002-7752-078X
+
+defaults:
+  -
+    values:
+      layout: "default"
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
