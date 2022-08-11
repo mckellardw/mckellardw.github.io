@@ -41,9 +41,11 @@ minima:
     orcid: 0000-0002-7752-078X
 
 defaults:
-  -
     values:
       layout: "default"
+
+gems:
+    - jekyll-font-awesome-sass
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

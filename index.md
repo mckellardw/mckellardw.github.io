@@ -18,8 +18,8 @@ theme: minima
      style="float: left; margin-right: 12px; border-radius:42%;"
      width=180 />
 <br /> -->
-![prof](images/prof_pic.jpg)
-<!-- {style: height="36px" width="36px"} -->
+![prof](images/prof_pic.jpg){style: height="36px" width="36px"}
+
 ## **David W. McKellar**  
 ```
 PhD Candidate  
