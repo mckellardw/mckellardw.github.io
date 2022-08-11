@@ -1,5 +1,6 @@
 # Annual albums list
-[last.fm](https://www.last.fm/user/mickyd413)
+
+I listen to a lot of music and people often ask for recommendations. This is a running list of my favorite records over the past few years, where each list is set on December 31st. Check back next year for more albums, or see what I'm listening to now on [last.fm](https://www.last.fm/user/mickyd413).
 
 ## **2021**
 ```

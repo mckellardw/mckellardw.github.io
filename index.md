@@ -6,19 +6,7 @@ layout: default
 theme: minima
 ---
 
-<!-- <h1 align="center"
-    style="color:#0076B6; font-weight: bold"> David W. McKellar </h1> -->
-
-<!-- <img align="center"
-  height="150"
-  src=images/prof_pic.jpg  
-  style="float: left; margin-right: 12px; border-radius:42%;"> -->
-<!-- <img src="images/prof_pic.jpg"
-     alt="On a walk somewhere in DC..."
-     style="float: left; margin-right: 12px; border-radius:42%;"
-     width=180 />
-<br /> -->
-![prof](images/prof_pic.jpg){style: height="36px" width="36px"}
+![DwM](images/prof_pic.jpg){: style="float: left; height: 180px; margin-right: 12px; border-radius:42%;"}
 
 ## **David W. McKellar**  
 ```
@@ -26,7 +14,7 @@ PhD Candidate
 Biomedical Engineering  
 Cornell University  
 dwm269 [at] cornell [dot] edu  
-```
+```  
 
 ### **google scholar**: [link](https://scholar.google.com/citations?user=Hta5xCcAAAAJ&hl=en&oi=ao)
 ### **github:** [mckellardw](https://github.com/mckellardw)
