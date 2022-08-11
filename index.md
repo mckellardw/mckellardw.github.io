@@ -9,6 +9,7 @@ theme: minima
 ![DwM](images/prof_pic.jpg){: style="float: left; height: 180px; margin-right: 12px; border-radius:42%;"}
 
 ## **David W. McKellar**  
+
 ```
 PhD Candidate  
 Biomedical Engineering  
@@ -16,10 +17,11 @@ Cornell University
 dwm269 [at] cornell [dot] edu  
 ```  
 
-### **google scholar**: [link](https://scholar.google.com/citations?user=Hta5xCcAAAAJ&hl=en&oi=ao)
-### **github:** [mckellardw](https://github.com/mckellardw)
-### **twitter:** [@dwmckellar](https://twitter.com/dwmckellar)
+-----------
 
+[**google scholar**](https://scholar.google.com/citations?user=Hta5xCcAAAAJ&hl=en&oi=ao) |
+[**github.com/mckellardw**](https://github.com/mckellardw) |
+[**twitter: @dwmckellar**](https://twitter.com/dwmckellar)
 
 -----------
 
