@@ -9,7 +9,7 @@ permalink: /publications/
 [[**bioRxiv, 2022**]](https://doi.org/10.1101/2022.04.20.488964) [[**github**]](https://github.com/mckellardw/STRS)
 
 ***Spatiotemporal transcriptomics reveals pathogenesis of viral myocarditis.***  
-Mantri, M., Hinchman, M. M., **McKellar, DW**, Z Wang, M. F., L Parker, J. S., de Vlaminck, I.
+Mantri, M., Hinchman, M. M., **McKellar, DW**, Z Wang, M. F., L Parker, J. S., de Vlaminck, I.  
 [[**bioRxiv, 2022**]](https://doi.org/10.1101/2021.12.07.471659)
 
 ### *Published*
