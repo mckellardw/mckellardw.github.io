@@ -1,5 +1,9 @@
-### **David W. McKellar**
-
+---
+layout: default
+title: Research
+permalink: /research/
+---
+# Research Overview
 My thesis work has centered on finding new ways to squeeze information out of transcriptomics data.
 
 ## 1. Exploring stem cell biology with large-scale single cell transcriptomics
