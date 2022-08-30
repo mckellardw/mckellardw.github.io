@@ -1,4 +1,3 @@
-# **Highlighted works**
 ### **David W. McKellar**
 
 My thesis work has centered on finding new ways to squeeze information out of transcriptomics data.
