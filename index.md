@@ -6,7 +6,7 @@ layout: default
 theme: minima
 ---
 
-![DwM](images/prof_pic.jpg){: style="float: left; height: 180px; margin-right: 12px; border-radius:42%;"}
+![DwM](images/prof_pic.jpg){: style="float: left; height: 180px; margin-right: 12px;"}
 
 ## **David W. McKellar**  
 
@@ -21,12 +21,13 @@ dwm269 [at] cornell [dot] edu
 
 [**google scholar**](https://scholar.google.com/citations?user=Hta5xCcAAAAJ&hl=en&oi=ao) |
 [**github.com/mckellardw**](https://github.com/mckellardw) |
+[**linkedin**](www.linkedin.com/in/dwmckellar) |
 [**twitter: @dwmckellar**](https://twitter.com/dwmckellar)
 
 -----------
 
 ## **About**:
-I'm a PhD candidate in the Biomedical Engineering Department at Cornell, co-advised by [Ben Cosgrove](https://cosgrovelab.bme.cornell.edu/) and [Iwijn De Vlaminck](https://devlaminck.bme.cornell.edu/). I work on computational and molecular strategies to understand single-cell and spatial biology, with particular interests in stem cells and noncoding RNAs. 
+I'm a PhD candidate in the Biomedical Engineering Department at Cornell, co-advised by [Ben Cosgrove](https://cosgrovelab.bme.cornell.edu/) and [Iwijn De Vlaminck](https://devlaminck.bme.cornell.edu/). I work on computational and molecular strategies to understand single-cell and spatial biology, with particular interests in stem cells and noncoding RNAs.
 
 Before coming to Cornell, I received my BS in Biomedical Engineering (minor in Biology) from Georgia Tech. While there I also worked in [Manu Platt's lab](https://platt.gatech.edu/index.html) on proteolytic networks. After undergrad, I moved to the National Human Genome Research Institute in Bethesda, MD and worked in [Paul Liu's lab](https://www.genome.gov/staff/Paul-P-Liu-MD-PhD). In the Liu Lab, I worked on developing in vitro models for familial leukemia using patient-derived induced pluripotent stem cells.
 
