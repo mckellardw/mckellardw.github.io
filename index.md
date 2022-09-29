@@ -19,9 +19,9 @@ dwm269 [at] cornell [dot] edu
 
 -----------
 
-[**google scholar**](https://scholar.google.com/citations?user=Hta5xCcAAAAJ&hl=en&oi=ao) |
-[**github.com/mckellardw**](https://github.com/mckellardw) |
-[**linkedin**](www.linkedin.com/in/dwmckellar) |
+[**google scholar**](https://scholar.google.com/citations?user=Hta5xCcAAAAJ&hl=en&oi=ao)  |
+[**github**](https://github.com/mckellardw)  |
+[**linkedin**](www.linkedin.com/in/dwmckellar)  |
 [**twitter**](https://twitter.com/dwmckellar)
 
 -----------
