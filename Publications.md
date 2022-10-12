@@ -16,13 +16,13 @@ permalink: /publications/
 [[**github**]](https://github.com/mckellardw/STRS)
 [[**pdf**]](https://mckellardw.github.io/pdfs/McKellar_bioRxiv_2022.pdf)
 
-#### Accepted to *Nature Cardiovascular Research*!
+### *Published*
 ***Spatiotemporal transcriptomics reveals pathogenesis of viral myocarditis.***  
 Mantri, M., Hinchman, M. M., **McKellar, DW**, Z Wang, M. F., L Parker, J. S., de Vlaminck, I.  
-[[**bioRxiv, 2022**]](https://doi.org/10.1101/2021.12.07.471659)
-[[**pdf**]](https://mckellardw.github.io/pdfs/Mantri_bioRxiv_2021.pdf)
+[[**Nature Cardiovascular Research, 2022**]](https://www.nature.com/articles/s44161-022-00138-1)
+[[**bioRxiv, 2021**]](https://doi.org/10.1101/2021.12.07.471659)
+[[**pdf**]](https://mckellardw.github.io/pdfs/Mantri_NatCardioResearch_2022.pdf)
 
-### *Published*
 ***A Tead1-Apelin axis directs paracrine communication from myogenic to endothelial cells in skeletal muscle.***  
 Lee, U., Stuelsatz, P., Karaz, S., **McKellar, DW**, Russeil, J., Deak, M., de Vlaminck, I., Lepper, C., Deplancke, B., Cosgrove, B. D., Feige, J. N.  
 [[**iScience, 2022**]](https://doi.org/10.1016/j.isci.2022.104589)
