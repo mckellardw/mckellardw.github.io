@@ -8,10 +8,6 @@ permalink: /publications/
 [[**bioRxiv, 2022**]](https://doi.org/10.1101/2022.08.15.504012)
 [[**pdf**]](https://mckellardw.github.io/pdfs/Norris_bioRxiv_2022.pdf)
 
-#### Accepted to *Nature Biotechnology*!
-
- McKellar, D. W. et al. Spatial mapping of the total transcriptome by in situ polyadenylation. Nat Biotechnol 1–8 (2022) doi:10.1038/s41587-022-01517-6.
-
 ### *Published*
 ***Spatial mapping of the total transcriptome by in situ polyadenylation.***  
 **McKellar, DW**, Mantri, M., Hinchman, M., Parker, J. S. L., Sethupathy, P., Cosgrove, B. D., Vlaminck, I. de.  
