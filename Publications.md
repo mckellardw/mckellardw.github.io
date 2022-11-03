@@ -11,7 +11,7 @@ permalink: /publications/
 ### *Published*
 ***Spatial mapping of the total transcriptome by in situ polyadenylation.***  
 **McKellar, DW**, Mantri, M., Hinchman, M., Parker, J. S. L., Sethupathy, P., Cosgrove, B. D., Vlaminck, I. de.  
-[[**Nature Biotechnology, 2022**]](https://doi:10.1038/s41587-022-01517-6)
+[[**Nature Biotechnology, 2022**]](https://www.nature.com/articles/s41587-022-01517-6)
 [[**bioRxiv, 2022**]](https://doi.org/10.1101/2022.04.20.488964)
 [[**github**]](https://github.com/mckellardw/STRS)
 [[**pdf**]](https://mckellardw.github.io/pdfs/McKellar_et_al_NatureBiotechnology_2022.pdf)
