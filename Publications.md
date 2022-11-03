@@ -8,15 +8,18 @@ permalink: /publications/
 [[**bioRxiv, 2022**]](https://doi.org/10.1101/2022.08.15.504012)
 [[**pdf**]](https://mckellardw.github.io/pdfs/Norris_bioRxiv_2022.pdf)
 
-### *In press*
 #### Accepted to *Nature Biotechnology*!
-***In situ polyadenylation enables spatial mapping of the total transcriptome.***  
-**McKellar, DW**, Mantri, M., Hinchman, M., Parker, J. S. L., Sethupathy, P., Cosgrove, B. D., Vlaminck, I. de.  
-[[**bioRxiv, 2022**]](https://doi.org/10.1101/2022.04.20.488964)
-[[**github**]](https://github.com/mckellardw/STRS)
-[[**pdf**]](https://mckellardw.github.io/pdfs/McKellar_bioRxiv_2022.pdf)
+
+ McKellar, D. W. et al. Spatial mapping of the total transcriptome by in situ polyadenylation. Nat Biotechnol 1–8 (2022) doi:10.1038/s41587-022-01517-6.
 
 ### *Published*
+***Spatial mapping of the total transcriptome by in situ polyadenylation.***  
+**McKellar, DW**, Mantri, M., Hinchman, M., Parker, J. S. L., Sethupathy, P., Cosgrove, B. D., Vlaminck, I. de.  
+[[**Nature Biotechnology, 2022**]](https://doi:10.1038/s41587-022-01517-6)
+[[**bioRxiv, 2022**]](https://doi.org/10.1101/2022.04.20.488964)
+[[**github**]](https://github.com/mckellardw/STRS)
+[[**pdf**]](https://mckellardw.github.io/pdfs/McKellar_et_al_NatureBiotechnology_2022.pdf)
+
 ***Spatiotemporal transcriptomics reveals pathogenesis of viral myocarditis.***  
 Mantri, M., Hinchman, M. M., **McKellar, DW**, Z Wang, M. F., L Parker, J. S., de Vlaminck, I.  
 [[**Nature Cardiovascular Research, 2022**]](https://www.nature.com/articles/s44161-022-00138-1)
