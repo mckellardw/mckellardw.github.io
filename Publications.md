@@ -3,6 +3,24 @@ layout: page
 title: Publications
 permalink: /publications/
 ---
+## **Highlighted**
+***Spatial mapping of the total transcriptome by in situ polyadenylation.***  
+**McKellar, DW**, Mantri, M., Hinchman, M., Parker, J. S. L., Sethupathy, P., Cosgrove, B. D., Vlaminck, I. de.  
+[[**Nature Biotechnology, 2022**]](https://www.nature.com/articles/s41587-022-01517-6)
+[[**bioRxiv, 2022**]](https://doi.org/10.1101/2022.04.20.488964)
+[[**github**]](https://github.com/mckellardw/STRS)
+[[**pdf**]](https://mckellardw.github.io/pdfs/McKellar_et_al_NatureBiotechnology_2022.pdf)
+
+***Large-scale integration of single-cell transcriptomic data captures transitional progenitor states in mouse skeletal muscle regeneration.***  
+**McKellar, DW**, Walter, LD, Song, LT, Mantri, M, Wang, MFZ, De Vlaminck, I, Cosgrove, BD  
+[[**Communications Biology, 2021**]](https://doi.org/10.1038/s42003-021-02810-x)
+[[**bioRxiv, 2020**]](https://www.biorxiv.org/content/10.1101/2020.12.01.407460v2)
+[[**github**]](https://github.com/mckellardw/scMuscle)
+[[**pdf**]](https://mckellardw.github.io/pdfs/McKellar_et_al_Communications_Biology_2021.pdf)
+
+-----
+
+## **Full list**
 ### *Preprints*
 ***Hedgehog signaling acts as cell fate determinant during adult tissue repair.*** Norris AM, Johnson CD, Zhou LY, Appu A, **McKellar DW**,  Cosgrove BD, Kopinke D
 [[**bioRxiv, 2022**]](https://doi.org/10.1101/2022.08.15.504012)
