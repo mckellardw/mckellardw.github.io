@@ -32,6 +32,7 @@ remote_theme: jekyll/minima
 # remote_theme: cotes2020/jekyll-theme-chirpy
 plugins:
   - jekyll-feed
+  - jekyll-font-awesome-sass
 
 minima:
   skin: dark
@@ -45,8 +46,8 @@ defaults:
     values:
       layout: "default"
 
-gems:
-    - jekyll-font-awesome-sass
+# gems:
+#     - jekyll-font-awesome-sass
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
