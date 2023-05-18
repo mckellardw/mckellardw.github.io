@@ -8,10 +8,9 @@ theme: minima
 
 ![DwM](images/prof_pic.jpg){: style="float: left; height: 180px; margin-right: 12px;"}
 
-## **David W. McKellar**  
+## **David W. McKellar, PhD**  
 
 ```
-PhD Candidate  
 Biomedical Engineering  
 Cornell University  
 dwm269 [at] cornell [dot] edu  
