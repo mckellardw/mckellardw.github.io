@@ -16,7 +16,7 @@
 title: David W. McKellar
 email: dwm269@cornell.edu
 description: >- # this means to ignore newlines until "baseurl:"
-  I'm a PhD candidate in the Biomedical Engineering Department at Cornell,
+  I'm a PhD in the Biomedical Engineering Department at Cornell,
   co-advised by Ben Cosgrove and Iwijn De Vlaminck. I work on computational
   and molecular strategies to understand single-cell and spatial biology,
   with particular interests in stem cells and noncoding RNAs.
@@ -27,11 +27,13 @@ github_username:  mckellardw
 
 # Build settings
 markdown: kramdown
-# theme: minima
-remote_theme: jekyll/minima
+theme: minima
+# remote_theme: jekyll/minima
 # remote_theme: cotes2020/jekyll-theme-chirpy
 plugins:
   - jekyll-feed
+
+gems:
   - jekyll-font-awesome-sass
 
 minima:
@@ -41,6 +43,9 @@ minima:
     github: mckellardw
     orcid: 0000-0002-7752-078X
     linkedin: dwmckellar
+
+font-awesome:
+  assets: true
 
 defaults:
     values:
