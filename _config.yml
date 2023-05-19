@@ -16,10 +16,12 @@
 title: DWM
 email: dwm269@cornell.edu
 description: >- # this means to ignore newlines until "baseurl:"
-  I'm a PhD in the Biomedical Engineering Department at Cornell,
-  co-advised by Ben Cosgrove and Iwijn De Vlaminck. I work on computational
-  and molecular strategies to understand single-cell and spatial biology,
-  with particular interests in stem cells and noncoding RNAs.
+  David W. McKellar
+  # I'm a PhD in the Biomedical Engineering Department at Cornell,
+  # co-advised by Ben Cosgrove and Iwijn De Vlaminck. I work on computational
+  # and molecular strategies to understand single-cell and spatial biology,
+  # with particular interests in stem cells and noncoding RNAs.
+
 # baseurl: "" # the subpath of your site, e.g. /blog
 # url: "http://mckellar.dw" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: dwmckellar
@@ -31,25 +33,27 @@ markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-font-awesome-sass
+  # - jekyll-seo-tag
 
-theme: jekyll-dash
-dash:
+
+# theme: minima
+remote_theme: jekyll/minima
+jekyll/minima:
+  skin: solarized
   social_links:
-    - url: https://twitter.com/dwmckellar
-      icon: twitter-square
-      color: cyan
-    - url: https://github.com/mckellardw
-      icon: github-square
-      color: purple
-    # - { platform: orcid,      user_url: "https://orcid.org/0000-0002-7752-078X" }
-    # - { platform: linkedin,   user_url: "https://www.linkedin.com/in/dwmckellar/" }
+    - { platform: twitter,    user_url: "https://twitter.com/dwmckellar"}
+    - { platform: github,     user_url: "https://github.com/mckellardw" }
+    - { platform: orcid,      user_url: "https://orcid.org/0000-0002-7752-078X" }
+    - { platform: linkedin,   user_url: "https://www.linkedin.com/in/dwmckellar/" }
 
-font-awesome:
-  assets: true
+show_excerpts: false
 
-defaults:
-    values:
-      layout: "page"
+# font-awesome:
+#   assets: true
+
+# defaults:
+#     values:
+#       layout: "page"
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
