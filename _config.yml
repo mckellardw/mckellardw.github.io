@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: David W. McKellar
+title: DWM
 email: dwm269@cornell.edu
 description: >- # this means to ignore newlines until "baseurl:"
   I'm a PhD in the Biomedical Engineering Department at Cornell,
@@ -27,29 +27,30 @@ github_username:  mckellardw
 
 # Build settings
 markdown: kramdown
-theme: minima
-# remote_theme: jekyll/minima
 # remote_theme: cotes2020/jekyll-theme-chirpy
 plugins:
   - jekyll-feed
-
-gems:
   - jekyll-font-awesome-sass
 
-minima:
-  skin: dark
+theme: jekyll-dash
+dash:
   social_links:
-    twitter: dwmckellar
-    github: mckellardw
-    orcid: 0000-0002-7752-078X
-    linkedin: dwmckellar
+      social_links:
+    - url: https://twitter.com/dwmckellar
+      icon: twitter-square
+      color: cyan
+    - url: https://github.com/mckellardw
+      icon: github-square
+      color: purple
+    # - { platform: orcid,      user_url: "https://orcid.org/0000-0002-7752-078X" }
+    # - { platform: linkedin,   user_url: "https://www.linkedin.com/in/dwmckellar/" }
 
 font-awesome:
   assets: true
 
 defaults:
     values:
-      layout: "default"
+      layout: "page"
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
