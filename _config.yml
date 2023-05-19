@@ -41,10 +41,10 @@ remote_theme: jekyll/minima
 minima:
   skin: dark
   social_links:
-    twitter: dwmckellar
     github: mckellardw
-    orcid: 0000-0002-7752-078X
+    twitter: dwmckellar
     linkedin: dwmckellar
+    orcid: 0000-0002-7752-078X
     # - { platform: twitter,    user_url: "https://twitter.com/dwmckellar"}
     # - { platform: github,     user_url: "https://github.com/mckellardw" }
     # - { platform: orcid,      user_url: "https://orcid.org/0000-0002-7752-078X" }
