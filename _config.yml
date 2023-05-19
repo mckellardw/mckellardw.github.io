@@ -35,7 +35,6 @@ plugins:
 theme: jekyll-dash
 dash:
   social_links:
-      social_links:
     - url: https://twitter.com/dwmckellar
       icon: twitter-square
       color: cyan
