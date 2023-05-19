@@ -265,6 +265,7 @@ DEPENDENCIES
   jekyll (~> 3.9.3)
   jekyll-feed (~> 0.6)
   jekyll-font-awesome-sass (~> 0.1.1)
+  jekyll-remote-theme
   minima (~> 2.5.1)
 
 BUNDLED WITH

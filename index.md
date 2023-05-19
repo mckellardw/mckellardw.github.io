@@ -2,8 +2,7 @@
 # Feel free to add content and custom Front Matter to this file.
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
-layout: home_noPosts
-theme: minima
+layout: home
 ---
 
 ![DwM](images/prof_pic.jpg){: style="float: left; height: 180px; margin-right: 12px;"}

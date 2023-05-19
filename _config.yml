@@ -17,10 +17,10 @@ title: DWM
 email: dwm269@cornell.edu
 description: >- # this means to ignore newlines until "baseurl:"
   David W. McKellar
-  # I'm a PhD in the Biomedical Engineering Department at Cornell,
-  # co-advised by Ben Cosgrove and Iwijn De Vlaminck. I work on computational
-  # and molecular strategies to understand single-cell and spatial biology,
-  # with particular interests in stem cells and noncoding RNAs.
+# I'm a PhD in the Biomedical Engineering Department at Cornell,
+# co-advised by Ben Cosgrove and Iwijn De Vlaminck. I work on computational
+# and molecular strategies to understand single-cell and spatial biology,
+# with particular interests in stem cells and noncoding RNAs.
 
 # baseurl: "" # the subpath of your site, e.g. /blog
 # url: "http://mckellar.dw" # the base hostname & protocol for your site, e.g. http://example.com
@@ -29,17 +29,17 @@ github_username:  mckellardw
 
 # Build settings
 markdown: kramdown
-# remote_theme: cotes2020/jekyll-theme-chirpy
+
 plugins:
+  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-font-awesome-sass
-  # - jekyll-seo-tag
 
-
+# remote_theme: cotes2020/jekyll-theme-chirpy
 # theme: minima
 remote_theme: jekyll/minima
-jekyll/minima:
-  skin: solarized
+minima:
+  skin: dark
   social_links:
     - { platform: twitter,    user_url: "https://twitter.com/dwmckellar"}
     - { platform: github,     user_url: "https://github.com/mckellardw" }
