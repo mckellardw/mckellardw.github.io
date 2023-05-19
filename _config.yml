@@ -41,10 +41,14 @@ remote_theme: jekyll/minima
 minima:
   skin: dark
   social_links:
-    - { platform: twitter,    user_url: "https://twitter.com/dwmckellar"}
-    - { platform: github,     user_url: "https://github.com/mckellardw" }
-    - { platform: orcid,      user_url: "https://orcid.org/0000-0002-7752-078X" }
-    - { platform: linkedin,   user_url: "https://www.linkedin.com/in/dwmckellar/" }
+    twitter: dwmckellar
+    github: mckellardw
+    orcid: 0000-0002-7752-078X
+    linkedin: dwmckellar
+    # - { platform: twitter,    user_url: "https://twitter.com/dwmckellar"}
+    # - { platform: github,     user_url: "https://github.com/mckellardw" }
+    # - { platform: orcid,      user_url: "https://orcid.org/0000-0002-7752-078X" }
+    # - { platform: linkedin,   user_url: "https://www.linkedin.com/in/dwmckellar/" }
 
 show_excerpts: false
 
