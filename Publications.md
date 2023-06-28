@@ -22,11 +22,16 @@ permalink: /publications/
 
 ## **Full list**
 ### *Preprints*
-***Hedgehog signaling acts as cell fate determinant during adult tissue repair.*** Norris AM, Johnson CD, Zhou LY, Appu A, **McKellar DW**,  Cosgrove BD, Kopinke D
-[[**bioRxiv, 2022**]](https://doi.org/10.1101/2022.08.15.504012)
-[[**pdf**]](https://mckellardw.github.io/pdfs/Norris_bioRxiv_2022.pdf)
+None at this time, but several in the works!
 
 ### *Published*
+***Hedgehog signaling acts as cell fate determinant during adult tissue repair.***  
+Norris AM, Johnson CD, Zhou LY, Appu A, **McKellar DW**,  Cosgrove BD, Kopinke D  
+[[**Nature Communications, 2023**]](https://www.nature.com/articles/s41467-023-39506-1)
+[[**bioRxiv, 2022**]](https://doi.org/10.1101/2022.08.15.504012)
+[[**pdf**]](https://mckellardw.github.io/pdfs/Norris_NatureCommunications_2023.pdf)
+
+
 ***Spatial mapping of the total transcriptome by in situ polyadenylation.***  
 **McKellar, DW**, Mantri, M., Hinchman, M., Parker, J. S. L., Sethupathy, P., Cosgrove, B. D., Vlaminck, I. de.  
 [[**Nature Biotechnology, 2022**]](https://www.nature.com/articles/s41587-022-01517-6)
