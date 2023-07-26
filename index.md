@@ -1,7 +1,5 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
+#Front matter
 layout: home_noPosts
 ---
 
@@ -10,9 +8,8 @@ layout: home_noPosts
 ## **David W. McKellar, PhD**  
 
 ```
-Biomedical Engineering  
-Cornell University  
-dwm269 [at] cornell [dot] edu  
+Research Scientist 
+dwmckellar [at] nygenome [dot] org  
 ```  
 
 -----------
@@ -25,10 +22,11 @@ dwm269 [at] cornell [dot] edu
 
 -----------
 
-## **About**:
+
+<!-- ## **About**:
 I'm a PhD candidate in the Biomedical Engineering Department at Cornell, co-advised by [Ben Cosgrove](https://cosgrovelab.bme.cornell.edu/) and [Iwijn De Vlaminck](https://devlaminck.bme.cornell.edu/). I work on computational and molecular strategies to understand single-cell and spatial biology, with particular interests in stem cells and noncoding RNAs.
 
-Before coming to Cornell, I received my BS in Biomedical Engineering (minor in Biology) from Georgia Tech. While there I also worked in [Manu Platt's](https://platt.gatech.edu/index.html) lab on proteolytic networks. After undergrad, I moved to the National Human Genome Research Institute in Bethesda, MD and worked in [Paul Liu's lab](https://www.genome.gov/staff/Paul-P-Liu-MD-PhD). In the Liu Lab, I worked on developing in vitro models for familial leukemia using patient-derived induced pluripotent stem cells.
+Before coming to Cornell, I received my BS in Biomedical Engineering (minor in Biology) from Georgia Tech. While there I also worked in [Manu Platt's](https://platt.gatech.edu/index.html) lab on proteolytic networks. After undergrad, I moved to the National Human Genome Research Institute in Bethesda, MD and worked in [Paul Liu's lab](https://www.genome.gov/staff/Paul-P-Liu-MD-PhD). In the Liu Lab, I worked on developing in vitro models for familial leukemia using patient-derived induced pluripotent stem cells. -->
 
 <!-- ## **Highlights**:
 + Highlight from the BME Department at Cornell: [link](https://www.bme.cornell.edu/spotlights/david-mckellar-phd-student) -->
