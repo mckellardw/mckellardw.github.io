@@ -12,15 +12,11 @@ Research Scientist
 dwmckellar [at] nygenome [dot] org  
 ```  
 
------------
-
 [**google scholar**](https://scholar.google.com/citations?user=Hta5xCcAAAAJ&hl=en&oi=ao)  |
 [**github**](https://github.com/mckellardw)  |
 [**linkedin**](https://www.linkedin.com/in/dwmckellar/)  |
 [**pubmed**](https://pubmed.ncbi.nlm.nih.gov/?term=David+McKellar%5BAuthor%5D&sort=date)  |
 [**twitter**](https://twitter.com/dwmckellar)
-
------------
 
 
 <!-- ## **About**:
