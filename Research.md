@@ -3,7 +3,7 @@ layout: page
 title: Research
 permalink: /research/
 ---
-# Research Overview
+# Overview
 I study gene regulation in stem cells, with a particular interest in noncoding RNA gene regulatory networks. At the beginning of my PhD, I found that current methods (both molecular and computational) were either not sensitive to or ignoring many RNA species altogether. My thesis work has centered on expanding the utility of transcriptomics technologies and finding new ways to squeeze information out of the data.
 
 ## **1. Exploring stem cell biology with large-scale single cell transcriptomics**
@@ -11,7 +11,7 @@ Stem cells are inherently lowly abundant in tissues. To characterize transient s
 
 Through this work my interest I became interested in cell atlas building, especially through the re-use of existing public data. I also generated some of the first spatial transcriptomics data in skeletal muscle, which inspired the second half of my PhD.
 
-This work resulted in a first author manuscript in [*Communications Biology*](https://www.nature.com/articles/s42003-021-02810-x).
+This work was performed under the advisement of [Ben Cosgrove](https://cosgrovelab.bme.cornell.edu/) and resulted in a first author manuscript in [*Communications Biology*](https://www.nature.com/articles/s42003-021-02810-x).
 
 ![scMuscle](images/thesis_summary/scMuscle_umap_harmony_vBlack.png)
 
@@ -22,7 +22,7 @@ Working with spatial transcriptomics data on the scMuscle project (above) as wel
 
 The development of STRS fueled my interest in noncoding RNA-mediated gene expression and technology development.  
 
-This work is detailed in a [preprint](https://www.biorxiv.org/content/10.1101/2022.04.20.488964v1) and is currently under review.
+This work was performed under the advisement of [Iwijn De Vlaminck](https://devlaminck.bme.cornell.edu/) and resulted in a manuscript published in [Nature Biotechnology](https://www.nature.com/articles/s41587-022-01517-6). Check out the [Research Briefing](https://www.nature.com/articles/s41587-022-01562-1) for a summary.
 
 ![scMuscle](images/thesis_summary/STRS_v2_DarkMode.png)
 
