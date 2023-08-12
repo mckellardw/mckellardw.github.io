@@ -17,5 +17,3 @@ dmckellar [at] nygenome [dot] org
 [**github**](https://github.com/mckellardw)  |
 [**linkedin**](https://www.linkedin.com/in/dwmckellar/)  |
 [**twitter**](https://twitter.com/dwmckellar)
-
-<link rel="icon" href="D.ico" type="image/x-icon">
