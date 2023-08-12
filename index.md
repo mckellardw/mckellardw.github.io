@@ -9,7 +9,7 @@ layout: home_noPosts
 
 ```
 Research Scientist 
-dwmckellar [at] nygenome [dot] org  
+dmckellar [at] nygenome [dot] org  
 ```  
 
 [**google scholar**](https://scholar.google.com/citations?user=Hta5xCcAAAAJ&hl=en&oi=ao)  |
@@ -18,4 +18,4 @@ dwmckellar [at] nygenome [dot] org
 [**linkedin**](https://www.linkedin.com/in/dwmckellar/)  |
 [**twitter**](https://twitter.com/dwmckellar)
 
-<link rel="icon" href="D.png" type="image/png">
+<link rel="icon" href="D.ico" type="image/x-icon">
