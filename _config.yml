@@ -20,6 +20,7 @@ plugins:
   - jekyll-remote-theme
   - jekyll-feed
   - jekyll-font-awesome-sass
+  - jekyll-seo-tag
 
 # theme: minima
 remote_theme: jekyll/minima
