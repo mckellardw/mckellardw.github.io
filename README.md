@@ -4,7 +4,7 @@ Personal website for David W. McKellar
 [mckellardw.github.io](https://mckellardw.github.io/)  
 
 Contact me:  
-email: [dwm269@cornell.edu](dwm269@cornell.edu)  
+email: [dmckellar@nygenome.org](dmckellar@nygenome.org)  
 github: [mckellardw](https://github.com/mckellardw)  
 google scholar: [David W. McKellar](https://scholar.google.com/citations?user=Hta5xCcAAAAJ&hl=en&oi=ao)  
 twitter: [@dwmckellar](https://twitter.com/dwmckellar)  
