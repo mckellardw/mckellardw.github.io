@@ -13,5 +13,6 @@ PubMed: [link](https://pubmed.ncbi.nlm.nih.gov/?term=David+McKellar%5BAuthor%5D&
 ORCID: [0000-0002-7752-078X](https://orcid.org/0000-0002-7752-078X)  
 
 ------------------------------------
-
-Using [jekyll/minima](https://github.com/jekyll/minima) theme
+Sources:
+- Using [jekyll/minima](https://github.com/jekyll/minima) theme
+- [Favicon generator](https://realfavicongenerator.net/)
