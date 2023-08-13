@@ -8,7 +8,8 @@ layout: home_noPosts
 ## **David W. McKellar, PhD**  
 
 ```
-Research Scientist 
+Research Scientist  
+Technology Innovation Lab, NYGC
 dmckellar [at] nygenome [dot] org  
 ```  
 
