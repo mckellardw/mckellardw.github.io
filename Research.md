@@ -29,4 +29,6 @@ This work was performed under the advisement of [Iwijn De Vlaminck](https://devl
 
 
 ## 3. Future Directions
-Coming soon... Reach out via [email](dwm269@cornell.edu) if you'd like to discuss!
+Coming soon... Reach out via [email](dmckellar@nygenome.org) if you'd like to discuss!
+
+In the meantime, check out the [Technology Innovation Lab website](https://www.vickovictechinnovation.com/) for a hint...
