@@ -22,7 +22,11 @@ permalink: /publications/
 
 ## **Full list**
 ### *Preprints*
-None at this time, but several in the works!
+***Pre-ciliated tubal epithelial cells are prone to initiation of high-grade serous ovarian carcinoma.***  
+Andrea Flesken-Nikitin, Coulter Q. Ralston, Dah-Jiun Fu, Andrea J. De Micheli, Daryl J. Phuong, Blaine A. Harlan, Amanda P. Armstrong, **David McKellar**, Sangeeta Ghuwalewala, John C. Schimenti1, Benjamin D. Cosgrove, and Alexander Yu. Nikitin  
+[[**bioRxiv, 2023**]](https://doi.org/10.1101/2023.12.12.571315)
+[[**pdf**]](https://mckellardw.github.io/pdfs/Ralston_et_al_bioRxiv_2023.pdf)
+
 
 ### *Published*
 ***Hedgehog signaling acts as cell fate determinant during adult tissue repair.***  
