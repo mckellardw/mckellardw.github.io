@@ -5,8 +5,8 @@ permalink: /presentations/
 ---
 
 ### **Sunbelt Spatial Omics Zoom Series | 2024** 
-***Illuminating transcriptomic dark matter with new spatial technologies***
-[YouTube link](https://www.youtube.com/watch?v=eQ21ek2gbEQ)
+***Illuminating transcriptomic dark matter with new spatial technologies***  
+[[YouTube link](https://www.youtube.com/watch?v=eQ21ek2gbEQ)]
 
 
 ### **NYSCF | 2022**
