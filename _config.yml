@@ -3,10 +3,6 @@ title: DWM
 email: dmckellar@nygenome.org
 description: >- # this means to ignore newlines until "baseurl:"
   David W. McKellar
-# I'm a PhD in the Biomedical Engineering Department at Cornell,
-# co-advised by Ben Cosgrove and Iwijn De Vlaminck. I work on computational
-# and molecular strategies to understand single-cell and spatial biology,
-# with particular interests in stem cells and noncoding RNAs.
 
 # baseurl: "" # the subpath of your site, e.g. /blog
 # url: "http://mckellar.dw" # the base hostname & protocol for your site, e.g. http://example.com

@@ -1,8 +1,14 @@
-<ul class="social-media-list">
-{%- for entry in site.minima.social_links -%}
-  {%- include social-item.html item = entry -%}
-    {% if site.minima.social_links.orcid %}
-    <li><a href="{{ site.minima.social_links.orcid | xml_escape }}"><img src="/social-icons/orcid.svg#orcid" alt="ORCID" /></a></li>
-    {% endif %}
-{%- endfor -%}
-</ul>
+{% assign social_links = site.minima.social_links %}
+{% if social_links %}
+  <ul class="social-media-list">
+    {% for link in social_links %}
+      <li>
+        <a href="{{ link.user_url | default: '#' }}" class="social-media-icon">
+          <svg class="svg-icon">
+            <use xlink:href="#{{ link.platform }}"></use>
+          </svg>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
