@@ -4,6 +4,11 @@ title: Publications
 permalink: /publications/
 ---
 
+## **Profiles**
+- [google scholar](https://scholar.google.com/citations?user=Hta5xCcAAAAJ&hl=en&oi=ao)
+- [pubmed](https://pubmed.ncbi.nlm.nih.gov/?term=David+McKellar%5BAuthor%5D)
+
+
 ## **Highlighted**
 ***High Resolution Spatial Mapping of Microbiome-Host Interactions via in situ Polyadenylation and Spatial RNA Sequencing.***  
 I Ntekas^, L Takayasu^, **DW McKellar^**, B Grodner, M Hinchman, C Holdener, P Schweitzer, M Sauthoff, Q Shi, L Brito, I de Vlaminck  
@@ -37,7 +42,7 @@ I Ntekas^, L Takayasu^, **DW McKellar^**, B Grodner, M Hinchman, C Holdener, P S
 
 ### *Published*
 ***Pre-ciliated tubal epithelial cells are prone to initiation of high-grade serous ovarian carcinoma.***  
-Andrea Flesken-Nikitin, Coulter QR Ralston, Dah-Jiun Fu, Andrea JD Micheli, Daryl JP Phuong, Blaine AH Harlan, Amanda PA Armstrong, **David McKellar**, Sangeeta Ghuwalewala, John CS Schimenti, Benjamin DC Cosgrove, Alexander YN Nikitin  
+A Flesken-Nikitin, CQ Ralston, DJ Fu, AJ De Micheli, DJ Phuong, BA Harlan, CS Ashe, AP Armstrong, **DW McKellar**, S Ghuwalewala, LH Ellison, JC Schimenti, BD Cosgrove, AY Nikitin  
 [[**Nature Communications, 2024***]](https://www.nature.com/articles/s41467-024-52984-1)
 [[**bioRxiv, 2023**]](https://doi.org/10.1101/2023.12.12.571315)
 [[**pdf**]](https://mckellardw.github.io/pdfs/manuscripts/Ralston_Nature_Communications_2024.pdf)
