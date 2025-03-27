@@ -3,3 +3,23 @@
     {%- include social-icons/{{ include.key }}.svg -%}
   </symbol>
 </svg>
+
+{% if key == "bluesky" %}
+<a href="https://bsky.app/profile/dwmckellar.bsky.social" class="social-link" aria-label="Bluesky">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#007bff" style="height: 24px;">
+    <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm0 22C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/>
+    <path d="M16.293 7.293l-4 4-4-4-1.414 1.414L12 13.414l5.707-5.707z"/>
+  </svg>
+</a>
+{% endif %}
+
+{% if key == "google-scholar" %}
+<a href="https://scholar.google.com/citations?user=Hta5xCcAAAAJ&hl=en&oi=ao" class="social-link" aria-label="Google Scholar">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" style="height: 24px;">
+    <path fill="#4285F4" d="M24 9.5c3.14 0 5.97 1.14 8.2 3.02l6.15-6.15C34.65 3.02 29.65 1 24 1 14.61 1 6.73 6.64 3.05 14.5l7.17 5.56C12.3 13.3 17.7 9.5 24 9.5z"/>
+    <path fill="#34A853" d="M46.5 24c0-1.65-.15-3.24-.45-4.78H24v9.06h12.7c-.55 2.8-2.2 5.18-4.7 6.8l7.17 5.56C43.27 36.36 46.5 30.6 46.5 24z"/>
+    <path fill="#FBBC05" d="M10.22 28.06c-.55-1.65-.87-3.4-.87-5.06s.32-3.41.87-5.06L3.05 14.5C1.1 18.1 0 21.9 0 26s1.1 7.9 3.05 11.5l7.17-5.56z"/>
+    <path fill="#EA4335" d="M24 46c5.65 0 10.65-2.02 14.35-5.5l-7.17-5.56c-2.02 1.35-4.65 2.14-7.18 2.14-6.3 0-11.7-3.8-14.05-9.5l-7.17 5.56C6.73 41.36 14.61 46 24 46z"/>
+  </svg>
+</a>
+{% endif %}
