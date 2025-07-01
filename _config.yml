@@ -13,21 +13,17 @@ github_username:  mckellardw
 markdown: kramdown
 
 plugins:
-  - jekyll-remote-theme
   - jekyll-feed
-  - jekyll-font-awesome-sass
   - jekyll-seo-tag
 
-# theme: minima
-remote_theme: jekyll/minima
+# Use the standard minima theme that comes with github-pages
+theme: minima
 minima:
   skin: dark
   social_links:
-    - { platform: twitter,    user_url: "https://twitter.com/dwmckellar"}
-    - { platform: github,     user_url: "https://github.com/mckellardw" }
-    - { platform: orcid,      user_url: "https://orcid.org/0000-0002-7752-078X" }
-    - { platform: linkedin,   user_url: "https://www.linkedin.com/in/dwmckellar/" }
-    - { platform: bluesky,    user_url: "https://bsky.app/profile/dwmckellar.bsky.social" }
+    twitter: dwmckellar
+    github: mckellardw
+    linkedin: dwmckellar
 
 show_excerpts: false
 
@@ -40,6 +36,5 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
-  - backup_jekyll_site/
-  - test/
   - README.md
+  - icons/README.md
