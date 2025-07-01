@@ -1,9 +1,32 @@
-_site
-.sass-cache
+# Jekyll build files
+_site/
+.sass-cache/
+.jekyll-cache/
 .jekyll-metadata
 
-vendor/**
-.bundle/**
+# Bundler
+vendor/
+.bundle/
 
-test/*.log
-test/*.err
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Development and backup files
+backup_jekyll_site/
+test/
+*.log
+*.err
+*.tmp
+*.bak
+favicon_package_*.zip
+icons/favicon_package_*.zip
+
+# IDE files
+.vscode/
+.idea/

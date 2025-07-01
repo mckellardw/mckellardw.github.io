@@ -27,28 +27,19 @@ minima:
     - { platform: github,     user_url: "https://github.com/mckellardw" }
     - { platform: orcid,      user_url: "https://orcid.org/0000-0002-7752-078X" }
     - { platform: linkedin,   user_url: "https://www.linkedin.com/in/dwmckellar/" }
-    - { platform: buesky,     user_url: "https://bsky.app/profile/dwmckellar.bsky.social" }
-# github: mckellardw
-# twitter: dwmckellar
-# linkedin: dwmckellar
-# orcid: orcid.org/0000-0002-7752-078X
+    - { platform: bluesky,    user_url: "https://bsky.app/profile/dwmckellar.bsky.social" }
+
 show_excerpts: false
 
-# font-awesome:
-#   assets: true
-
-# defaults:
-#     values:
-#       layout: "page"
-
 # Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - backup_jekyll_site/
+  - test/
+  - README.md
