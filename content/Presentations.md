@@ -1,8 +1,3 @@
----
-layout: page
-title: Presentations
-permalink: /presentations/
----
 
 ## Recorded Talks  
 ### **Sunbelt Spatial Omics Zoom Series | 2024** 

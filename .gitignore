@@ -30,3 +30,21 @@ icons/favicon_package_*.zip
 # IDE files
 .vscode/
 .idea/
+
+# Remove Jekyll and Ruby files
+_site/
+Gemfile
+Gemfile.lock
+_config.yml
+vendor/
+
+# Hugo build output
+public/
+
+
+# Node and package manager files (if not needed in repo)
+node_modules/
+pnpm-lock.yaml
+
+# Ignore root index.md if not needed
+index.md

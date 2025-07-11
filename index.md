@@ -1,7 +1,3 @@
----
-#Front matter
-layout: home_noPosts
----
 
 ![DwM](images/prof_pic.jpg){: style="float: left; height: 180px; margin-right: 24px; border-radius: 10px;"}
 

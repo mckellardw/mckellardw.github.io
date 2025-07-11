@@ -1,0 +1,30 @@
+baseURL = "https://mckellardw.github.io/"
+title = "DWM"
+theme = "hugo-paper"
+languageCode = "en-us"
+description = "David W. McKellar"
+
+[params]
+  github = "mckellardw"
+  linkedin = "dwmckellar"
+  twitter = "dwmckellar"
+  color = "dark" # Enable dark mode for hugo-paper
+
+[menu]
+  [[menu.main]]
+    name = "CV"
+    url = "/cv/"
+    weight = 1
+  [[menu.main]]
+    name = "Presentations"
+    url = "/presentations/"
+    weight = 2
+  [[menu.main]]
+    name = "Publications"
+    url = "/publications/"
+    weight = 3
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

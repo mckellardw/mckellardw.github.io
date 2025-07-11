@@ -1,7 +1,5 @@
----
-title: "Home"
-date: 2025-07-10
----
+
+Welcome to the personal site of David W. McKellar.
 
 ![DwM](images/prof_pic.jpg)
 
