@@ -1,5 +1,5 @@
 baseURL = "https://mckellardw.github.io/"
-title = "DWM"
+title = "David W. McKellar"
 theme = "hugo-paper"
 languageCode = "en-us"
 description = "David W. McKellar"
@@ -8,7 +8,7 @@ description = "David W. McKellar"
   github = "mckellardw"
   linkedin = "dwmckellar"
   twitter = "dwmckellar"
-  color = "dark" # Enable dark mode for hugo-paper
+  color = "dark" 
 
 [menu]
   [[menu.main]]
