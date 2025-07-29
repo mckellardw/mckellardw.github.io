@@ -1,9 +1,9 @@
 
 <div style="display: flex; gap: 10px;">
-  <a href="https://scholar.google.com/citations?user=Hta5xCcAAAAJ&hl=en&oi=ao" style="text-decoration: none; padding: 10px; background-color: #bbbbbb; border-radius: 5px; display: flex; align-items: center;">
+  <a href="https://scholar.google.com/citations?user=Hta5xCcAAAAJ&hl=en&oi=ao" style="text-decoration: none; padding: 1px; background-color: #bbbbbb; border-radius: 5px; display: flex; align-items: center;">
     <img src="https://upload.wikimedia.org/wikipedia/commons/2/28/Google_Scholar_logo.png" alt="Google Scholar" style="height: 20px;">
   </a>
-  <a href="https://pubmed.ncbi.nlm.nih.gov/?term=David+McKellar%5BAuthor%5D" style="text-decoration: none; padding: 10px; background-color: #bbbbbb; border-radius: 5px; display: flex; align-items: center;">
+  <a href="https://pubmed.ncbi.nlm.nih.gov/?term=David+McKellar%5BAuthor%5D" style="text-decoration: none; padding: 1px; background-color: #bbbbbb; border-radius: 5px; display: flex; align-items: center;">
     <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/US-NLM-PubMed-Logo.svg" alt="PubMed" style="height: 20px;">
   </a>
 </div>
