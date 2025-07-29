@@ -1,3 +1,9 @@
+---
+title: "Home"
+menu: main
+weight: 0
+---
+
 ![DwM](static/images/prof_pic.jpg){: style="float: left; height: 180px; margin-right: 24px; border-radius: 10px;"}
 
 ## **David W. McKellar, PhD**  
