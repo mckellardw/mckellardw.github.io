@@ -9,6 +9,9 @@ description = "David W. McKellar"
   linkedin = "dwmckellar"
   twitter = "dwmckellar"
   color = "dark" 
+  name = "David W. McKellar"
+  bio = "RNA Technology Development"
+  mainSections = ["posts", "publications", "presentations"]
 
 [menu]
   [[menu.main]]
