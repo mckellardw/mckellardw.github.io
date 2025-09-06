@@ -11,21 +11,13 @@ description = "David W. McKellar"
   color = "dark" 
   name = "David W. McKellar"
   bio = "RNA Technology Development"
-  mainSections = ["posts", "publications", "presentations"]
+  mainSections = ["publications"]
 
 [menu]
   [[menu.main]]
-    name = "CV"
-    url = "/cv/"
-    weight = 1
-  [[menu.main]]
-    name = "Presentations"
-    url = "/presentations/"
-    weight = 2
-  [[menu.main]]
     name = "Publications"
     url = "/publications/"
-    weight = 3
+    weight = 1
 
 [markup]
   [markup.goldmark]
