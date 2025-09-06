@@ -23,6 +23,6 @@ test/
 .idea/
 
 # Hugo build output
-public/
+# public/
 
 

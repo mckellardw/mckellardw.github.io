@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>David W. McKellar</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on David W. McKellar</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>http://localhost:1313/presentations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/presentations/</guid>
+      <description>&lt;h2 id=&#34;recorded-talks&#34;&gt;Recorded Talks&lt;/h2&gt;&#xA;&lt;h3 id=&#34;sunbelt-spatial-omics-zoom-series--2024&#34;&gt;&lt;strong&gt;Sunbelt Spatial Omics Zoom Series | 2024&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;&lt;em&gt;&lt;strong&gt;Illuminating transcriptomic dark matter with new spatial technologies&lt;/strong&gt;&lt;/em&gt;&lt;br&gt;&#xA;[&lt;a href=&#34;https://www.youtube.com/watch?v=eQ21ek2gbEQ&#34;&gt;YouTube link&lt;/a&gt;]&lt;/p&gt;&#xA;&lt;h2 id=&#34;posters&#34;&gt;Posters&lt;/h2&gt;&#xA;&lt;h3 id=&#34;nyscf--2022&#34;&gt;&lt;strong&gt;NYSCF | 2022&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;Rockefeller University, NY, USA&lt;br&gt;&#xA;&lt;em&gt;&lt;strong&gt;Strength in numbers: Exploring muscle regeneration through single-cell and spatial transcriptomics&lt;/strong&gt;&lt;/em&gt;&lt;br&gt;&#xA;[&lt;a href=&#34;https://mckellardw.github.io/pdfs/posters/NYSCF_2022_DWMposter.png&#34;&gt;png&lt;/a&gt;]  [&lt;a href=&#34;https://mckellardw.github.io/pdfs/posters/NYSCF_2022_DWMposter.pdf&#34;&gt;pdf&lt;/a&gt;]&lt;/p&gt;&#xA;&lt;h3 id=&#34;grc--single-cell-genomics--2022&#34;&gt;&lt;strong&gt;GRC | Single-Cell Genomics | 2022&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;Les Diablerets, Switzerland&lt;br&gt;&#xA;&lt;em&gt;&lt;strong&gt;Strength in numbers: Exploring muscle regeneration through single-cell and spatial transcriptomics&lt;/strong&gt;&lt;/em&gt;&lt;br&gt;&#xA;[&lt;a href=&#34;https://mckellardw.github.io/pdfs/posters/GRC_Single-cell-genomics_2022_poster_v1.png&#34;&gt;png&lt;/a&gt;]  [&lt;a href=&#34;https://mckellardw.github.io/pdfs/posters/GRC_Single-cell-genomics_2022_poster_v1.pdf&#34;&gt;pdf&lt;/a&gt;]&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/publications/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publications/</guid>
+      <description>&lt;div style=&#34;display: flex; gap: 10px;&#34;&gt;&#xD;&#xA;  &lt;a href=&#34;https://scholar.google.com/citations?user=Hta5xCcAAAAJ&amp;hl=en&amp;oi=ao&#34; style=&#34;text-decoration: none; padding: 10px; background-color: #bbbbbb; border-radius: 5px; display: flex; align-items: center;&#34;&gt;&#xD;&#xA;    &lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/2/28/Google_Scholar_logo.png&#34; alt=&#34;Google Scholar&#34; style=&#34;height: 12px;&#34;&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;  &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/?term=David+McKellar%5BAuthor%5D&#34; style=&#34;text-decoration: none; padding: 10px; background-color: #bbbbbb; border-radius: 5px; display: flex; align-items: center;&#34;&gt;&#xD;&#xA;    &lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/f/fb/US-NLM-PubMed-Logo.svg&#34; alt=&#34;PubMed&#34; style=&#34;height: 12px;&#34;&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&lt;h2 id=&#34;highlighted&#34;&gt;&lt;strong&gt;Highlighted&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;em&gt;&lt;strong&gt;High Resolution Spatial Mapping of Microbiome-Host Interactions via in situ Polyadenylation and Spatial RNA Sequencing.&lt;/strong&gt;&lt;/em&gt;&lt;br&gt;&#xA;I Ntekas^, L Takayasu^, &lt;strong&gt;DW McKellar^&lt;/strong&gt;, B Grodner, M Hinchman, C Holdener, P Schweitzer, M Sauthoff, Q Shi, L Brito, I de Vlaminck&lt;br&gt;&#xA;&lt;a href=&#34;https://doi.org/10.1101/2024.11.18.624127&#34;&gt;[&lt;strong&gt;bioRxiv, 2024&lt;/strong&gt;]&lt;/a&gt;&#xA;&lt;a href=&#34;https://github.com/ntekasi/microSTRS&#34;&gt;[&lt;strong&gt;github&lt;/strong&gt;]&lt;/a&gt;&#xA;&lt;a href=&#34;https://mckellardw.github.io/pdfs/manuscripts/Ntekas_et_al_bioRxiv_2024.pdf&#34;&gt;[&lt;strong&gt;pdf&lt;/strong&gt;]&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;&lt;strong&gt;Spatial mapping of the total transcriptome by in situ polyadenylation.&lt;/strong&gt;&lt;/em&gt;&lt;br&gt;&#xA;&lt;strong&gt;DW McKellar&lt;/strong&gt;, M Mantri, M Hinchman, JSL Parker, P Sethupathy, BD Cosgrove, I de Vlaminck&lt;br&gt;&#xA;&lt;a href=&#34;https://www.nature.com/articles/s41587-022-01517-6&#34;&gt;[&lt;strong&gt;Nature Biotechnology, 2023&lt;/strong&gt;]&lt;/a&gt;&#xA;&lt;a href=&#34;https://doi.org/10.1101/2022.04.20.488964&#34;&gt;[&lt;strong&gt;bioRxiv, 2022&lt;/strong&gt;]&lt;/a&gt;&#xA;&lt;a href=&#34;https://github.com/mckellardw/STRS&#34;&gt;[&lt;strong&gt;github&lt;/strong&gt;]&lt;/a&gt;&#xA;&lt;a href=&#34;https://mckellardw.github.io/pdfs/manuscripts/McKellar_et_al_NatureBiotechnology_2022.pdf&#34;&gt;[&lt;strong&gt;pdf&lt;/strong&gt;]&lt;/a&gt;&lt;br&gt;&#xA;&lt;a href=&#34;https://www.nature.com/articles/s41587-022-01562-1&#34;&gt;[&lt;strong&gt;Research Briefing&lt;/strong&gt;]&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>CV</title>
+      <link>http://localhost:1313/cv/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/cv/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://localhost:1313/pdfs/CV_DavidMcKellar.pdf&#34;&gt;Download my CV (PDF)&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
