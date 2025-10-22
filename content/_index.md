@@ -35,3 +35,21 @@ david [at] romix [dot] bio
 [**github**](https://github.com/mckellardw)  |
 [**linkedin**](https://www.linkedin.com/in/dwmckellar/)  |
 [**twitter**](https://twitter.com/dwmckellar)
+
+<!-- Google Calendar Appointment Scheduling begin -->
+<link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+<script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+<script>
+(function() {
+  var target = document.currentScript;
+  window.addEventListener('load', function() {
+    calendar.schedulingButton.load({
+      url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ38BS9UBJ7ua-m52r8_kScIctfYTEzPE0WnfosX5v-gsc-DrNXGRw-Mge_UOruOmvtYRvPce_uV?gv=true',
+      color: '#039BE5',
+      label: "book a call w/ me",
+      target,
+    });
+  });
+})();
+</script>
+<!-- end Google Calendar Appointment Scheduling -->
