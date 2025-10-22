@@ -4,10 +4,6 @@
 {{ $id := printf "gcal-schedule-button-%s" (md5 $url) }}
 
 <div id="{{ $id }}"></div>
-<noscript>
-  <p><a href="{{ $url }}">{{ $label }}</a></p>
-  <!-- Fallback for users with JavaScript disabled -->
-</noscript>
 <script>
 (function() {
   function ensureAssets(cb) {

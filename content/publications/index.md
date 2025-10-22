@@ -1,10 +1,10 @@
 
 <div style="display: flex; gap: 10px;">
-  <a href="https://scholar.google.com/citations?user=Hta5xCcAAAAJ&hl=en&oi=ao" style="text-decoration: none; padding: 10px; background-color: #bbbbbb; border-radius: 5px; display: flex; align-items: center;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/28/Google_Scholar_logo.png" alt="Google Scholar" style="height: 12px;">
+  <a href="https://scholar.google.com/citations?user=Hta5xCcAAAAJ&hl=en&oi=ao" style="text-decoration: none; padding: 6px 8px; background-color: #bbbbbb; border-radius: 6px; display: inline-flex; align-items: center;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/28/Google_Scholar_logo.png" alt="Google Scholar" style="height: 14px; margin: 0;">
   </a>
-  <a href="https://pubmed.ncbi.nlm.nih.gov/?term=David+McKellar%5BAuthor%5D" style="text-decoration: none; padding: 10px; background-color: #bbbbbb; border-radius: 5px; display: flex; align-items: center;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/US-NLM-PubMed-Logo.svg" alt="PubMed" style="height: 12px;">
+  <a href="https://pubmed.ncbi.nlm.nih.gov/?term=David+McKellar%5BAuthor%5D" style="text-decoration: none; padding: 6px 8px; background-color: #bbbbbb; border-radius: 6px; display: inline-flex; align-items: center;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/US-NLM-PubMed-Logo.svg" alt="PubMed" style="height: 16px; margin: 0;">
   </a>
 </div>
 
