@@ -1,0 +1,60 @@
+{{ $url := .Get "url" }}
+{{ $label := .Get "label" | default "Book a call" }}
+{{ $color := .Get "color" | default "#039BE5" }}
+{{ $id := printf "gcal-schedule-button-%s" (md5 $url) }}
+
+<div id="{{ $id }}"></div>
+<noscript>
+  <p><a href="{{ $url }}">{{ $label }}</a></p>
+  <!-- Fallback for users with JavaScript disabled -->
+</noscript>
+<script>
+(function() {
+  function ensureAssets(cb) {
+    // Add CSS once
+    if (!document.getElementById('gcal-scheduling-css')) {
+      var link = document.createElement('link');
+      link.id = 'gcal-scheduling-css';
+      link.rel = 'stylesheet';
+      link.href = 'https://calendar.google.com/calendar/scheduling-button-script.css';
+      document.head.appendChild(link);
+    }
+
+    function onScriptReady() {
+      if (window.calendar && calendar.schedulingButton) cb();
+      else setTimeout(onScriptReady, 50);
+    }
+
+    // Add JS once
+    if (!document.getElementById('gcal-scheduling-js')) {
+      var s = document.createElement('script');
+      s.id = 'gcal-scheduling-js';
+      s.src = 'https://calendar.google.com/calendar/scheduling-button-script.js';
+      s.async = true;
+      s.onload = onScriptReady;
+      document.head.appendChild(s);
+    } else {
+      onScriptReady();
+    }
+  }
+
+  function init() {
+    var el = document.getElementById('{{ $id }}');
+    if (!el) return;
+    try {
+      calendar.schedulingButton.load({
+        url: '{{ $url }}',
+        color: '{{ $color }}',
+        label: '{{ $label }}',
+        target: el,
+      });
+    } catch (e) {
+      // Fail silently to avoid breaking page
+      console && console.warn && console.warn('GCal scheduling button failed to load', e);
+    }
+  }
+
+  if (document.readyState === 'complete') ensureAssets(init);
+  else window.addEventListener('load', function(){ ensureAssets(init); });
+})();
+</script>
