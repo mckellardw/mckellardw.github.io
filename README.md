@@ -3,7 +3,7 @@
 ```
 Co-founder & CTO
 Romix Biosciences
-david [at] romix [dot] bio  
+david [at] romixbio [dot] com  
 ```  
 
 [**google scholar**](https://scholar.google.com/citations?user=Hta5xCcAAAAJ&hl=en&oi=ao)  |

@@ -1488,4 +1488,4 @@
 }@property --tw-ring-offset-shadow{syntax: "*";
   inherits: false;
   initial-value: 0 0 #0000;
-}@keyframes spin{to{transform:rotate(360deg)}}@reference './app.css'
+}@keyframes spin{to{transform:rotate(360deg)}}:root,:host{--font-sans:'Ubuntu', ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"}html{font-family:ubuntu,ui-sans-serif,system-ui,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji}body{font-family:ubuntu,ui-sans-serif,system-ui,sans-serif}a.social-icon{transition:filter .2s ease !important}a.social-googlescholar:hover,a.social-linkedin:hover,a.social-twitter:hover{filter:invert(42%)sepia(93%)saturate(1352%)hue-rotate(196deg)brightness(100%)contrast(92%) !important}a.social-pubmed:hover{filter:invert(37%)sepia(93%)saturate(7471%)hue-rotate(351deg)brightness(91%)contrast(101%) !important}a.social-github:hover{filter:invert(47%)sepia(74%)saturate(491%)hue-rotate(92deg)brightness(96%)contrast(91%) !important}

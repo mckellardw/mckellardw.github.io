@@ -1,0 +1,36 @@
+/* Custom styles for mckellardw.github.io */
+
+/* Ubuntu font override */
+:root, :host {
+  --font-sans: 'Ubuntu', ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+html {
+  font-family: 'Ubuntu', ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+body {
+  font-family: 'Ubuntu', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Social icon hover effects - Google colors */
+a.social-icon {
+  transition: filter 0.2s ease !important;
+}
+
+/* Blue: #4285F4 - for Google Scholar, LinkedIn, Twitter */
+a.social-googlescholar:hover,
+a.social-linkedin:hover,
+a.social-twitter:hover {
+  filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(196deg) brightness(100%) contrast(92%) !important;
+}
+
+/* Red: #EA4335 - for PubMed */
+a.social-pubmed:hover {
+  filter: invert(37%) sepia(93%) saturate(7471%) hue-rotate(351deg) brightness(91%) contrast(101%) !important;
+}
+
+/* Green: #34A853 - for GitHub */
+a.social-github:hover {
+  filter: invert(47%) sepia(74%) saturate(491%) hue-rotate(92deg) brightness(96%) contrast(91%) !important;
+}

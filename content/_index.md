@@ -19,6 +19,19 @@ title: "David W. McKellar"
 			height: 140px;
 		}
 	}
+	/* Standardize border-radius */
+	.btn-colorful {
+		border-radius: 12px !important;
+		transition: background-color 0.2s ease, transform 0.2s ease;
+	}
+	.btn-colorful:hover {
+		background-color: #5A93E8 !important;
+		transform: scale(1.1);
+	}
+	/* Code block styling */
+	.prose pre {
+		border-radius: 12px !important;
+	}
 </style>
 
 <img src="/images/prof_pic.jpg" alt="Portrait of David W. McKellar" class="home-avatar" loading="eager" />
@@ -27,13 +40,7 @@ title: "David W. McKellar"
 ```
 Co-founder & CTO
 Romix Biosciences
-david [at] romix [dot] bio  
+david [at] romixbio [dot] com  
 ```  
 
-[**google scholar**](https://scholar.google.com/citations?user=Hta5xCcAAAAJ&hl=en&oi=ao)  |
-[**pubmed**](https://pubmed.ncbi.nlm.nih.gov/?term=David+McKellar%5BAuthor%5D&sort=date)  |
-[**github**](https://github.com/mckellardw)  |
-[**linkedin**](https://www.linkedin.com/in/dwmckellar/)  |
-[**twitter**](https://twitter.com/dwmckellar)
-
-{{< gcal_button url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ38BS9UBJ7ua-m52r8_kScIctfYTEzPE0WnfosX5v-gsc-DrNXGRw-Mge_UOruOmvtYRvPce_uV?gv=true" color="#039BE5" label="book a call w/ me" >}}
+<a href="https://scheduler.zoom.us/david-mckellar/book-a-meeting-w-david" class="btn btn-colorful" target="_blank" rel="noopener">book a call w/ me</a>

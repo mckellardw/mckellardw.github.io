@@ -5,13 +5,16 @@ languageCode = "en-us"
 description = "David W. McKellar"
 
 [params]
+  googlescholar = "https://scholar.google.com/citations?user=Hta5xCcAAAAJ&hl=en&oi=ao"
+  pubmed = "https://pubmed.ncbi.nlm.nih.gov/?term=David+McKellar%5BAuthor%5D&sort=date"
   github = "mckellardw"
   linkedin = "dwmckellar"
   twitter = "dwmckellar"
-  color = "dark" 
+  color = "dark"
   name = "David W. McKellar"
   bio = "RNA Technology Development"
   mainSections = ["publications"]
+  favicon = "favicon.svg"
 
 [menu]
   [[menu.main]]
