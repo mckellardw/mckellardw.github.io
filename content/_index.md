@@ -39,16 +39,14 @@ title: "David W. McKellar"
 	document.addEventListener('DOMContentLoaded', function() {
 		const btn = document.querySelector('.btn-colorful');
 		const colors = ['#5A93E8', '#D9615A', '#4D9E62', '#E8B42A'];
-		let originalBg;
 
 		btn.addEventListener('mouseenter', function() {
-			originalBg = getComputedStyle(btn).backgroundColor;
 			const randomColor = colors[Math.floor(Math.random() * colors.length)];
-			btn.style.backgroundColor = randomColor;
+			btn.style.setProperty('background-color', randomColor, 'important');
 		});
 
 		btn.addEventListener('mouseleave', function() {
-			btn.style.backgroundColor = '';
+			btn.style.setProperty('background-color', 'var(--tw-prose-pre-bg)', 'important');
 		});
 	});
 </script>
