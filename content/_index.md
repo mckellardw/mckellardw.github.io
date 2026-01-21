@@ -19,13 +19,14 @@ title: "David W. McKellar"
 			height: 140px;
 		}
 	}
-	/* Standardize border-radius */
+	/* Standardize border-radius and match text box colors */
 	.btn-colorful {
 		border-radius: 12px !important;
+		background-color: var(--tw-prose-pre-bg) !important;
+		color: var(--tw-prose-pre-code) !important;
 		transition: background-color 0.2s ease, transform 0.2s ease;
 	}
 	.btn-colorful:hover {
-		background-color: #5A93E8 !important;
 		transform: scale(1.1);
 	}
 	/* Code block styling */
@@ -33,6 +34,24 @@ title: "David W. McKellar"
 		border-radius: 12px !important;
 	}
 </style>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		const btn = document.querySelector('.btn-colorful');
+		const colors = ['#5A93E8', '#D9615A', '#4D9E62', '#E8B42A'];
+		let originalBg;
+
+		btn.addEventListener('mouseenter', function() {
+			originalBg = getComputedStyle(btn).backgroundColor;
+			const randomColor = colors[Math.floor(Math.random() * colors.length)];
+			btn.style.backgroundColor = randomColor;
+		});
+
+		btn.addEventListener('mouseleave', function() {
+			btn.style.backgroundColor = '';
+		});
+	});
+</script>
 
 <img src="/images/prof_pic.jpg" alt="Portrait of David W. McKellar" class="home-avatar" loading="eager" />
 

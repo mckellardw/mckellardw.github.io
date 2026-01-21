@@ -1,0 +1,28 @@
+<footer
+  class="mx-auto flex flex-col max-w-(--w) items-center px-8 py-8 text-xs tracking-wider uppercase opacity-60"
+>
+  <nav class="flex items-center justify-center space-x-24 mb-4 dark:invert">
+    {{- $social_params := slice "googlescholar" "pubmed" "github" "linkedin" "twitter" -}}
+    {{- range $social_params -}}
+    {{- if isset site.Params . -}}
+    <a
+      class="social-icon h-6 w-6 text-[0px] [background:var(--url)_center_center/cover_no-repeat] transition-transform duration-200 hover:scale-125"
+      style="--url: url(./{{- . -}}.svg)"
+      href="{{- if eq . `googlescholar` -}}{{- index site.Params . -}}{{- else if eq . `pubmed` -}}{{- index site.Params . -}}{{- else -}}https://{{- . -}}.com/{{- if eq . `linkedin` -}}in/{{- end -}}{{- index site.Params . -}}{{- end -}}"
+      target="_blank"
+      rel="me"
+      title="{{- if eq . `googlescholar` -}}google scholar{{- else if eq . `pubmed` -}}pubmed{{- else -}}{{- . -}}{{- end -}}"
+    >
+      {{- . -}}
+    </a>
+    {{- end -}}
+    {{- end -}}
+  </nav>
+
+  <div>
+    {{- if site.Copyright -}} {{- site.Copyright -}} {{- else -}} &copy; {{-
+    now.Year }}
+    <a class="link" href="{{- `` | absURL -}}">{{- site.Title -}}</a>
+    {{- end -}}
+  </div>
+</footer>

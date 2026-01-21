@@ -68,29 +68,12 @@ I Ntekas^, L Takayasu^, DW McKellar^, B Grodner, M Hinchman, C Holdener, P Schwe
     class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
   ><style>
    
-  a.social-icon {
+  nav a {
     transition: transform 0.2s ease;
+    display: inline-block;
   }
-  a.social-icon svg {
-    transition: fill 0.2s ease;
-    fill: currentColor;
-  }
-  a.social-icon:hover {
-    transform: scale(1.2);
-  }
-   
-  a.social-googlescholar:hover svg,
-  a.social-linkedin:hover svg,
-  a.social-twitter:hover svg {
-    fill: #5A93E8;
-  }
-   
-  a.social-pubmed:hover svg {
-    fill: #D9615A;
-  }
-   
-  a.social-github:hover svg {
-    fill: #4D9E62;
+  nav a:hover {
+    transform: scale(1.1);
   }
 </style>
 <header
@@ -166,40 +149,8 @@ I Ntekas^, L Takayasu^, DW McKellar^, B Grodner, M Hinchman, C Holdener, P Schwe
         class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
         href="/publications/"
         >Publications</a
-      ></nav><nav
-      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14"
-    >
-      <a
-        class="social-icon social-googlescholarh-7 w-7 lg:h-6 lg:w-6"
-        href="https://scholar.google.com/citations?user=Hta5xCcAAAAJ&amp;hl=en&amp;oi=ao"
-        target="_blank"
-        rel="me"
-      ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="h-full w-full"><path d="M24 4L4 16l4 2.5V34h4V20.5L24 27l20-11L24 4z"/><path d="M24 30L12 23v8.5c0 4.5 5.4 8.5 12 8.5s12-4 12-8.5V23L24 30z"/></svg></a>
-      <a
-        class="social-icon social-pubmedh-7 w-7 lg:h-6 lg:w-6"
-        href="https://pubmed.ncbi.nlm.nih.gov/?term=David&#43;McKellar%5BAuthor%5D&amp;sort=date"
-        target="_blank"
-        rel="me"
-      ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="h-full w-full"><path d="M8 6v36h24V6H8zm20 32H12V10h16v28z"/><path d="M14 14h12v2H14zm0 4h12v2H14zm0 4h8v2h-8z"/><path d="M36 12v32h-22v-2h20V12h2z"/></svg></a>
-      <a
-        class="social-icon social-twitterh-7 w-7 lg:h-6 lg:w-6"
-        href="https://twitter.com/dwmckellar"
-        target="_blank"
-        rel="me"
-      ><svg xmlns="http://www.w3.org/2000/svg" viewBox="4 4 40 40" class="h-full w-full"><path d="M 12.5 6 C 8.9280619 6 6 8.9280619 6 12.5 L 6 35.5 C 6 39.071938 8.9280619 42 12.5 42 L 35.5 42 C 39.071938 42 42 39.071938 42 35.5 L 42 12.5 C 42 8.9280619 39.071938 6 35.5 6 L 12.5 6 z M 12.5 9 L 35.5 9 C 37.450062 9 39 10.549938 39 12.5 L 39 35.5 C 39 37.450062 37.450062 39 35.5 39 L 12.5 39 C 10.549938 39 9 37.450062 9 35.5 L 9 12.5 C 9 10.549938 10.549938 9 12.5 9 z M 13.828125 14 L 21.564453 25.056641 L 13.822266 34 L 15.865234 34 L 22.46875 26.351562 L 27.820312 34 L 34.257812 34 L 26.025391 22.234375 L 33.136719 14 L 31.136719 14 L 25.123047 20.943359 L 20.265625 14 L 13.828125 14 z M 16.935547 15.695312 L 19.498047 15.695312 L 31.150391 32.304688 L 28.587891 32.304688 L 16.935547 15.695312 z"/></svg></a>
-      <a
-        class="social-icon social-githubh-7 w-7 lg:h-6 lg:w-6"
-        href="https://github.com/mckellardw"
-        target="_blank"
-        rel="me"
-      ><svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 42 42" class="h-full w-full"><path d="M 24 4 C 12.972066 4 4 12.972074 4 24 C 4 35.027926 12.972066 44 24 44 C 35.027934 44 44 35.027926 44 24 C 44 12.972074 35.027934 4 24 4 z M 24 7 C 33.406615 7 41 14.593391 41 24 C 41 31.66536 35.956939 38.122519 29 40.251953 L 29 35.136719 C 29 33.226635 27.899316 31.588619 26.308594 30.773438 A 10 8 0 0 0 32.4375 18.720703 C 32.881044 17.355414 33.376523 14.960672 32.199219 13.076172 C 29.929345 13.076172 28.464667 14.632086 27.765625 15.599609 A 10 8 0 0 0 24 15 A 10 8 0 0 0 20.230469 15.59375 C 19.529731 14.625773 18.066226 13.076172 15.800781 13.076172 C 14.449711 15.238817 15.28492 17.564557 15.732422 18.513672 A 10 8 0 0 0 21.681641 30.779297 C 20.3755 31.452483 19.397283 32.674042 19.097656 34.15625 L 17.783203 34.15625 C 16.486203 34.15625 15.98225 33.629234 15.28125 32.740234 C 14.58925 31.851234 13.845172 31.253859 12.951172 31.005859 C 12.469172 30.954859 12.144453 31.321484 12.564453 31.646484 C 13.983453 32.612484 14.081391 34.193516 14.650391 35.228516 C 15.168391 36.160516 16.229687 37 17.429688 37 L 19 37 L 19 40.251953 C 12.043061 38.122519 7 31.66536 7 24 C 7 14.593391 14.593385 7 24 7 z"/></svg></a>
-      <a
-        class="social-icon social-linkedinh-7 w-7 lg:h-6 lg:w-6"
-        href="https://linkedin.com/in/dwmckellar"
-        target="_blank"
-        rel="me"
-      ><svg xmlns="http://www.w3.org/2000/svg" viewBox="4 4 40 40" class="h-full w-full"><path d="M 11.5 6 C 8.4802259 6 6 8.4802259 6 11.5 L 6 36.5 C 6 39.519774 8.4802259 42 11.5 42 L 36.5 42 C 39.519774 42 42 39.519774 42 36.5 L 42 11.5 C 42 8.4802259 39.519774 6 36.5 6 L 11.5 6 z M 11.5 9 L 36.5 9 C 37.898226 9 39 10.101774 39 11.5 L 39 36.5 C 39 37.898226 37.898226 39 36.5 39 L 11.5 39 C 10.101774 39 9 37.898226 9 36.5 L 9 11.5 C 9 10.101774 10.101774 9 11.5 9 z M 15.5 13 A 2.5 2.5 0 0 0 15.5 18 A 2.5 2.5 0 0 0 15.5 13 z M 14 20 C 13.447 20 13 20.447 13 21 L 13 34 C 13 34.553 13.447 35 14 35 L 17 35 C 17.553 35 18 34.553 18 34 L 18 21 C 18 20.447 17.553 20 17 20 L 14 20 z M 21 20 C 20.447 20 20 20.447 20 21 L 20 34 C 20 34.553 20.447 35 21 35 L 24 35 C 24.553 35 25 34.553 25 34 L 25 26.5 C 25 25.121 26.121 24 27.5 24 C 28.879 24 30 25.121 30 26.5 L 30 34 C 30 34.553 30.447 35 31 35 L 34 35 C 34.553 35 35 34.553 35 34 L 35 26 C 35 22.691 32.309 20 29 20 C 27.462 20 26.063 20.586016 25 21.541016 L 25 21 C 25 20.447 24.553 20 24 20 L 21 20 z"/></svg></a>
-    </nav>
+      ></nav>
+
   </div>
 </header>
 <main
@@ -251,20 +202,47 @@ I Ntekas^, L Takayasu^, <strong><u>DW McKellar</u></strong>^, B Grodner, M Hinch
 </section>
 
   </article></main><footer
-  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
+  class="mx-auto flex flex-col max-w-(--w) items-center px-8 py-8 text-xs tracking-wider uppercase opacity-60"
 >
-  <div class="mr-auto">&copy;2026
+  <nav class="flex items-center justify-center space-x-24 mb-4 dark:invert"><a
+      class="social-icon h-6 w-6 text-[0px] [background:var(--url)_center_center/cover_no-repeat] transition-transform duration-200 hover:scale-125"
+      style="--url: url(./googlescholar.svg)"
+      href="https://scholar.google.com/citations?user=Hta5xCcAAAAJ&amp;hl=en&amp;oi=ao"
+      target="_blank"
+      rel="me"
+      title="google scholar"
+    >googlescholar</a><a
+      class="social-icon h-6 w-6 text-[0px] [background:var(--url)_center_center/cover_no-repeat] transition-transform duration-200 hover:scale-125"
+      style="--url: url(./pubmed.svg)"
+      href="https://pubmed.ncbi.nlm.nih.gov/?term=David&#43;McKellar%5BAuthor%5D&amp;sort=date"
+      target="_blank"
+      rel="me"
+      title="pubmed"
+    >pubmed</a><a
+      class="social-icon h-6 w-6 text-[0px] [background:var(--url)_center_center/cover_no-repeat] transition-transform duration-200 hover:scale-125"
+      style="--url: url(./github.svg)"
+      href="https://github.com/mckellardw"
+      target="_blank"
+      rel="me"
+      title="github"
+    >github</a><a
+      class="social-icon h-6 w-6 text-[0px] [background:var(--url)_center_center/cover_no-repeat] transition-transform duration-200 hover:scale-125"
+      style="--url: url(./linkedin.svg)"
+      href="https://linkedin.com/in/dwmckellar"
+      target="_blank"
+      rel="me"
+      title="linkedin"
+    >linkedin</a><a
+      class="social-icon h-6 w-6 text-[0px] [background:var(--url)_center_center/cover_no-repeat] transition-transform duration-200 hover:scale-125"
+      style="--url: url(./twitter.svg)"
+      href="https://twitter.com/dwmckellar"
+      target="_blank"
+      rel="me"
+      title="twitter"
+    >twitter</a></nav>
+
+  <div>&copy;2026
     <a class="link" href="http://localhost:1313/">David W. McKellar</a></div>
-  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
-    >powered by hugo️️</a
-  >️
-  <a
-    class="link"
-    href="https://github.com/nanxiaobei/hugo-paper"
-    rel="noopener"
-    target="_blank"
-    >hugo-paper</a
-  >
 </footer>
 </body>
 </html>
