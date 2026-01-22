@@ -1,3 +1,7 @@
+---
+title: "Publications"
+---
+
 <style>
   .pub-link {
     text-decoration: none;
