@@ -180,6 +180,25 @@
 	.prose pre {
 		border-radius: 12px !important;
 	}
+	/* Custom info box to replace code block */
+	.info-box {
+		background-color: var(--tw-prose-pre-bg);
+		color: var(--tw-prose-pre-code);
+		border-radius: 12px;
+		padding: 1em;
+		font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+		font-size: 0.875em;
+		line-height: 1.7;
+		margin: 1em 0;
+	}
+	.info-box a {
+		color: inherit;
+		text-decoration: none;
+		transition: color 0.2s ease;
+	}
+	.info-box a:hover {
+		color: #5A93E8;
+	}
 </style>
 <script>
 	document.addEventListener('DOMContentLoaded', function() {
@@ -197,10 +216,12 @@
 	});
 </script>
 <img src="/images/prof_pic.jpg" alt="Portrait of David W. McKellar" class="home-avatar" loading="eager" />
-<pre tabindex="0"><code>Co-founder &amp; CTO
-Romix Biosciences
-david [at] romixbio [dot] com  
-</code></pre><p><a href="https://scheduler.zoom.us/david-mckellar/book-a-meeting-w-david" class="btn btn-colorful" target="_blank" rel="noopener">book a call w/ me</a></p>
+<div class="info-box">
+Co-founder & CTO<br>
+Romix Biosciences<br>
+david [at] <a href="https://romixbio.com/" target="_blank" rel="noopener">romixbio [dot] com</a>
+</div>  
+<p><a href="https://scheduler.zoom.us/david-mckellar/book-a-meeting-w-david" class="btn btn-colorful" target="_blank" rel="noopener">book a call w/ me</a></p>
 </section></main><footer
   class="mx-auto flex flex-col max-w-(--w) items-center px-8 py-8 text-xs tracking-wider uppercase opacity-60"
 >
@@ -240,6 +261,29 @@ david [at] romixbio [dot] com
       rel="me"
       title="twitter"
     >twitter</a></nav>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const icons = document.querySelectorAll('.social-icon');
+      const filters = [
+        'invert(56%) sepia(52%) saturate(1169%) hue-rotate(190deg) brightness(95%) contrast(91%)',  
+        'invert(47%) sepia(62%) saturate(577%) hue-rotate(324deg) brightness(91%) contrast(85%)',   
+        'invert(56%) sepia(28%) saturate(732%) hue-rotate(93deg) brightness(93%) contrast(85%)',    
+        'invert(71%) sepia(53%) saturate(726%) hue-rotate(7deg) brightness(98%) contrast(87%)'      
+      ];
+
+      icons.forEach(function(icon) {
+        icon.addEventListener('mouseenter', function() {
+          const randomFilter = filters[Math.floor(Math.random() * filters.length)];
+          icon.style.filter = randomFilter;
+        });
+
+        icon.addEventListener('mouseleave', function() {
+          icon.style.filter = '';
+        });
+      });
+    });
+  </script>
 
   <div>&copy;2026
     <a class="link" href="http://localhost:1313/">David W. McKellar</a></div>

@@ -33,6 +33,25 @@ title: "David W. McKellar"
 	.prose pre {
 		border-radius: 12px !important;
 	}
+	/* Custom info box to replace code block */
+	.info-box {
+		background-color: var(--tw-prose-pre-bg);
+		color: var(--tw-prose-pre-code);
+		border-radius: 12px;
+		padding: 1em;
+		font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+		font-size: 0.875em;
+		line-height: 1.7;
+		margin: 1em 0;
+	}
+	.info-box a {
+		color: inherit;
+		text-decoration: none;
+		transition: color 0.2s ease;
+	}
+	.info-box a:hover {
+		color: #5A93E8;
+	}
 </style>
 
 <script>
@@ -54,10 +73,10 @@ title: "David W. McKellar"
 <img src="/images/prof_pic.jpg" alt="Portrait of David W. McKellar" class="home-avatar" loading="eager" />
 
 
-```
-Co-founder & CTO
-Romix Biosciences
-david [at] romixbio [dot] com  
-```  
+<div class="info-box">
+Co-founder & CTO<br>
+Romix Biosciences<br>
+david [at] <a href="https://romixbio.com/" target="_blank" rel="noopener">romixbio [dot] com</a>
+</div>  
 
 <a href="https://scheduler.zoom.us/david-mckellar/book-a-meeting-w-david" class="btn btn-colorful" target="_blank" rel="noopener">book a call w/ me</a>

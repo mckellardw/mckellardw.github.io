@@ -265,6 +265,29 @@ I Ntekas^, L Takayasu^, <strong><u class="author-highlight">DW McKellar</u></str
       title="twitter"
     >twitter</a></nav>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const icons = document.querySelectorAll('.social-icon');
+      const filters = [
+        'invert(56%) sepia(52%) saturate(1169%) hue-rotate(190deg) brightness(95%) contrast(91%)',  
+        'invert(47%) sepia(62%) saturate(577%) hue-rotate(324deg) brightness(91%) contrast(85%)',   
+        'invert(56%) sepia(28%) saturate(732%) hue-rotate(93deg) brightness(93%) contrast(85%)',    
+        'invert(71%) sepia(53%) saturate(726%) hue-rotate(7deg) brightness(98%) contrast(87%)'      
+      ];
+
+      icons.forEach(function(icon) {
+        icon.addEventListener('mouseenter', function() {
+          const randomFilter = filters[Math.floor(Math.random() * filters.length)];
+          icon.style.filter = randomFilter;
+        });
+
+        icon.addEventListener('mouseleave', function() {
+          icon.style.filter = '';
+        });
+      });
+    });
+  </script>
+
   <div>&copy;2026
     <a class="link" href="http://localhost:1313/">David W. McKellar</a></div>
 </footer>
