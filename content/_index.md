@@ -156,5 +156,5 @@ david [at] <a href="https://romixbio.com/" target="_blank" rel="noopener">romixb
 <hr class="separator">
 
 <div class="bio-box">
-<p>I build new/better ways to measure RNA molecules. In the past, that has mostly focused on spatial technologies. Now, I want to make the best RNA tech available to patients. I think better tools make better data, and better data makes better medicines.</p>
+<p>I grew up in Atlanta, but am a diehard Chicago Cubs & Detroit Lions fan. I’m an engineer by training, but a biologist at heart. I went to Georgia Tech, and then learned how to do science at the NIH (where I met my lovely wife), Cornell, and the New York Genome Center. I have spent the last 8 years building tech to better understand the RNA molecules that make your cells work. I think better tools make better data, and better data make better medicines. I like to run and can quote more of the West Wing than the average viewer.</p>
 </div>
