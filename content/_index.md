@@ -55,29 +55,6 @@ title: "David W. McKellar"
 		font-weight: bold;
 		font-size: 1.05em;
 	}
-	/* Horizontal separator */
-	.separator {
-		border: none;
-		border-top: 6px solid var(--tw-prose-hr);
-		margin: 2em 0;
-		opacity: 0.5;
-	}
-	/* Bio box styling */
-	.bio-box {
-		background-color: var(--tw-prose-pre-bg);
-		color: var(--tw-prose-pre-code);
-		border-radius: 12px;
-		padding: 1.25em;
-		line-height: 1.7;
-		margin: 1em 0;
-		text-align: justify;
-	}
-	.bio-box p {
-		margin: 0 0 1em 0;
-	}
-	.bio-box p:last-child {
-		margin-bottom: 0;
-	}
 </style>
 
 <script>
@@ -152,9 +129,3 @@ david [at] <a href="https://romixbio.com/" target="_blank" rel="noopener">romixb
 </div>  
 
 <a href="https://scheduler.zoom.us/david-mckellar/book-a-meeting-w-david" class="btn btn-colorful" target="_blank" rel="noopener">book a call w/ me</a>
-
-<hr class="separator">
-
-<div class="bio-box">
-<p>I grew up in Atlanta, but am a diehard Chicago Cubs & Detroit Lions fan. I’m an engineer by training, but a biologist at heart. I went to Georgia Tech, and then learned how to do science at the NIH (where I met my lovely wife), Cornell, and the New York Genome Center. I have spent the last 8 years building tech to better understand the RNA molecules that make your cells work. I think better tools make better data, and better data make better medicines. I like to run and can quote more of the West Wing than the average viewer.</p>
-</div>
