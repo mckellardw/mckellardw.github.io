@@ -3,10 +3,10 @@ title: "David W. McKellar"
 ---
 
 <style>
-	/* Hero row: image stretches to match the height of the right-side column */
+	/* Hero row: image at natural aspect, capped in size; text column to its right */
 	.hero-row {
 		display: flex;
-		align-items: stretch;
+		align-items: center;
 		gap: 24px;
 		margin: 1em 0;
 	}
@@ -21,37 +21,25 @@ title: "David W. McKellar"
 	.hero-text .btn-colorful {
 		margin: 0;
 	}
-	.avatar-wrap {
-		position: relative;
-		align-self: stretch;
-		flex: 0 0 40%;
-		border-radius: 12px;
-		overflow: hidden;
-	}
 	.home-avatar {
-		position: absolute;
-		inset: 0;
 		display: block;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
+		flex: 0 0 auto;
+		width: auto;
+		height: auto;
+		max-width: 40%;
+		max-height: 220px;
+		border-radius: 12px;
 	}
 	@media (max-width: 640px) {
 		.hero-row {
 			flex-direction: column;
 			align-items: center;
 		}
-		.avatar-wrap {
-			position: static;
-			flex: 0 0 auto;
-			width: auto;
-			height: 140px;
-			align-self: center;
-		}
 		.home-avatar {
-			position: static;
+			max-width: none;
+			max-height: none;
+			height: 200px;
 			width: auto;
-			height: 100%;
 		}
 	}
 	/* Standardize border-radius and match text box colors */
@@ -155,9 +143,7 @@ title: "David W. McKellar"
 </script>
 
 <div class="hero-row">
-<div class="avatar-wrap">
 <img src="/images/prof_pic.jpg" alt="Portrait of David W. McKellar" class="home-avatar" loading="eager" />
-</div>
 <div class="hero-text">
 <div class="info-box">
 Co-founder & CTO<br>
@@ -165,6 +151,5 @@ Romix Biosciences<br>
 david [at] <a href="https://romixbio.com/" target="_blank" rel="noopener">romixbio [dot] com</a>
 </div>
 <a href="https://scheduler.zoom.us/david-mckellar/book-a-meeting-w-david" class="btn btn-colorful" target="_blank" rel="noopener">book a call w/ me</a>
-</div>
 </div>
 </div>
