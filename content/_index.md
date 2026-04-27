@@ -21,25 +21,37 @@ title: "David W. McKellar"
 	.hero-text .btn-colorful {
 		margin: 0;
 	}
-	.home-avatar {
+	.avatar-wrap {
+		position: relative;
 		align-self: stretch;
-		height: auto;
-		width: auto;
-		max-width: 40%;
-		object-fit: cover;
+		flex: 0 0 40%;
 		border-radius: 12px;
-		flex: 0 0 auto;
+		overflow: hidden;
+	}
+	.home-avatar {
+		position: absolute;
+		inset: 0;
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
 	}
 	@media (max-width: 640px) {
 		.hero-row {
 			flex-direction: column;
 			align-items: center;
 		}
-		.home-avatar {
-			max-width: none;
-			height: 140px;
+		.avatar-wrap {
+			position: static;
+			flex: 0 0 auto;
 			width: auto;
+			height: 140px;
 			align-self: center;
+		}
+		.home-avatar {
+			position: static;
+			width: auto;
+			height: 100%;
 		}
 	}
 	/* Standardize border-radius and match text box colors */
@@ -143,7 +155,9 @@ title: "David W. McKellar"
 </script>
 
 <div class="hero-row">
+<div class="avatar-wrap">
 <img src="/images/prof_pic.jpg" alt="Portrait of David W. McKellar" class="home-avatar" loading="eager" />
+</div>
 <div class="hero-text">
 <div class="info-box">
 Co-founder & CTO<br>
@@ -151,5 +165,6 @@ Romix Biosciences<br>
 david [at] <a href="https://romixbio.com/" target="_blank" rel="noopener">romixbio [dot] com</a>
 </div>
 <a href="https://scheduler.zoom.us/david-mckellar/book-a-meeting-w-david" class="btn btn-colorful" target="_blank" rel="noopener">book a call w/ me</a>
+</div>
 </div>
 </div>
