@@ -34,7 +34,9 @@ Automated via GitHub Actions on push to `main` branch. The workflow (`.github/wo
 
 **Custom Layouts** (override theme defaults):
 - `layouts/index.html` - Custom homepage with profile styling
-- `layouts/shortcodes/gcal_button.html` - Google Calendar scheduling button
+- `layouts/_default/baseof.html`, `layouts/_default/single.html` - Base/single templates
+- `layouts/partials/{head,header,footer}.html` - Site chrome partials
+- `assets/custom.css` - Ubuntu font + social icon hover styles
 
 **Content Structure**:
 - `content/_index.md` - Homepage content
@@ -48,10 +50,3 @@ Main config in `config.toml`:
 - Theme: `hugo-paper` with dark color scheme
 - Markdown rendering allows raw HTML (`unsafe = true`)
 - Single menu item: Publications
-
-## Custom Shortcode
-
-Google Calendar button usage in markdown:
-```
-{{< gcal_button url="https://calendar.google.com/..." color="#039BE5" label="Book a call" >}}
-```

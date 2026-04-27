@@ -13,24 +13,15 @@ body {
   font-family: 'Ubuntu', ui-sans-serif, system-ui, sans-serif;
 }
 
-/* Social icon hover effects - Google colors */
+/* Social icons: dark icons by default, white in dark mode.
+   Hover filter is applied inline via JS in footer.html and replaces the
+   whole filter chain, so the random hover color renders cleanly without
+   compounding with the base inversion. */
 a.social-icon {
-  transition: filter 0.2s ease !important;
+  filter: brightness(0);
+  transition: filter 0.2s ease;
 }
 
-/* Blue: #4285F4 - for Google Scholar, LinkedIn, Twitter */
-a.social-googlescholar:hover,
-a.social-linkedin:hover,
-a.social-twitter:hover {
-  filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(196deg) brightness(100%) contrast(92%) !important;
-}
-
-/* Red: #EA4335 - for PubMed */
-a.social-pubmed:hover {
-  filter: invert(37%) sepia(93%) saturate(7471%) hue-rotate(351deg) brightness(91%) contrast(101%) !important;
-}
-
-/* Green: #34A853 - for GitHub */
-a.social-github:hover {
-  filter: invert(47%) sepia(74%) saturate(491%) hue-rotate(92deg) brightness(96%) contrast(91%) !important;
+.dark a.social-icon {
+  filter: brightness(0) invert(1);
 }

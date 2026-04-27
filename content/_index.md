@@ -3,20 +3,43 @@ title: "David W. McKellar"
 ---
 
 <style>
-	/* Scoped styles for the homepage avatar */
+	/* Hero row: image stretches to match the height of the right-side column */
+	.hero-row {
+		display: flex;
+		align-items: stretch;
+		gap: 24px;
+		margin: 1em 0;
+	}
+	.hero-text {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		flex: 1 1 auto;
+		min-width: 0;
+	}
+	.hero-text .info-box,
+	.hero-text .btn-colorful {
+		margin: 0;
+	}
 	.home-avatar {
-		float: left;
-		height: 180px;
+		align-self: stretch;
+		height: auto;
 		width: auto;
+		max-width: 40%;
+		object-fit: cover;
 		border-radius: 12px;
-		margin: 0 24px 16px 0;
+		flex: 0 0 auto;
 	}
 	@media (max-width: 640px) {
+		.hero-row {
+			flex-direction: column;
+			align-items: center;
+		}
 		.home-avatar {
-			float: none;
-			display: block;
-			margin: 0 auto 16px auto;
+			max-width: none;
 			height: 140px;
+			width: auto;
+			align-self: center;
 		}
 	}
 	/* Standardize border-radius and match text box colors */
@@ -119,13 +142,14 @@ title: "David W. McKellar"
 	});
 </script>
 
+<div class="hero-row">
 <img src="/images/prof_pic.jpg" alt="Portrait of David W. McKellar" class="home-avatar" loading="eager" />
-
-
+<div class="hero-text">
 <div class="info-box">
 Co-founder & CTO<br>
 Romix Biosciences<br>
 david [at] <a href="https://romixbio.com/" target="_blank" rel="noopener">romixbio [dot] com</a>
-</div>  
-
+</div>
 <a href="https://scheduler.zoom.us/david-mckellar/book-a-meeting-w-david" class="btn btn-colorful" target="_blank" rel="noopener">book a call w/ me</a>
+</div>
+</div>

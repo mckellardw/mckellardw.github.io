@@ -1,7 +1,7 @@
 <footer
   class="mx-auto flex flex-col max-w-(--w) items-center px-8 py-8 text-xs tracking-wider uppercase opacity-60"
 >
-  <nav class="flex items-center justify-center space-x-24 mb-4 dark:invert">
+  <nav class="flex items-center justify-center space-x-24 mb-4">
     {{- $social_params := slice "googlescholar" "pubmed" "github" "linkedin" "twitter" -}}
     {{- range $social_params -}}
     {{- if isset site.Params . -}}
@@ -23,10 +23,10 @@
     document.addEventListener('DOMContentLoaded', function() {
       const icons = document.querySelectorAll('.social-icon');
       const filters = [
-        'invert(56%) sepia(52%) saturate(1169%) hue-rotate(190deg) brightness(95%) contrast(91%)',  // blue
-        'invert(47%) sepia(62%) saturate(577%) hue-rotate(324deg) brightness(91%) contrast(85%)',   // red
-        'invert(56%) sepia(28%) saturate(732%) hue-rotate(93deg) brightness(93%) contrast(85%)',    // green
-        'invert(71%) sepia(53%) saturate(726%) hue-rotate(7deg) brightness(98%) contrast(87%)'      // yellow
+        'brightness(0) saturate(100%) invert(58%) sepia(52%) saturate(553%) hue-rotate(190deg) brightness(94%) contrast(87%)', // #5A93E8
+        'brightness(0) saturate(100%) invert(48%) sepia(67%) saturate(487%) hue-rotate(324deg) brightness(92%) contrast(89%)', // #D9615A
+        'brightness(0) saturate(100%) invert(56%) sepia(20%) saturate(1069%) hue-rotate(85deg) brightness(94%) contrast(85%)', // #4D9E62
+        'brightness(0) saturate(100%) invert(72%) sepia(47%) saturate(762%) hue-rotate(8deg) brightness(97%) contrast(88%)'   // #E8B42A
       ];
 
       icons.forEach(function(icon) {

@@ -11,6 +11,7 @@ vendor/
 .Trashes
 ehthumbs.db
 Thumbs.db
+desktop.ini
 
 # Development and backup files
 test/
@@ -23,7 +24,7 @@ test/
 .idea/
 
 # Hugo build output
-# public/
-# resources
+public/
+resources/
 .hugo_build.lock
 
