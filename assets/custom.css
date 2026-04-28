@@ -13,15 +13,17 @@ body {
   font-family: 'Ubuntu', ui-sans-serif, system-ui, sans-serif;
 }
 
-/* Social icons: dark icons by default, white in dark mode.
-   Hover filter is applied inline via JS in footer.html and replaces the
-   whole filter chain, so the random hover color renders cleanly without
-   compounding with the base inversion. */
+/* Social icons rendered via CSS mask: the SVG (set per-icon as --url in
+   footer.html) is used as an alpha stencil, and the actual color is the
+   element's background-color. This lets us paint exact brand hex values
+   on hover instead of approximating them with hue-rotate filters. */
 a.social-icon {
-  filter: brightness(0);
-  transition: filter 0.2s ease;
+  -webkit-mask: var(--url) center / cover no-repeat;
+          mask: var(--url) center / cover no-repeat;
+  background-color: #000;
+  transition: background-color 0.2s ease;
 }
 
 .dark a.social-icon {
-  filter: brightness(0) invert(1);
+  background-color: #fff;
 }

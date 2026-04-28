@@ -1,17 +1,17 @@
 <footer
   class="mx-auto flex flex-col max-w-(--w) items-center px-8 py-8 text-xs tracking-wider uppercase opacity-60"
 >
-  <nav class="flex items-center justify-center space-x-24 mb-4">
-    {{- $social_params := slice "googlescholar" "pubmed" "github" "linkedin" "twitter" -}}
+  <nav class="flex items-center justify-center space-x-72 mb-4">
+    {{- $social_params := slice "googlescholar" "pubmed" "github" "linkedin" "twitter" "lastfm" -}}
     {{- range $social_params -}}
     {{- if isset site.Params . -}}
     <a
-      class="social-icon h-6 w-6 text-[0px] [background:var(--url)_center_center/cover_no-repeat] transition-transform duration-200 hover:scale-125"
+      class="social-icon h-6 w-6 text-[0px] transition-transform duration-200 hover:scale-125"
       style="--url: url(./{{- . -}}.svg)"
-      href="{{- if eq . `googlescholar` -}}{{- index site.Params . -}}{{- else if eq . `pubmed` -}}{{- index site.Params . -}}{{- else -}}https://{{- . -}}.com/{{- if eq . `linkedin` -}}in/{{- end -}}{{- index site.Params . -}}{{- end -}}"
+      href="{{- if eq . `googlescholar` -}}{{- index site.Params . -}}{{- else if eq . `pubmed` -}}{{- index site.Params . -}}{{- else if eq . `lastfm` -}}https://www.last.fm/user/{{- index site.Params . -}}{{- else -}}https://{{- . -}}.com/{{- if eq . `linkedin` -}}in/{{- end -}}{{- index site.Params . -}}{{- end -}}"
       target="_blank"
       rel="me"
-      title="{{- if eq . `googlescholar` -}}google scholar{{- else if eq . `pubmed` -}}pubmed{{- else -}}{{- . -}}{{- end -}}"
+      title="{{- if eq . `googlescholar` -}}google scholar{{- else if eq . `pubmed` -}}pubmed{{- else if eq . `lastfm` -}}last.fm{{- else -}}{{- . -}}{{- end -}}"
     >
       {{- . -}}
     </a>
@@ -22,21 +22,16 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const icons = document.querySelectorAll('.social-icon');
-      const filters = [
-        'brightness(0) saturate(100%) invert(58%) sepia(52%) saturate(553%) hue-rotate(190deg) brightness(94%) contrast(87%)', // #5A93E8
-        'brightness(0) saturate(100%) invert(48%) sepia(67%) saturate(487%) hue-rotate(324deg) brightness(92%) contrast(89%)', // #D9615A
-        'brightness(0) saturate(100%) invert(56%) sepia(20%) saturate(1069%) hue-rotate(85deg) brightness(94%) contrast(85%)', // #4D9E62
-        'brightness(0) saturate(100%) invert(72%) sepia(47%) saturate(762%) hue-rotate(8deg) brightness(97%) contrast(88%)'   // #E8B42A
-      ];
+      const colors = ['#5A93E8', '#D9615A', '#4D9E62', '#E8B42A'];
 
       icons.forEach(function(icon) {
         icon.addEventListener('mouseenter', function() {
-          const randomFilter = filters[Math.floor(Math.random() * filters.length)];
-          icon.style.filter = randomFilter;
+          const randomColor = colors[Math.floor(Math.random() * colors.length)];
+          icon.style.backgroundColor = randomColor;
         });
 
         icon.addEventListener('mouseleave', function() {
-          icon.style.filter = '';
+          icon.style.backgroundColor = '';
         });
       });
     });

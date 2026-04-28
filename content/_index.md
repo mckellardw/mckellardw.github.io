@@ -21,6 +21,9 @@ title: "David W. McKellar"
 	.hero-text .btn-colorful {
 		margin: 0;
 	}
+	.hero-text .btn-colorful {
+		align-self: flex-start;
+	}
 	.home-avatar {
 		display: block;
 		flex: 0 0 auto;
