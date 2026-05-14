@@ -50,11 +50,12 @@ title: "Publications"
 
 ## **Highlighted**
 
-***High Resolution Spatial Mapping of Microbiome-Host Interactions via in situ Polyadenylation and Spatial RNA Sequencing.***<br>
+***Spatial transcriptomics maps host–gut microbiome biogeography at high resolution.***<br>
 I Ntekas^, L Takayasu^, <strong><u class="author-highlight">DW McKellar</u></strong>^, B Grodner, M Hinchman, C Holdener, P Schweitzer, M Sauthoff, Q Shi, L Brito, I de Vlaminck<br>
+<a href="https://www.nature.com/articles/s41564-026-02286-7" class="pub-link link-paper">[Nature Microbiology, 2026]</a>
 <a href="https://doi.org/10.1101/2024.11.18.624127" class="pub-link link-biorxiv">[bioRxiv, 2024]</a>
 <a href="https://github.com/ntekasi/microSTRS" class="pub-link link-github">[github]</a>
-<a href="https://mckellardw.github.io/pdfs/manuscripts/Ntekas_et_al_bioRxiv_2024.pdf" class="pub-link link-pdf">[pdf]</a>
+<a href="https://mckellardw.github.io/pdfs/manuscripts/Ntekas_et_al_NatureMicrobiology_2026.pdf" class="pub-link link-pdf">[pdf]</a>
 
 ***Spatial mapping of the total transcriptome by in situ polyadenylation.***<br>
 <strong><u class="author-highlight">DW McKellar</u></strong>, M Mantri, M Hinchman, JSL Parker, P Sethupathy, BD Cosgrove, I de Vlaminck<br>
