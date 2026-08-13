@@ -28,7 +28,15 @@
   var height = 0;
   var lastFrame = 0;
   var start = performance.now();
-  var pointer = { x: 0, y: 0, targetX: 0, targetY: 0, active: false, attracting: false };
+  var pointer = {
+    x: 0,
+    y: 0,
+    targetX: 0,
+    targetY: 0,
+    active: false,
+    attracting: false,
+    attractionStartedAt: 0
+  };
   var seed = 24871;
   var storageKey = 'mckellardw-paint-state-v1';
 
@@ -132,8 +140,15 @@
       var y = random();
       var reflection = x > 0.27 && x < 0.8 && y < 0.62 && random() < 0.3;
       var colorIndex = reflection ? (random() < 0.58 ? 7 : 5) : chooseColorIndex(x, y);
-      var depth = 0.12 + Math.pow(random(), 1.45) * 0.88;
-      var radius = (0.8 + depth * 3.4 + random() * 1.1) * (width / 1600 + 0.55);
+      var depth = 0.08 + Math.pow(random(), 1.45) * 0.92;
+      // A skewed distribution creates many small flecks and occasional large,
+      // close dabs instead of clustering every particle around one scale.
+      var sizeVariation = Math.pow(random(), 2.2);
+      var radius = (
+        0.256 +
+        Math.pow(depth, 1.65) * 6.96 +
+        sizeVariation * 4.08
+      ) * (width / 1600 + 0.55);
       var color = paintColors[colorIndex];
 
       pointData[offset] = x;
@@ -250,8 +265,9 @@
     }
     var elapsed = lastFrame ? Math.min((now - lastFrame) / 1000, 0.05) : 0;
     lastFrame = now;
-    pointer.x += (pointer.targetX - pointer.x) * 0.09;
-    pointer.y += (pointer.targetY - pointer.y) * 0.09;
+    // 0.18 halves the response time versus the previous 0.09 easing rate.
+    pointer.x += (pointer.targetX - pointer.x) * 0.18;
+    pointer.y += (pointer.targetY - pointer.y) * 0.18;
 
     if (!reduceMotion && elapsed > 0) {
       updatePointPositions((now - start) / 1000, elapsed);
@@ -272,32 +288,55 @@
   function updatePointPositions(time, elapsed) {
     var stride = 10;
     var cursorRadius = 320;
+    var attractionMultiplier = 1;
+
+    if (pointer.attracting && pointer.attractionStartedAt) {
+      var heldFor = Math.max(0, time - pointer.attractionStartedAt);
+      var charge = Math.min(heldFor / 3, 1);
+      // Ease-in acceleration: subtle at first, then increasingly strong.
+      attractionMultiplier = 1 + charge * charge * 2;
+    }
 
     for (var i = 0; i < pointCount; i += 1) {
       var offset = i * stride;
       var depth = pointData[offset + 2];
+      var renderedDiameter = pointData[offset + 3];
+      // Mass follows rendered area. Clamp the extremes so tiny paint flecks
+      // remain controllable and the largest dabs still respond visibly.
+      var mass = Math.max(0.18, Math.min(6.5, Math.pow(renderedDiameter / 11, 2)));
+      var inverseSqrtMass = 1 / Math.sqrt(mass);
+      var inverseMass = 1 / mass;
       var phase = pointData[offset + 8];
 
       // Slowly varying headings create persistent Brownian-like wandering.
       driftAngles[i] += (
         Math.sin(time * 0.31 + phase * 1.7) +
         Math.cos(time * 0.17 + phase * 2.3)
-      ) * elapsed * 0.24;
-      var driftSpeed = (0.7 + depth * 5.5) * 1.1;
+      ) * elapsed * 0.24 * inverseSqrtMass;
+      // Brownian speed varies with inverse square-root mass: small pigment
+      // flecks wander quickly while broad, heavy dabs move more deliberately.
+      var driftSpeed = (0.7 + depth * 5.5) * 1.1 * inverseSqrtMass;
       var x = pointData[offset] * width + Math.cos(driftAngles[i]) * driftSpeed * elapsed;
       var y = pointData[offset + 1] * height + Math.sin(driftAngles[i]) * driftSpeed * elapsed;
 
       if (pointer.active) {
         var dx = x - pointer.x;
         var dy = y - pointer.y;
-        var distance = Math.sqrt(dx * dx + dy * dy) || 1;
-
-        if (distance < cursorRadius) {
+        // Reject most points before paying for a square root.
+        if (Math.abs(dx) < cursorRadius && Math.abs(dy) < cursorRadius) {
+          var distanceSquared = dx * dx + dy * dy;
+          if (distanceSquared < cursorRadius * cursorRadius) {
+            var distance = Math.sqrt(distanceSquared) || 1;
           var influence = 1 - distance / cursorRadius;
-          var forceSpeed = influence * influence * (18 + depth * 105);
+          // Cursor force becomes acceleration through inverse mass.
+          var forceSpeed = influence * influence * (18 + depth * 105) * inverseMass;
           var forceDirection = pointer.attracting ? -1 : 1;
+          if (pointer.attracting) {
+            forceSpeed *= attractionMultiplier;
+          }
           x += dx / distance * forceSpeed * forceDirection * elapsed;
           y += dy / distance * forceSpeed * forceDirection * elapsed;
+          }
         }
       }
 
@@ -377,6 +416,7 @@
       }
       pointer.active = false;
       pointer.attracting = false;
+      pointer.attractionStartedAt = 0;
       buildPoints();
     });
   }
@@ -393,14 +433,25 @@
         pointer.targetY = event.clientY + 32;
         pointer.active = true;
         pointer.attracting = true;
+        pointer.attractionStartedAt = (performance.now() - start) / 1000;
       }
     }, { passive: true });
-    window.addEventListener('pointerup', function () { pointer.attracting = false; }, { passive: true });
-    window.addEventListener('pointercancel', function () { pointer.attracting = false; }, { passive: true });
-    window.addEventListener('blur', function () { pointer.attracting = false; });
+    window.addEventListener('pointerup', function () {
+      pointer.attracting = false;
+      pointer.attractionStartedAt = 0;
+    }, { passive: true });
+    window.addEventListener('pointercancel', function () {
+      pointer.attracting = false;
+      pointer.attractionStartedAt = 0;
+    }, { passive: true });
+    window.addEventListener('blur', function () {
+      pointer.attracting = false;
+      pointer.attractionStartedAt = 0;
+    });
     document.documentElement.addEventListener('mouseleave', function () {
       pointer.active = false;
       pointer.attracting = false;
+      pointer.attractionStartedAt = 0;
     });
   }
 
