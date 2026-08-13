@@ -2,52 +2,6 @@
 title: "Publications"
 ---
 
-<style>
-  .pub-link {
-    text-decoration: none;
-    font-weight: bold;
-  }
-  .pub-link:hover {
-    text-decoration: underline;
-  }
-  .link-paper {
-    color: #5A93E8;
-  }
-  .link-biorxiv {
-    color: #D9615A;
-  }
-  .link-github {
-    color: #4D9E62;
-  }
-  .link-pdf {
-    color: #E8B42A;
-  }
-  .author-highlight {
-    color: inherit;
-    transition: color 0.2s ease;
-    cursor: pointer;
-    font-weight: bold;
-  }
-</style>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const authors = document.querySelectorAll('.author-highlight');
-    const colors = ['#5A93E8', '#D9615A', '#4D9E62', '#E8B42A'];
-
-    authors.forEach(function(author) {
-      author.addEventListener('mouseenter', function() {
-        const randomColor = colors[Math.floor(Math.random() * colors.length)];
-        author.style.setProperty('color', randomColor, 'important');
-      });
-
-      author.addEventListener('mouseleave', function() {
-        author.style.removeProperty('color');
-      });
-    });
-  });
-</script>
-
 ## **Highlighted**
 
 ***Spatial transcriptomics maps host–gut microbiome biogeography at high resolution.***<br>

@@ -1,46 +1,31 @@
-<footer
-  class="mx-auto flex flex-col max-w-(--w) items-center px-8 py-8 text-xs tracking-wider uppercase opacity-60"
->
-  <nav class="flex items-center justify-center space-x-72 mb-4">
-    {{- $social_params := slice "googlescholar" "pubmed" "github" "linkedin" "twitter" "lastfm" -}}
-    {{- range $social_params -}}
-    {{- if isset site.Params . -}}
+{{- /*
+  Social icons are inlined so they inherit the site's currentColor states.
+*/ -}}
+<footer class="site-footer wrap">
+  <nav class="social-row" aria-label="Social links">
+    {{- range site.Params.social -}}
+    {{- $icon := resources.Get (printf "icons/%s.svg" .name) -}}
     <a
-      class="social-icon h-6 w-6 text-[0px] transition-transform duration-200 hover:scale-125"
-      style="--url: url(./{{- . -}}.svg)"
-      href="{{- if eq . `googlescholar` -}}{{- index site.Params . -}}{{- else if eq . `pubmed` -}}{{- index site.Params . -}}{{- else if eq . `lastfm` -}}https://www.last.fm/user/{{- index site.Params . -}}{{- else -}}https://{{- . -}}.com/{{- if eq . `linkedin` -}}in/{{- end -}}{{- index site.Params . -}}{{- end -}}"
+      class="social-icon"
+      href="{{- .url -}}"
+      aria-label="{{- or .title .name -}}"
       target="_blank"
-      rel="me"
-      title="{{- if eq . `googlescholar` -}}google scholar{{- else if eq . `pubmed` -}}pubmed{{- else if eq . `lastfm` -}}last.fm{{- else -}}{{- . -}}{{- end -}}"
+      rel="me noopener"
     >
-      {{- . -}}
+      {{- with $icon -}}
+      {{- .Content | safeHTML -}}
+      {{- else -}}
+      {{- warnf "Missing social icon: %s" .name -}}
+      {{- end -}}
     </a>
-    {{- end -}}
     {{- end -}}
   </nav>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const icons = document.querySelectorAll('.social-icon');
-      const colors = ['#5A93E8', '#D9615A', '#4D9E62', '#E8B42A'];
-
-      icons.forEach(function(icon) {
-        icon.addEventListener('mouseenter', function() {
-          const randomColor = colors[Math.floor(Math.random() * colors.length)];
-          icon.style.backgroundColor = randomColor;
-        });
-
-        icon.addEventListener('mouseleave', function() {
-          icon.style.backgroundColor = '';
-        });
-      });
-    });
-  </script>
-
-  <div>
-    {{- if site.Copyright -}} {{- site.Copyright -}} {{- else -}} &copy; {{-
-    now.Year }}
-    <a class="link" href="{{- `` | absURL -}}">{{- site.Title -}}</a>
+  <div class="site-copy">
+    {{- with site.Copyright -}}
+    {{- . -}}
+    {{- else -}}
+    &copy; {{ now.Year }} {{ site.Title }}
     {{- end -}}
   </div>
 </footer>

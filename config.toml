@@ -2,20 +2,43 @@ baseURL = "https://mckellardw.github.io/"
 title = "David W. McKellar"
 theme = "hugo-paper"
 languageCode = "en-us"
-description = "David W. McKellar"
 
 [params]
-  googlescholar = "https://scholar.google.com/citations?user=Hta5xCcAAAAJ&hl=en&oi=ao"
-  pubmed = "https://pubmed.ncbi.nlm.nih.gov/?term=David+McKellar%5BAuthor%5D&sort=date"
-  github = "mckellardw"
-  linkedin = "dwmckellar"
-  twitter = "dwmckellar"
-  lastfm = "mickyd413"
-  color = "dark"
   name = "David W. McKellar"
   bio = "RNA Technology Development"
-  mainSections = ["publications"]
+  description = "David W. McKellar — RNA technology development."
   favicon = "favicon.svg"
+
+  # Footer links. `name` must match an SVG in assets/icons/.
+  [[params.social]]
+    name = "googlescholar"
+    title = "google scholar"
+    url = "https://scholar.google.com/citations?user=Hta5xCcAAAAJ&hl=en&oi=ao"
+
+  [[params.social]]
+    name = "pubmed"
+    title = "pubmed"
+    url = "https://pubmed.ncbi.nlm.nih.gov/?term=David+McKellar%5BAuthor%5D&sort=date"
+
+  [[params.social]]
+    name = "github"
+    title = "github"
+    url = "https://github.com/mckellardw"
+
+  [[params.social]]
+    name = "linkedin"
+    title = "linkedin"
+    url = "https://www.linkedin.com/in/dwmckellar"
+
+  [[params.social]]
+    name = "twitter"
+    title = "twitter"
+    url = "https://twitter.com/dwmckellar"
+
+  [[params.social]]
+    name = "lastfm"
+    title = "last.fm"
+    url = "https://www.last.fm/user/mickyd413"
 
 [menu]
   [[menu.main]]

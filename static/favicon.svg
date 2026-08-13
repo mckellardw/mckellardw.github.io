@@ -1,18 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- RNA single strand backbone -->
-  <path d="M32 4 C20 12, 44 20, 32 28 C20 36, 44 44, 32 52 C26 56, 32 60, 32 60"
-        fill="none"
-        stroke="#5A93E8"
-        stroke-width="4"
-        stroke-linecap="round"/>
-
-  <!-- Nucleotide bases (stylized as small circles/bumps) -->
-  <!-- Adenine - green -->
-  <circle cx="26" cy="10" r="5" fill="#4D9E62"/>
-  <!-- Uracil - yellow -->
-  <circle cx="38" cy="20" r="5" fill="#E8B42A"/>
-  <!-- Guanine - blue -->
-  <circle cx="26" cy="32" r="5" fill="#5A93E8"/>
-  <!-- Cytosine - red -->
-  <circle cx="38" cy="44" r="5" fill="#D9615A"/>
+  <rect width="64" height="64" rx="14" fill="#0b1113"/>
+  <path d="M19 15v34h12c10 0 17-6.8 17-17s-7-17-17-17H19Zm8 7h4c5.8 0 9.5 3.8 9.5 10S36.8 42 31 42h-4V22Z" fill="#edf3f2"/>
+  <circle cx="49" cy="48" r="4" fill="#74c9bd"/>
 </svg>
