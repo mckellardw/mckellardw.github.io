@@ -23,6 +23,11 @@
   var uniforms = {};
   var pointData;
   var driftAngles;
+  var velocityX;
+  var velocityY;
+  var inverseMasses;
+  var inverseSqrtMasses;
+  var maximumSpeeds;
   var pointCount = 0;
   var ratio = 1;
   var width = 0;
@@ -39,7 +44,7 @@
     attractionStartedAt: 0
   };
   var seed = 24871;
-  var storageKey = 'mckellardw-paint-state-v1';
+  var storageKey = 'mckellardw-paint-state-v2';
   var touchGesture = {
     pointerId: null,
     startX: 0,
@@ -140,6 +145,11 @@
     var stride = 10;
     pointData = new Float32Array(pointCount * stride);
     driftAngles = new Float32Array(pointCount);
+    velocityX = new Float32Array(pointCount);
+    velocityY = new Float32Array(pointCount);
+    inverseMasses = new Float32Array(pointCount);
+    inverseSqrtMasses = new Float32Array(pointCount);
+    maximumSpeeds = new Float32Array(pointCount);
 
     for (var i = 0; i < pointCount; i += 1) {
       var offset = i * stride;
@@ -161,7 +171,9 @@
       pointData[offset] = x;
       pointData[offset + 1] = y;
       pointData[offset + 2] = depth;
-      pointData[offset + 3] = radius * 2.75;
+      var renderedDiameter = radius * 2.75;
+      var mass = Math.max(0.18, Math.min(6.5, Math.pow(renderedDiameter / 11, 2)));
+      pointData[offset + 3] = renderedDiameter;
       pointData[offset + 4] = color[0];
       pointData[offset + 5] = color[1];
       pointData[offset + 6] = color[2];
@@ -169,6 +181,11 @@
       pointData[offset + 8] = random() * Math.PI * 2;
       pointData[offset + 9] = random();
       driftAngles[i] = random() * Math.PI * 2;
+      velocityX[i] = 0;
+      velocityY[i] = 0;
+      inverseMasses[i] = 1 / mass;
+      inverseSqrtMasses[i] = 1 / Math.sqrt(mass);
+      maximumSpeeds[i] = 85 + depth * 115;
     }
 
     gl.bindBuffer(gl.ARRAY_BUFFER, pointBuffer);
@@ -196,7 +213,7 @@
   }
 
   function savePointState() {
-    if (!pointData || !driftAngles) {
+    if (!pointData || !driftAngles || !velocityX || !velocityY) {
       return;
     }
     var positions = new Float32Array(pointCount * 2);
@@ -208,7 +225,9 @@
       window.localStorage.setItem(storageKey, JSON.stringify({
         count: pointCount,
         positions: encodeFloatArray(positions),
-        angles: encodeFloatArray(driftAngles)
+        angles: encodeFloatArray(driftAngles),
+        velocityX: encodeFloatArray(velocityX),
+        velocityY: encodeFloatArray(velocityY)
       }));
     } catch (error) {
       // Storage can be unavailable in strict privacy modes; animation still works.
@@ -223,7 +242,10 @@
       }
       var positions = decodeFloatArray(saved.positions);
       var angles = decodeFloatArray(saved.angles);
-      if (positions.length !== pointCount * 2 || angles.length !== pointCount) {
+      var savedVelocityX = decodeFloatArray(saved.velocityX);
+      var savedVelocityY = decodeFloatArray(saved.velocityY);
+      if (positions.length !== pointCount * 2 || angles.length !== pointCount ||
+          savedVelocityX.length !== pointCount || savedVelocityY.length !== pointCount) {
         return;
       }
       for (var i = 0; i < pointCount; i += 1) {
@@ -231,6 +253,8 @@
         pointData[i * 10 + 1] = positions[i * 2 + 1];
       }
       driftAngles.set(angles);
+      velocityX.set(savedVelocityX);
+      velocityY.set(savedVelocityY);
       gl.bufferSubData(gl.ARRAY_BUFFER, 0, pointData);
     } catch (error) {
       try {
@@ -307,24 +331,21 @@
     for (var i = 0; i < pointCount; i += 1) {
       var offset = i * stride;
       var depth = pointData[offset + 2];
-      var renderedDiameter = pointData[offset + 3];
-      // Mass follows rendered area. Clamp the extremes so tiny paint flecks
-      // remain controllable and the largest dabs still respond visibly.
-      var mass = Math.max(0.18, Math.min(6.5, Math.pow(renderedDiameter / 11, 2)));
-      var inverseSqrtMass = 1 / Math.sqrt(mass);
-      var inverseMass = 1 / mass;
+      var inverseSqrtMass = inverseSqrtMasses[i];
+      var inverseMass = inverseMasses[i];
       var phase = pointData[offset + 8];
 
-      // Slowly varying headings create persistent Brownian-like wandering.
+      // Slowly varying headings provide a low-cost Brownian force direction.
       driftAngles[i] += (
         Math.sin(time * 0.31 + phase * 1.7) +
         Math.cos(time * 0.17 + phase * 2.3)
       ) * elapsed * 0.24 * inverseSqrtMass;
-      // Brownian speed varies with inverse square-root mass: small pigment
-      // flecks wander quickly while broad, heavy dabs move more deliberately.
-      var driftSpeed = (0.7 + depth * 5.5) * 1.1 * inverseSqrtMass;
-      var x = pointData[offset] * width + Math.cos(driftAngles[i]) * driftSpeed * elapsed;
-      var y = pointData[offset + 1] * height + Math.sin(driftAngles[i]) * driftSpeed * elapsed;
+      // Brownian acceleration varies with inverse square-root mass.
+      var brownianAcceleration = (2.4 + depth * 6.8) * 1.1 * inverseSqrtMass;
+      velocityX[i] += Math.cos(driftAngles[i]) * brownianAcceleration * elapsed;
+      velocityY[i] += Math.sin(driftAngles[i]) * brownianAcceleration * elapsed;
+      var x = pointData[offset] * width;
+      var y = pointData[offset + 1] * height;
 
       if (pointer.active) {
         var dx = x - pointer.x;
@@ -335,17 +356,33 @@
           if (distanceSquared < cursorRadius * cursorRadius) {
             var distance = Math.sqrt(distanceSquared) || 1;
           var influence = 1 - distance / cursorRadius;
-          // Cursor force becomes acceleration through inverse mass.
-          var forceSpeed = influence * influence * (18 + depth * 105) * inverseMass;
+          // Cursor force becomes acceleration through inverse mass. Attraction
+          // ramps while held, so velocity—and therefore momentum—accumulates.
+          var forceAcceleration = influence * influence * (42 + depth * 230) * inverseMass;
           var forceDirection = pointer.attracting ? -1 : 1;
           if (pointer.attracting) {
-            forceSpeed *= attractionMultiplier;
+            forceAcceleration *= attractionMultiplier;
           }
-          x += dx / distance * forceSpeed * forceDirection * elapsed;
-          y += dy / distance * forceSpeed * forceDirection * elapsed;
+          velocityX[i] += dx / distance * forceAcceleration * forceDirection * elapsed;
+          velocityY[i] += dy / distance * forceAcceleration * forceDirection * elapsed;
           }
         }
       }
+
+      // Fluid drag preserves momentum after release but prevents endless or
+      // unstable acceleration. Heavy particles retain momentum for longer.
+      var damping = 1 / (1 + 0.72 * inverseSqrtMass * elapsed);
+      velocityX[i] *= damping;
+      velocityY[i] *= damping;
+      var speedSquared = velocityX[i] * velocityX[i] + velocityY[i] * velocityY[i];
+      var maximumSpeed = maximumSpeeds[i];
+      if (speedSquared > maximumSpeed * maximumSpeed) {
+        var speedScale = maximumSpeed / Math.sqrt(speedSquared);
+        velocityX[i] *= speedScale;
+        velocityY[i] *= speedScale;
+      }
+      x += velocityX[i] * elapsed;
+      y += velocityY[i] * elapsed;
 
       // Positions persist—there is no origin or spring to return to.
       if (x < -12) x = width + 12;
@@ -386,6 +423,57 @@
     element.addEventListener('pointerenter', function () { chooseHoverColor(element); });
     element.addEventListener('focus', function () { chooseHoverColor(element); });
   });
+
+  function setupPublicationPager() {
+    var entries = Array.prototype.slice.call(document.querySelectorAll(
+      "body[data-page='publications'] .site-main article > section > p"
+    ));
+    if (entries.length < 2) {
+      return;
+    }
+
+    var section = entries[0].parentElement;
+    var pager = document.createElement('nav');
+    var previous = document.createElement('button');
+    var next = document.createElement('button');
+    var status = document.createElement('span');
+    var mobile = window.matchMedia('(max-width: 640px)');
+    var current = 0;
+
+    pager.className = 'publication-pager';
+    pager.setAttribute('aria-label', 'Publication entries');
+    previous.type = 'button';
+    previous.textContent = 'Previous';
+    next.type = 'button';
+    next.textContent = 'Next';
+    status.className = 'publication-status';
+    status.setAttribute('aria-live', 'polite');
+    pager.append(previous, status, next);
+    section.appendChild(pager);
+
+    function render() {
+      entries.forEach(function (entry, index) {
+        entry.hidden = mobile.matches && index !== current;
+      });
+      pager.hidden = !mobile.matches;
+      previous.disabled = current === 0;
+      next.disabled = current === entries.length - 1;
+      status.textContent = (current + 1) + ' / ' + entries.length;
+    }
+
+    previous.addEventListener('click', function () {
+      current = Math.max(0, current - 1);
+      render();
+    });
+    next.addEventListener('click', function () {
+      current = Math.min(entries.length - 1, current + 1);
+      render();
+    });
+    mobile.addEventListener('change', render);
+    render();
+  }
+
+  setupPublicationPager();
 
   if (!gl) {
     canvas.width = window.innerWidth;
