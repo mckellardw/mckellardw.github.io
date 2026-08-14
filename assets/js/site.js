@@ -4,6 +4,7 @@
   var canvas = document.querySelector('.paint-background');
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var finePointer = window.matchMedia('(pointer: fine)').matches;
+  var coarsePointer = window.matchMedia('(pointer: coarse)').matches;
   var hoverColors = ['#7fa8b0', '#91aea0', '#aaa2be', '#c0989c', '#cfaa91', '#b9ae82'];
   var paintColors = [
     [0.169, 0.259, 0.294],
@@ -39,6 +40,12 @@
   };
   var seed = 24871;
   var storageKey = 'mckellardw-paint-state-v1';
+  var touchGesture = {
+    pointerId: null,
+    startX: 0,
+    startY: 0,
+    holdTimer: 0
+  };
 
   var vertexSource = [
     'attribute vec2 a_position;',
@@ -423,12 +430,15 @@
 
   if (finePointer && !reduceMotion) {
     window.addEventListener('pointermove', function (event) {
+      if (event.pointerType === 'touch') {
+        return;
+      }
       pointer.targetX = event.clientX + 32;
       pointer.targetY = event.clientY + 32;
       pointer.active = true;
     }, { passive: true });
     window.addEventListener('pointerdown', function (event) {
-      if (event.button === 0) {
+      if (event.pointerType !== 'touch' && event.button === 0) {
         pointer.targetX = event.clientX + 32;
         pointer.targetY = event.clientY + 32;
         pointer.active = true;
@@ -453,6 +463,70 @@
       pointer.attracting = false;
       pointer.attractionStartedAt = 0;
     });
+  }
+
+  function stopTouchGesture() {
+    if (touchGesture.holdTimer) {
+      window.clearTimeout(touchGesture.holdTimer);
+    }
+    touchGesture.pointerId = null;
+    touchGesture.holdTimer = 0;
+    pointer.active = false;
+    pointer.attracting = false;
+    pointer.attractionStartedAt = 0;
+  }
+
+  if (coarsePointer && !reduceMotion) {
+    window.addEventListener('pointerdown', function (event) {
+      if (event.pointerType !== 'touch' || !event.isPrimary ||
+          event.target.closest('a, button, input, select, textarea, summary')) {
+        return;
+      }
+
+      touchGesture.pointerId = event.pointerId;
+      touchGesture.startX = event.clientX;
+      touchGesture.startY = event.clientY;
+      pointer.x = pointer.targetX = event.clientX + 32;
+      pointer.y = pointer.targetY = event.clientY + 32;
+      pointer.active = true;
+      pointer.attracting = false;
+
+      // A stationary long press attracts. Moving before the delay remains a
+      // repelling brush gesture and avoids competing with normal page scroll.
+      touchGesture.holdTimer = window.setTimeout(function () {
+        if (touchGesture.pointerId === event.pointerId) {
+          pointer.attracting = true;
+          pointer.attractionStartedAt = (performance.now() - start) / 1000;
+        }
+      }, 320);
+    }, { passive: true });
+
+    window.addEventListener('pointermove', function (event) {
+      if (event.pointerType !== 'touch' || event.pointerId !== touchGesture.pointerId) {
+        return;
+      }
+
+      pointer.targetX = event.clientX + 32;
+      pointer.targetY = event.clientY + 32;
+      var movedX = event.clientX - touchGesture.startX;
+      var movedY = event.clientY - touchGesture.startY;
+
+      if (movedX * movedX + movedY * movedY > 100 && touchGesture.holdTimer) {
+        window.clearTimeout(touchGesture.holdTimer);
+        touchGesture.holdTimer = 0;
+      }
+    }, { passive: true });
+
+    window.addEventListener('pointerup', function (event) {
+      if (event.pointerId === touchGesture.pointerId) {
+        stopTouchGesture();
+      }
+    }, { passive: true });
+    window.addEventListener('pointercancel', function (event) {
+      if (event.pointerId === touchGesture.pointerId) {
+        stopTouchGesture();
+      }
+    }, { passive: true });
   }
 
   window.addEventListener('resize', resize, { passive: true });

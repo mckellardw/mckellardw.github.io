@@ -32,6 +32,7 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   isolation: isolate;
+  touch-action: pan-y pinch-zoom;
   background: linear-gradient(145deg, #080c12 0%, #0b1117 52%, #070d10 100%);
   color: var(--text);
   font-family: var(--font-sans);
@@ -435,10 +436,17 @@ body[data-page='publications'] .site-main article > section > p:focus-within {
 
   .site-header-row {
     min-height: 4.25rem;
+    justify-content: space-between;
   }
 
   .site-nav {
+    flex: 0 0 auto;
     gap: 1.25rem;
+  }
+
+  .wordmark {
+    min-width: 0;
+    margin-right: 0;
   }
 
   .site-main article,
@@ -448,8 +456,13 @@ body[data-page='publications'] .site-main article > section > p:focus-within {
   }
 
   .hero-row {
+    width: 100%;
     grid-template-columns: 1fr;
     justify-items: start;
+  }
+
+  .hero-text {
+    width: 100%;
   }
 
   .home-avatar {
@@ -463,8 +476,11 @@ body[data-page='publications'] .site-main article > section > p:focus-within {
   }
 
   .social-row {
-    width: 100%;
-    gap: 0.35rem;
+    display: grid;
+    width: auto;
+    max-width: 100%;
+    grid-template-columns: repeat(3, 3rem);
+    gap: 0.35rem 0.75rem;
   }
 
   .social-icon {
