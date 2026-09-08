@@ -16,12 +16,18 @@
     [0.357, 0.369, 0.275],
     [0.510, 0.475, 0.435]
   ];
+  // Mineral-like pigments have different apparent density: deeper, earthier
+  // colors carry more inertia than the pale reflective pigments at a given size.
+  var pigmentDensities = [0.9, 0.98, 0.94, 1.12, 1.2, 1.08, 1.18, 0.78];
   var gl = canvas && (canvas.getContext('webgl', { alpha: true, antialias: false }) ||
     canvas.getContext('experimental-webgl', { alpha: true, antialias: false }));
   var program;
-  var pointBuffer;
+  var positionBuffer;
+  var styleBuffer;
   var uniforms = {};
   var pointData;
+  var positionData;
+  var styleData;
   var driftAngles;
   var velocityX;
   var velocityY;
@@ -43,7 +49,7 @@
     attracting: false,
     attractionStartedAt: 0
   };
-  var seed = 24871;
+  var seed = Math.floor(Math.random() * 2147483646) + 1;
   var storageKey = 'mckellardw-paint-state-v2';
   var touchGesture = {
     pointerId: null,
@@ -51,10 +57,10 @@
     startY: 0,
     holdTimer: 0
   };
+  var forceScale = { push: 1, pull: 1 };
 
   var vertexSource = [
     'attribute vec2 a_position;',
-    'attribute float a_depth;',
     'attribute float a_size;',
     'attribute vec3 a_color;',
     'attribute float a_alpha;',
@@ -137,13 +143,19 @@
   }
 
   function buildPoints() {
-    seed = 24871;
+    // Every initialization begins from a fresh state rather than replaying a
+    // fixed scene or a previously persisted particle arrangement.
+    seed = Math.floor(Math.random() * 2147483646) + 1;
     var mobileViewport = width < 700;
     var minimum = mobileViewport ? 3600 : 7200;
     var maximum = mobileViewport ? 7200 : 14400;
     pointCount = Math.max(minimum, Math.min(maximum, Math.round(width * height / 130)));
     var stride = 10;
     pointData = new Float32Array(pointCount * stride);
+    // Positions are the only data that changes frame-to-frame. Keeping them
+    // in a dedicated buffer avoids re-uploading every static visual attribute.
+    positionData = new Float32Array(pointCount * 2);
+    styleData = new Float32Array(pointCount * 7);
     driftAngles = new Float32Array(pointCount);
     velocityX = new Float32Array(pointCount);
     velocityY = new Float32Array(pointCount);
@@ -172,7 +184,8 @@
       pointData[offset + 1] = y;
       pointData[offset + 2] = depth;
       var renderedDiameter = radius * 2.75;
-      var mass = Math.max(0.18, Math.min(6.5, Math.pow(renderedDiameter / 11, 2)));
+      var pigmentDensity = pigmentDensities[colorIndex];
+      var mass = Math.max(0.18, Math.min(7.8, Math.pow(renderedDiameter / 11, 2) * pigmentDensity));
       pointData[offset + 3] = renderedDiameter;
       pointData[offset + 4] = color[0];
       pointData[offset + 5] = color[1];
@@ -180,17 +193,28 @@
       pointData[offset + 7] = 0.13 + depth * 0.35 + random() * 0.1;
       pointData[offset + 8] = random() * Math.PI * 2;
       pointData[offset + 9] = random();
+      positionData[i * 2] = x;
+      positionData[i * 2 + 1] = y;
+      var styleOffset = i * 7;
+      styleData[styleOffset] = depth;
+      styleData[styleOffset + 1] = renderedDiameter;
+      styleData[styleOffset + 2] = color[0];
+      styleData[styleOffset + 3] = color[1];
+      styleData[styleOffset + 4] = color[2];
+      styleData[styleOffset + 5] = pointData[offset + 7];
+      styleData[styleOffset + 6] = pointData[offset + 9];
       driftAngles[i] = random() * Math.PI * 2;
-      velocityX[i] = 0;
-      velocityY[i] = 0;
+      velocityX[i] = (random() - 0.5) * (8 + depth * 20);
+      velocityY[i] = (random() - 0.5) * (8 + depth * 20);
       inverseMasses[i] = 1 / mass;
       inverseSqrtMasses[i] = 1 / Math.sqrt(mass);
-      maximumSpeeds[i] = 85 + depth * 115;
+      maximumSpeeds[i] = (85 + depth * 115) / Math.pow(pigmentDensity, 0.22);
     }
 
-    gl.bindBuffer(gl.ARRAY_BUFFER, pointBuffer);
-    gl.bufferData(gl.ARRAY_BUFFER, pointData, gl.DYNAMIC_DRAW);
-    restorePointState();
+    gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+    gl.bufferData(gl.ARRAY_BUFFER, positionData, gl.DYNAMIC_DRAW);
+    gl.bindBuffer(gl.ARRAY_BUFFER, styleBuffer);
+    gl.bufferData(gl.ARRAY_BUFFER, styleData, gl.STATIC_DRAW);
   }
 
   function encodeFloatArray(values) {
@@ -251,11 +275,13 @@
       for (var i = 0; i < pointCount; i += 1) {
         pointData[i * 10] = positions[i * 2];
         pointData[i * 10 + 1] = positions[i * 2 + 1];
+        positionData[i * 2] = positions[i * 2];
+        positionData[i * 2 + 1] = positions[i * 2 + 1];
       }
       driftAngles.set(angles);
       velocityX.set(savedVelocityX);
       velocityY.set(savedVelocityY);
-      gl.bufferSubData(gl.ARRAY_BUFFER, 0, pointData);
+      syncPositionBuffer();
     } catch (error) {
       try {
         window.localStorage.removeItem(storageKey);
@@ -265,10 +291,23 @@
     }
   }
 
-  function bindAttribute(name, size, offset) {
-    var location = gl.getAttribLocation(program, name);
+  function bindPositionAttribute() {
+    var location = gl.getAttribLocation(program, 'a_position');
+    gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
     gl.enableVertexAttribArray(location);
-    gl.vertexAttribPointer(location, size, gl.FLOAT, false, 40, offset * 4);
+    gl.vertexAttribPointer(location, 2, gl.FLOAT, false, 8, 0);
+  }
+
+  function bindStyleAttribute(name, size, offset) {
+    var location = gl.getAttribLocation(program, name);
+    gl.bindBuffer(gl.ARRAY_BUFFER, styleBuffer);
+    gl.enableVertexAttribArray(location);
+    gl.vertexAttribPointer(location, size, gl.FLOAT, false, 28, offset * 4);
+  }
+
+  function syncPositionBuffer() {
+    gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+    gl.bufferSubData(gl.ARRAY_BUFFER, 0, positionData);
   }
 
   function resize() {
@@ -301,9 +340,17 @@
     pointer.y += (pointer.targetY - pointer.y) * 0.18;
 
     if (!reduceMotion && elapsed > 0) {
-      updatePointPositions((now - start) / 1000, elapsed);
-      gl.bindBuffer(gl.ARRAY_BUFFER, pointBuffer);
-      gl.bufferSubData(gl.ARRAY_BUFFER, 0, pointData);
+      // Smaller fixed steps keep drag and cursor force stable after a slow
+      // frame, without adding work during normal 60 fps rendering.
+      var remaining = elapsed;
+      var simulationTime = (now - start) / 1000 - elapsed;
+      while (remaining > 0) {
+        var step = Math.min(remaining, 1 / 60);
+        simulationTime += step;
+        updatePointPositions(simulationTime, step);
+        remaining -= step;
+      }
+      syncPositionBuffer();
     }
 
     gl.clear(gl.COLOR_BUFFER_BIT);
@@ -360,6 +407,7 @@
           // ramps while held, so velocity—and therefore momentum—accumulates.
           var forceAcceleration = influence * influence * (42 + depth * 230) * inverseMass;
           var forceDirection = pointer.attracting ? -1 : 1;
+          forceAcceleration *= pointer.attracting ? forceScale.pull : forceScale.push;
           if (pointer.attracting) {
             forceAcceleration *= attractionMultiplier;
           }
@@ -371,7 +419,8 @@
 
       // Fluid drag preserves momentum after release but prevents endless or
       // unstable acceleration. Heavy particles retain momentum for longer.
-      var damping = 1 / (1 + 0.72 * inverseSqrtMass * elapsed);
+      // Exponential drag is invariant to the number of simulation substeps.
+      var damping = Math.exp(-0.72 * inverseSqrtMass * elapsed);
       velocityX[i] *= damping;
       velocityY[i] *= damping;
       var speedSquared = velocityX[i] * velocityX[i] + velocityY[i] * velocityY[i];
@@ -391,6 +440,8 @@
       if (y > height + 12) y = -12;
       pointData[offset] = x / width;
       pointData[offset + 1] = y / height;
+      positionData[i * 2] = pointData[offset];
+      positionData[i * 2 + 1] = pointData[offset + 1];
     }
   }
 
@@ -423,6 +474,25 @@
     element.addEventListener('pointerenter', function () { chooseHoverColor(element); });
     element.addEventListener('focus', function () { chooseHoverColor(element); });
   });
+
+  var forceControls = Array.prototype.slice.call(document.querySelectorAll('.background-force'));
+
+  function randomizeForceControls() {
+    forceControls.forEach(function (control) {
+      // Keep randomized forces expressive without making either gesture
+      // unexpectedly extreme. Values stay aligned with the slider's step.
+      var value = Math.round((0.45 + Math.random() * 1.15) / 0.05) * 0.05;
+      control.value = value.toFixed(2);
+      forceScale[control.dataset.force] = value;
+    });
+  }
+
+  forceControls.forEach(function (control) {
+    control.addEventListener('input', function () {
+      forceScale[control.dataset.force] = Number(control.value);
+    });
+  });
+  randomizeForceControls();
 
   function setupPublicationPager() {
     var entries = Array.prototype.slice.call(document.querySelectorAll(
@@ -486,20 +556,19 @@
   if (!program) {
     return;
   }
-  pointBuffer = gl.createBuffer();
+  positionBuffer = gl.createBuffer();
+  styleBuffer = gl.createBuffer();
   gl.useProgram(program);
   uniforms.resolution = gl.getUniformLocation(program, 'u_resolution');
   uniforms.ratio = gl.getUniformLocation(program, 'u_ratio');
   gl.enable(gl.BLEND);
   gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
   gl.clearColor(0, 0, 0, 0);
-  gl.bindBuffer(gl.ARRAY_BUFFER, pointBuffer);
-  bindAttribute('a_position', 2, 0);
-  bindAttribute('a_depth', 1, 2);
-  bindAttribute('a_size', 1, 3);
-  bindAttribute('a_color', 3, 4);
-  bindAttribute('a_alpha', 1, 7);
-  bindAttribute('a_shape', 1, 9);
+  bindPositionAttribute();
+  bindStyleAttribute('a_size', 1, 1);
+  bindStyleAttribute('a_color', 3, 2);
+  bindStyleAttribute('a_alpha', 1, 5);
+  bindStyleAttribute('a_shape', 1, 6);
 
   var resetButton = document.querySelector('.background-reset');
   if (resetButton) {
@@ -512,6 +581,7 @@
       pointer.active = false;
       pointer.attracting = false;
       pointer.attractionStartedAt = 0;
+      randomizeForceControls();
       buildPoints();
     });
   }
