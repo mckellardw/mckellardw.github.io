@@ -79,6 +79,39 @@ body::before {
   transition: border-color 180ms ease, background-color 180ms ease, color 180ms ease, transform 180ms ease;
 }
 
+.background-force-controls {
+  position: fixed;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  z-index: 3;
+  display: grid;
+  gap: 0.35rem;
+  width: 10.5rem;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--muted);
+  font-family: var(--font-sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  backdrop-filter: blur(12px);
+}
+
+.background-force-controls label {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.background-force {
+  width: 100%;
+  accent-color: var(--accent-strong);
+  cursor: ew-resize;
+}
+
 .background-reset svg {
   width: 1.15rem;
   height: 1.15rem;
@@ -599,6 +632,11 @@ body[data-page='publications'] .site-main article > section > p > em:first-child
   .background-reset {
     right: 0.75rem;
     bottom: 0.75rem;
+  }
+
+  .background-force-controls {
+    bottom: 0.75rem;
+    left: 0.75rem;
   }
 }
 
