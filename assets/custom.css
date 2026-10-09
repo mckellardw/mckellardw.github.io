@@ -1,24 +1,21 @@
 :root,
 :host {
   --font-sans: 'Ubuntu', ui-sans-serif, system-ui, sans-serif;
-  --bg: #0b1113;
-  --surface: rgba(15, 24, 27, 0.78);
-  --surface-hover: rgba(21, 34, 37, 0.94);
-  --line: rgba(255, 255, 255, 0.1);
-  --text: #edf3f2;
-  --muted: #aab8b7;
-  /* Lifted from the blue-green water, lavender reflections, pale cloud,
-     and reddish vegetation in Monet's Water Lilies (1914–26). */
-  --water-blue: #7fa8b0;
-  --lily-green: #91aea0;
-  --cloud-lavender: #aaa2be;
-  --dusk-rose: #c0989c;
-  --cloud-peach: #cfaa91;
-  --reed-gold: #b9ae82;
-  --accent: var(--lily-green);
-  --accent-strong: #b3ccc1;
-  --hover-accent: var(--lily-green);
-  --radius: 10px;
+  /* Neutral grayscale base — the only colour on the site is the random
+     highlight, applied per-hover from site.js (see --hover-accent). */
+  --bg: #0e0e0e;
+  --surface: rgba(24, 24, 24, 0.78);
+  --surface-hover: rgba(36, 36, 36, 0.94);
+  --line: rgba(255, 255, 255, 0.12);
+  --text: #ededed;
+  --muted: #a6a6a6;
+  --accent: #cfcfcf;
+  --accent-strong: #e6e6e6;
+  /* Default highlight before JS assigns a random one; grayscale so an element
+     that is focused before the script runs still looks neutral. */
+  --hover-accent: #ededed;
+  /* Swiss / International Typographic style: square corners and flat surfaces. */
+  --radius: 0px;
 }
 
 html {
@@ -33,7 +30,7 @@ body {
   overflow-x: hidden;
   isolation: isolate;
   touch-action: pan-y pinch-zoom;
-  background: linear-gradient(145deg, #080c12 0%, #0b1117 52%, #070d10 100%);
+  background: linear-gradient(145deg, #0a0a0a 0%, #101010 52%, #070707 100%);
   color: var(--text);
   font-family: var(--font-sans);
 }
@@ -57,8 +54,14 @@ body::before {
   width: calc(100% + 64px);
   height: calc(100% + 64px);
   filter: saturate(0.94) contrast(1.08);
-  opacity: 0.9;
+  /* Off by default; the hidden footer switch adds .paint-on to reveal it. */
+  opacity: 0;
   pointer-events: none;
+  transition: opacity 700ms ease;
+}
+
+body.paint-on .paint-background {
+  opacity: 0.9;
 }
 
 .background-reset {
@@ -66,7 +69,8 @@ body::before {
   right: 1.25rem;
   bottom: 1.25rem;
   z-index: 3;
-  display: grid;
+  /* The background controls only exist while the animation is on. */
+  display: none;
   width: 2.6rem;
   height: 2.6rem;
   place-items: center;
@@ -76,7 +80,7 @@ body::before {
   color: var(--muted);
   cursor: pointer;
   backdrop-filter: blur(12px);
-  transition: border-color 180ms ease, background-color 180ms ease, color 180ms ease, transform 180ms ease;
+  transition: border-color 120ms linear, background-color 120ms linear, color 120ms linear;
 }
 
 .background-force-controls {
@@ -84,7 +88,7 @@ body::before {
   bottom: 1.25rem;
   left: 1.25rem;
   z-index: 3;
-  display: grid;
+  display: none;
   gap: 0.35rem;
   width: 10.5rem;
   padding: 0.55rem 0.65rem;
@@ -112,6 +116,14 @@ body::before {
   cursor: ew-resize;
 }
 
+body.paint-on .background-reset {
+  display: grid;
+}
+
+body.paint-on .background-force-controls {
+  display: grid;
+}
+
 .background-reset svg {
   width: 1.15rem;
   height: 1.15rem;
@@ -126,12 +138,11 @@ body::before {
 .background-reset:focus-visible {
   border-color: var(--hover-accent);
   background: var(--hover-accent);
-  color: #111719;
-  transform: rotate(-24deg) translateY(-2px);
+  color: var(--bg);
 }
 
 ::selection {
-  background: rgba(116, 201, 189, 0.28);
+  background: rgba(255, 255, 255, 0.2);
   color: var(--text);
 }
 
@@ -174,15 +185,14 @@ body::before {
   letter-spacing: -0.015em;
   text-decoration: none;
   backdrop-filter: blur(12px);
-  transition: border-color 180ms ease, background-color 180ms ease, color 180ms ease, transform 180ms ease;
+  transition: border-color 120ms linear, background-color 120ms linear, color 120ms linear;
 }
 
 .wordmark:hover,
 .wordmark:focus-visible {
   border-color: var(--hover-accent);
   background: var(--hover-accent);
-  color: #111719;
-  transform: translateY(-2px);
+  color: var(--bg);
 }
 
 .site-nav {
@@ -202,21 +212,20 @@ body::before {
   font-size: 1rem;
   text-decoration: none;
   backdrop-filter: blur(12px);
-  transition: border-color 180ms ease, background-color 180ms ease, color 180ms ease, transform 180ms ease;
+  transition: border-color 120ms linear, background-color 120ms linear, color 120ms linear;
 }
 
 .nav-link:hover,
 .nav-link:focus-visible {
   border-color: var(--hover-accent);
   background: var(--hover-accent);
-  color: #111719;
-  transform: translateY(-2px);
+  color: var(--bg);
 }
 
 .nav-link[aria-current='page'] {
-  border-color: color-mix(in srgb, var(--hover-accent) 38%, transparent);
-  background: var(--surface-hover);
-  color: var(--accent-strong);
+  border-color: var(--text);
+  background: var(--text);
+  color: var(--bg);
 }
 
 .hero-row {
@@ -286,15 +295,14 @@ body::before {
   font-size: 0.88rem;
   text-decoration: none;
   backdrop-filter: blur(12px);
-  transition: border-color 180ms ease, background-color 180ms ease, color 180ms ease, transform 180ms ease;
+  transition: border-color 120ms linear, background-color 120ms linear, color 120ms linear;
 }
 
 .btn-colorful:hover,
 .btn-colorful:focus-visible {
   border-color: var(--hover-accent);
   background: var(--hover-accent);
-  color: #111719;
-  transform: translateY(-2px);
+  color: var(--bg);
 }
 
 .prose {
@@ -353,38 +361,28 @@ body[data-page='publications'] .site-main article > section > p {
 
 body[data-page='publications'] .site-main article > section > p:hover,
 body[data-page='publications'] .site-main article > section > p:focus-within {
-  border-color: color-mix(in srgb, var(--hover-accent) 38%, transparent);
+  border-color: var(--text);
   background: var(--surface-hover);
-  transform: translateY(-2px);
 }
 
 body[data-page='publications'] .site-main article > section > p > em:first-child strong {
-  color: var(--cloud-lavender);
+  color: var(--text);
 }
 
 .publication-pager {
   display: none;
 }
 
-.link-paper {
-  color: var(--water-blue);
-}
-
-.link-biorxiv {
-  color: var(--dusk-rose);
-}
-
-.link-github {
-  color: var(--lily-green);
-}
-
+.link-paper,
+.link-biorxiv,
+.link-github,
 .link-pdf {
-  color: var(--reed-gold);
+  color: var(--text);
 }
 
 .author-highlight {
   color: var(--text);
-  text-decoration-color: rgba(116, 201, 189, 0.6);
+  text-decoration-color: rgba(255, 255, 255, 0.4);
   text-underline-offset: 0.16em;
 }
 
@@ -416,10 +414,10 @@ body[data-page='publications'] .site-main article > section > p > em:first-child
   width: 4rem;
   height: 4rem;
   place-items: center;
-  border: 1px solid transparent;
-  border-radius: 50%;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
   color: var(--muted);
-  transition: border-color 180ms ease, background-color 180ms ease, color 180ms ease, transform 180ms ease;
+  transition: border-color 120ms linear, background-color 120ms linear, color 120ms linear;
 }
 
 .social-icon::after {
@@ -452,10 +450,9 @@ body[data-page='publications'] .site-main article > section > p > em:first-child
 
 .social-icon:hover,
 .social-icon:focus-visible {
-  border-color: color-mix(in srgb, var(--hover-accent) 45%, transparent);
-  background: color-mix(in srgb, var(--hover-accent) 12%, transparent);
-  color: var(--hover-accent);
-  transform: translateY(-2px);
+  border-color: var(--hover-accent);
+  background: var(--hover-accent);
+  color: var(--bg);
 }
 
 .social-icon:hover::after,
@@ -468,6 +465,11 @@ body[data-page='publications'] .site-main article > section > p > em:first-child
   font-size: 0.7rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  /* Doubles as the hidden switch: double click / double tap toggles the paint
+     background. Suppress selection highlight and the mobile double-tap zoom. */
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 @media (max-width: 640px) {
