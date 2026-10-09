@@ -5,6 +5,8 @@
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var finePointer = window.matchMedia('(pointer: fine)').matches;
   var coarsePointer = window.matchMedia('(pointer: coarse)').matches;
+  // The random highlight palette: the only colour on an otherwise grayscale
+  // site. A fresh one is picked on every hover/focus so no two are alike.
   var hoverColors = ['#7fa8b0', '#91aea0', '#aaa2be', '#c0989c', '#cfaa91', '#b9ae82'];
   var paintColors = [
     [0.169, 0.259, 0.294],
@@ -58,6 +60,13 @@
     holdTimer: 0
   };
   var forceScale = { push: 1, pull: 1 };
+  // The ambient paint background is off by default; a hidden switch (a quick
+  // double click / double tap on the footer line) turns it on and remembers it.
+  var rafId = 0;
+  var glReady = false;
+  var listenersBound = false;
+  var paintRunning = false;
+  var paintStorageKey = 'mckellardw-paint-enabled';
 
   var vertexSource = [
     'attribute vec2 a_position;',
@@ -311,6 +320,9 @@
   }
 
   function resize() {
+    if (!paintRunning) {
+      return;
+    }
     ratio = Math.min(window.devicePixelRatio || 1, 1.35);
     width = window.innerWidth + 64;
     height = window.innerHeight + 64;
@@ -329,8 +341,11 @@
   }
 
   function draw(now, force) {
+    if (!paintRunning) {
+      return;
+    }
     if (!force && now - lastFrame < 16) {
-      window.requestAnimationFrame(draw);
+      rafId = window.requestAnimationFrame(draw);
       return;
     }
     var elapsed = lastFrame ? Math.min((now - lastFrame) / 1000, 0.05) : 0;
@@ -359,7 +374,7 @@
     gl.drawArrays(gl.POINTS, 0, pointCount);
 
     if (!reduceMotion) {
-      window.requestAnimationFrame(draw);
+      rafId = window.requestAnimationFrame(draw);
     }
   }
 
@@ -545,48 +560,70 @@
 
   setupPublicationPager();
 
-  if (!gl) {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    drawFallback();
-    return;
+  function initGl() {
+    if (glReady) {
+      return true;
+    }
+    if (!gl) {
+      return false;
+    }
+    program = createProgram();
+    if (!program) {
+      return false;
+    }
+    positionBuffer = gl.createBuffer();
+    styleBuffer = gl.createBuffer();
+    gl.useProgram(program);
+    uniforms.resolution = gl.getUniformLocation(program, 'u_resolution');
+    uniforms.ratio = gl.getUniformLocation(program, 'u_ratio');
+    gl.enable(gl.BLEND);
+    gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+    gl.clearColor(0, 0, 0, 0);
+    bindPositionAttribute();
+    bindStyleAttribute('a_size', 1, 1);
+    bindStyleAttribute('a_color', 3, 2);
+    bindStyleAttribute('a_alpha', 1, 5);
+    bindStyleAttribute('a_shape', 1, 6);
+    glReady = true;
+    return true;
   }
 
-  program = createProgram();
-  if (!program) {
-    return;
-  }
-  positionBuffer = gl.createBuffer();
-  styleBuffer = gl.createBuffer();
-  gl.useProgram(program);
-  uniforms.resolution = gl.getUniformLocation(program, 'u_resolution');
-  uniforms.ratio = gl.getUniformLocation(program, 'u_ratio');
-  gl.enable(gl.BLEND);
-  gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
-  gl.clearColor(0, 0, 0, 0);
-  bindPositionAttribute();
-  bindStyleAttribute('a_size', 1, 1);
-  bindStyleAttribute('a_color', 3, 2);
-  bindStyleAttribute('a_alpha', 1, 5);
-  bindStyleAttribute('a_shape', 1, 6);
-
-  var resetButton = document.querySelector('.background-reset');
-  if (resetButton) {
-    resetButton.addEventListener('click', function () {
-      try {
-        window.localStorage.removeItem(storageKey);
-      } catch (error) {
-        // Reset still succeeds in memory when persistent storage is unavailable.
-      }
-      pointer.active = false;
-      pointer.attracting = false;
-      pointer.attractionStartedAt = 0;
-      randomizeForceControls();
-      buildPoints();
-    });
+  function stopTouchGesture() {
+    if (touchGesture.holdTimer) {
+      window.clearTimeout(touchGesture.holdTimer);
+    }
+    touchGesture.pointerId = null;
+    touchGesture.holdTimer = 0;
+    pointer.active = false;
+    pointer.attracting = false;
+    pointer.attractionStartedAt = 0;
   }
 
-  if (finePointer && !reduceMotion) {
+  // Interaction listeners are bound lazily the first time the background turns
+  // on, so a visitor who never enables it pays for none of this tracking.
+  function bindInteractions() {
+    if (listenersBound) {
+      return;
+    }
+    listenersBound = true;
+
+    var resetButton = document.querySelector('.background-reset');
+    if (resetButton) {
+      resetButton.addEventListener('click', function () {
+        try {
+          window.localStorage.removeItem(storageKey);
+        } catch (error) {
+          // Reset still succeeds in memory when persistent storage is unavailable.
+        }
+        pointer.active = false;
+        pointer.attracting = false;
+        pointer.attractionStartedAt = 0;
+        randomizeForceControls();
+        buildPoints();
+      });
+    }
+
+    if (finePointer && !reduceMotion) {
     window.addEventListener('pointermove', function (event) {
       if (event.pointerType === 'touch') {
         return;
@@ -621,20 +658,9 @@
       pointer.attracting = false;
       pointer.attractionStartedAt = 0;
     });
-  }
-
-  function stopTouchGesture() {
-    if (touchGesture.holdTimer) {
-      window.clearTimeout(touchGesture.holdTimer);
     }
-    touchGesture.pointerId = null;
-    touchGesture.holdTimer = 0;
-    pointer.active = false;
-    pointer.attracting = false;
-    pointer.attractionStartedAt = 0;
-  }
 
-  if (coarsePointer && !reduceMotion) {
+    if (coarsePointer && !reduceMotion) {
     window.addEventListener('pointerdown', function (event) {
       if (event.pointerType !== 'touch' || !event.isPrimary ||
           event.target.closest('a, button, input, select, textarea, summary')) {
@@ -685,6 +711,98 @@
         stopTouchGesture();
       }
     }, { passive: true });
+    }
+  }
+
+  function paintEnabledPreference() {
+    try {
+      return window.localStorage.getItem(paintStorageKey) === 'on';
+    } catch (error) {
+      return false;
+    }
+  }
+
+  function persistPaintPreference(enabled) {
+    try {
+      window.localStorage.setItem(paintStorageKey, enabled ? 'on' : 'off');
+    } catch (error) {
+      // The preference simply will not persist when storage is blocked.
+    }
+  }
+
+  function startPaint() {
+    if (paintRunning) {
+      return;
+    }
+    if (!gl) {
+      // No WebGL: fall back to a single static spatter so the switch still does
+      // something visible, but there is nothing to animate or stop.
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      paintRunning = true;
+      document.body.classList.add('paint-on');
+      drawFallback();
+      return;
+    }
+    if (!initGl()) {
+      return;
+    }
+    bindInteractions();
+    paintRunning = true;
+    lastFrame = 0;
+    document.body.classList.add('paint-on');
+    randomizeForceControls();
+    resize();
+    if (!reduceMotion) {
+      rafId = window.requestAnimationFrame(draw);
+    }
+  }
+
+  function stopPaint() {
+    if (!paintRunning) {
+      return;
+    }
+    paintRunning = false;
+    lastFrame = 0;
+    if (rafId) {
+      window.cancelAnimationFrame(rafId);
+      rafId = 0;
+    }
+    document.body.classList.remove('paint-on');
+    if (glReady) {
+      gl.clear(gl.COLOR_BUFFER_BIT);
+    } else {
+      var fallbackContext = canvas.getContext('2d');
+      if (fallbackContext) {
+        fallbackContext.clearRect(0, 0, canvas.width, canvas.height);
+      }
+    }
+  }
+
+  function togglePaint() {
+    if (paintRunning) {
+      stopPaint();
+    } else {
+      startPaint();
+    }
+    persistPaintPreference(paintRunning);
+  }
+
+  // The hidden switch: a quick double click or double tap on the footer line.
+  // Using the click event keeps it identical on desktop and touch, and
+  // `touch-action: manipulation` on the element suppresses double-tap zoom.
+  var copyElement = document.querySelector('.site-copy');
+  if (copyElement) {
+    var lastToggleAt = 0;
+    copyElement.addEventListener('click', function () {
+      var now = Date.now();
+      if (now - lastToggleAt < 400) {
+        togglePaint();
+        lastToggleAt = 0;
+      } else {
+        lastToggleAt = now;
+      }
+    });
   }
 
   window.addEventListener('resize', resize, { passive: true });
@@ -692,8 +810,8 @@
   document.querySelectorAll('.wordmark, .nav-link').forEach(function (link) {
     link.addEventListener('click', savePointState);
   });
-  resize();
-  if (!reduceMotion) {
-    window.requestAnimationFrame(draw);
+
+  if (paintEnabledPreference()) {
+    startPaint();
   }
 })();
