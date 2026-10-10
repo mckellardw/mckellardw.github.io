@@ -169,32 +169,8 @@ body.paint-on .background-force-controls {
   gap: 1.5rem;
 }
 
-.wordmark {
-  margin-right: auto;
-  display: inline-flex;
-  align-items: center;
-  min-height: 2.6rem;
-  padding-inline: 1rem;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--surface);
-  color: var(--text);
-  font-size: 1.25rem;
-  font-weight: 500;
-  letter-spacing: -0.015em;
-  text-decoration: none;
-  backdrop-filter: blur(12px);
-  transition: border-color 120ms linear, background-color 120ms linear, color 120ms linear;
-}
-
-.wordmark:hover,
-.wordmark:focus-visible {
-  border-color: var(--hover-accent);
-  background: var(--hover-accent);
-  color: var(--bg);
-}
-
 .site-nav {
+  margin-left: auto;
   display: flex;
   gap: 2rem;
 }
@@ -254,6 +230,29 @@ body.paint-on .background-force-controls {
 
 .hero-text > * {
   margin: 0;
+}
+
+.not-found {
+  display: grid;
+  min-height: 50vh;
+  place-content: center;
+  justify-items: center;
+  gap: 1.5rem;
+}
+
+.not-found h1 {
+  margin: 0;
+  font-size: clamp(5rem, 18vw, 8rem);
+  line-height: 1;
+}
+
+/* Scoped to .hero-text so it outranks the theme's .prose h1 rules. */
+.hero-text .hero-name {
+  color: var(--text);
+  font-size: clamp(1.6rem, 4vw, 2.1rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
 }
 
 .info-box {
@@ -487,11 +486,6 @@ body[data-page='publications'] .site-main article > section > p > em:first-child
     gap: 1.25rem;
   }
 
-  .wordmark {
-    min-width: 0;
-    margin-right: 0;
-  }
-
   .site-main article,
   .site-main article > section {
     min-width: 0;
@@ -632,12 +626,6 @@ body[data-page='publications'] .site-main article > section > p > em:first-child
 @media (max-width: 430px) {
   .site-header-row {
     gap: 0.5rem;
-  }
-
-  .wordmark {
-    min-height: 2.4rem;
-    padding-inline: 0.75rem;
-    font-size: 1rem;
   }
 
   .nav-link {

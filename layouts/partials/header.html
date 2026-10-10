@@ -1,12 +1,13 @@
 {{- /*
   Note: the theme ships a pre-compiled Tailwind bundle, so only utility classes
   the theme itself already uses exist. Layout here is plain CSS in custom.css.
+
+  The name lives in the homepage hero, so the header only renders when there
+  are nav entries in [[menu.main]].
 */ -}}
+{{- with site.Menus.main -}}
 <header class="wrap">
   <div class="site-header-row">
-    <a class="wordmark" href="{{- `` | absURL -}}">{{- site.Title -}}</a>
-
-    {{- with site.Menus.main -}}
     <nav class="site-nav">
       {{- range . -}}
       <a
@@ -16,6 +17,6 @@
       >{{- .Name -}}</a>
       {{- end -}}
     </nav>
-    {{- end -}}
   </div>
 </header>
+{{- end -}}

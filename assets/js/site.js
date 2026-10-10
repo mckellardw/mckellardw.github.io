@@ -485,7 +485,7 @@
     element.style.setProperty('--hover-accent', choices[Math.floor(Math.random() * choices.length)]);
   }
 
-  document.querySelectorAll('.wordmark, .nav-link, .info-box a, .social-icon, .author-highlight, .background-reset').forEach(function (element) {
+  document.querySelectorAll('.nav-link, .info-box a, .social-icon, .author-highlight, .background-reset').forEach(function (element) {
     element.addEventListener('pointerenter', function () { chooseHoverColor(element); });
     element.addEventListener('focus', function () { chooseHoverColor(element); });
   });
@@ -807,7 +807,7 @@
 
   window.addEventListener('resize', resize, { passive: true });
   window.addEventListener('pagehide', savePointState);
-  document.querySelectorAll('.wordmark, .nav-link').forEach(function (link) {
+  document.querySelectorAll('.nav-link').forEach(function (link) {
     link.addEventListener('click', savePointState);
   });
 
