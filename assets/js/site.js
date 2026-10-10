@@ -111,6 +111,13 @@
     '}'
   ].join('\n');
 
+  // The homepage name takes a random highlight colour on every page load. Set
+  // first thing so the default grey is replaced before the first paint.
+  var heroName = document.querySelector('.hero-name');
+  if (heroName) {
+    heroName.style.color = hoverColors[Math.floor(Math.random() * hoverColors.length)];
+  }
+
   document.documentElement.classList.remove('not-ready');
 
   function random() {
