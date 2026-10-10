@@ -282,28 +282,6 @@ body.paint-on .background-force-controls {
   text-decoration-color: currentColor;
 }
 
-.btn-colorful {
-  display: inline-flex;
-  align-items: center;
-  min-height: 2.6rem;
-  padding-inline: 1rem;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--surface);
-  color: var(--text);
-  font-size: 0.88rem;
-  text-decoration: none;
-  backdrop-filter: blur(12px);
-  transition: border-color 120ms linear, background-color 120ms linear, color 120ms linear;
-}
-
-.btn-colorful:hover,
-.btn-colorful:focus-visible {
-  border-color: var(--hover-accent);
-  background: var(--hover-accent);
-  color: var(--bg);
-}
-
 .prose {
   --tw-prose-body: var(--muted);
   --tw-prose-headings: var(--text);
@@ -626,14 +604,18 @@ body[data-page='publications'] .site-main article > section > p > em:first-child
     margin-bottom: 0.25rem;
   }
 
+  /* Icons shrink to share the single row on narrow phones, capped at 2.75rem. */
   .social-icon {
-    width: 2.75rem;
-    height: 2.75rem;
+    flex: 0 1 2.75rem;
+    min-width: 0;
+    width: auto;
+    height: auto;
+    aspect-ratio: 1;
   }
 
   .social-icon svg {
-    width: 2rem;
-    height: 2rem;
+    width: 72%;
+    height: 72%;
   }
 
   .background-reset {

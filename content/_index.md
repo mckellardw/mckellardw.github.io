@@ -10,6 +10,5 @@ title: "David W. McKellar"
       Romix Biosciences<br>
       david [at] <a href="https://romixbio.com/" target="_blank" rel="noopener">romixbio [dot] com</a>
     </div>
-    <a href="https://scheduler.zoom.us/david-mckellar/book-a-meeting-w-david" class="btn-colorful" target="_blank" rel="noopener">book a call w/ me</a>
   </div>
 </div>

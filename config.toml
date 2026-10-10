@@ -40,6 +40,11 @@ languageCode = "en-us"
     title = "last.fm"
     url = "https://www.last.fm/user/mickyd413"
 
+  [[params.social]]
+    name = "zoom"
+    title = "book a call"
+    url = "https://scheduler.zoom.us/david-mckellar/book-a-meeting-w-david"
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
