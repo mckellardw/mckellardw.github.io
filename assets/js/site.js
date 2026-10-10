@@ -485,7 +485,7 @@
     element.style.setProperty('--hover-accent', choices[Math.floor(Math.random() * choices.length)]);
   }
 
-  document.querySelectorAll('.wordmark, .btn-colorful, .nav-link, .info-box a, .social-icon, .author-highlight, .background-reset').forEach(function (element) {
+  document.querySelectorAll('.wordmark, .nav-link, .info-box a, .social-icon, .author-highlight, .background-reset').forEach(function (element) {
     element.addEventListener('pointerenter', function () { chooseHoverColor(element); });
     element.addEventListener('focus', function () { chooseHoverColor(element); });
   });
