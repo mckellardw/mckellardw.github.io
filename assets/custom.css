@@ -14,8 +14,7 @@
   /* Default highlight before JS assigns a random one; grayscale so an element
      that is focused before the script runs still looks neutral. */
   --hover-accent: #ededed;
-  /* Swiss / International Typographic style: square corners and flat surfaces. */
-  --radius: 0px;
+  --radius: 10px;
 }
 
 html {
@@ -240,7 +239,7 @@ body.paint-on .background-force-controls {
   width: 168px;
   aspect-ratio: 1;
   border: 1px solid var(--line);
-  border-radius: var(--radius);
+  border-radius: 50%;
   object-fit: cover;
   filter: saturate(0.82) contrast(1.03);
 }
