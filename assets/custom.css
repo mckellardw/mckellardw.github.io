@@ -339,6 +339,12 @@ body.paint-on .background-force-controls {
   text-decoration: underline;
 }
 
+/* Wider reading column for the publication list; header and footer keep the
+   default width so the nav doesn't shift between pages. */
+body[data-page='publications'] .site-main {
+  --w: 960px;
+}
+
 body[data-page='publications'] .site-main article > header,
 body[data-page='publications'] .site-main article > section > h2 {
   padding-inline: 0.15rem;
