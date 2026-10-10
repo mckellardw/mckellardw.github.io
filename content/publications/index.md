@@ -1,5 +1,10 @@
 ---
 title: "Publications"
+# Hidden for now: the page is not rendered or listed. Remove this block (and
+# restore the [[menu.main]] entry in config.toml) to bring it back.
+build:
+  render: never
+  list: never
 ---
 
 ## **Highlighted**

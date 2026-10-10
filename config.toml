@@ -40,12 +40,6 @@ languageCode = "en-us"
     title = "last.fm"
     url = "https://www.last.fm/user/mickyd413"
 
-[menu]
-  [[menu.main]]
-    name = "Publications"
-    url = "/publications/"
-    weight = 1
-
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
