@@ -1,0 +1,56 @@
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b1113" />
+
+  <title>
+    {{- if not .IsHome -}}{{- .Title }} - {{ end -}}{{- site.Title -}}
+  </title>
+
+  {{- $author := or site.Params.name site.Title -}}
+  {{- $description := site.Params.description -}}
+  {{- if eq .Kind "page" -}}
+  <meta name="description" content="{{- .Summary | plainify | default $description -}}" />
+  <meta name="author" content="{{- or .Params.author $author -}}" />
+  {{- else -}}
+  <meta name="description" content="{{- site.Params.description -}}" />
+  <meta name="author" content="{{- $author -}}" />
+  {{- end -}}
+
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- css -->
+  {{- $main := resources.Get "main.css" -}}
+  {{- $custom := resources.Get "custom.css" -}}
+  {{- $css := slice $main $custom | resources.Concat "main.css" | minify | fingerprint -}}
+  <link rel="stylesheet" href="{{- $css.RelPermalink -}}" />
+
+  <!-- js -->
+  {{- $js := resources.Get "js/site.js" | minify | fingerprint -}}
+  <script defer src="{{- $js.RelPermalink -}}"></script>
+
+  <link rel="icon" type="image/svg+xml" href="{{- site.Params.favicon | default `favicon.svg` | absURL -}}" />
+
+  {{- hugo.Generator -}}
+
+  {{- if hugo.IsProduction -}}
+  {{- template "_internal/schema.html" . -}}
+  {{- template "_internal/opengraph.html" . -}}
+  {{- template "_internal/twitter_cards.html" . -}}
+  {{- range .AlternativeOutputFormats -}}
+  <link
+    rel="{{- .Rel -}}"
+    type="{{- .MediaType.Type -}}"
+    href="{{- .Permalink -}}"
+    title="{{- site.Title -}}"
+  />
+  {{- end -}}
+  <link rel="canonical" href="{{- .Permalink -}}" />
+  {{- end -}}
+</head>

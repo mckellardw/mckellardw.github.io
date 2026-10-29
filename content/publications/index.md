@@ -1,0 +1,30 @@
+---
+title: "Publications"
+# Hidden for now: the page is not rendered or listed. Remove this block (and
+# restore the [[menu.main]] entry in config.toml) to bring it back.
+build:
+  render: never
+  list: never
+---
+
+## **Highlighted**
+
+***Spatial transcriptomics maps host–gut microbiome biogeography at high resolution.***<br>
+I Ntekas^, L Takayasu^, <strong><u class="author-highlight">DW McKellar</u></strong>^, B Grodner, M Hinchman, C Holdener, P Schweitzer, M Sauthoff, Q Shi, L Brito, I de Vlaminck<br>
+<a href="https://www.nature.com/articles/s41564-026-02286-7" class="pub-link link-paper">[Nature Microbiology, 2026]</a>
+<a href="https://doi.org/10.1101/2024.11.18.624127" class="pub-link link-biorxiv">[bioRxiv, 2024]</a>
+<a href="https://github.com/ntekasi/microSTRS" class="pub-link link-github">[github]</a>
+
+***Spatial mapping of the total transcriptome by in situ polyadenylation.***<br>
+<strong><u class="author-highlight">DW McKellar</u></strong>, M Mantri, M Hinchman, JSL Parker, P Sethupathy, BD Cosgrove, I de Vlaminck<br>
+<a href="https://www.nature.com/articles/s41587-022-01517-6" class="pub-link link-paper">[Nature Biotechnology, 2023]</a>
+<a href="https://doi.org/10.1101/2022.04.20.488964" class="pub-link link-biorxiv">[bioRxiv, 2022]</a>
+<a href="https://github.com/mckellardw/STRS" class="pub-link link-github">[github]</a>
+<a href="https://www.nature.com/articles/s41587-022-01562-1" class="pub-link link-paper">[Research Briefing]</a>
+
+***Large-scale integration of single-cell transcriptomic data captures transitional progenitor states in mouse skeletal muscle regeneration.***<br>
+<strong><u class="author-highlight">DW McKellar</u></strong>, LD Walter, LT Song, M Mantri, MFZ Wang, I de Vlaminck, BD Cosgrove<br>
+<a href="https://doi.org/10.1038/s42003-021-02810-x" class="pub-link link-paper">[Communications Biology, 2021]</a>
+<a href="https://www.biorxiv.org/content/10.1101/2020.12.01.407460v2" class="pub-link link-biorxiv">[bioRxiv, 2020]</a>
+<a href="https://github.com/mckellardw/scMuscle" class="pub-link link-github">[github]</a>
+

@@ -1,0 +1,31 @@
+{{- /*
+  Social icons are inlined so they inherit the site's currentColor states.
+*/ -}}
+<footer class="site-footer wrap">
+  <nav class="social-row" aria-label="Social links">
+    {{- range site.Params.social -}}
+    {{- $icon := resources.Get (printf "icons/%s.svg" .name) -}}
+    <a
+      class="social-icon"
+      href="{{- .url -}}"
+      aria-label="{{- or .title .name -}}"
+      target="_blank"
+      rel="me noopener"
+    >
+      {{- with $icon -}}
+      {{- .Content | safeHTML -}}
+      {{- else -}}
+      {{- warnf "Missing social icon: %s" .name -}}
+      {{- end -}}
+    </a>
+    {{- end -}}
+  </nav>
+
+  <div class="site-copy">
+    {{- with site.Copyright -}}
+    {{- . -}}
+    {{- else -}}
+    &copy; {{ now.Year }} {{ site.Title }}
+    {{- end -}}
+  </div>
+</footer>

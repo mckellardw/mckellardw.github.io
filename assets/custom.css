@@ -1,0 +1,682 @@
+:root,
+:host {
+  --font-sans: 'Ubuntu', ui-sans-serif, system-ui, sans-serif;
+  /* Neutral grayscale base — the only colour on the site is the random
+     highlight, applied per-hover from site.js (see --hover-accent). */
+  --bg: #0e0e0e;
+  --surface: rgba(24, 24, 24, 0.78);
+  --surface-hover: rgba(36, 36, 36, 0.94);
+  --line: rgba(255, 255, 255, 0.12);
+  --text: #ededed;
+  --muted: #a6a6a6;
+  --accent: #cfcfcf;
+  --accent-strong: #e6e6e6;
+  /* Default highlight before JS assigns a random one; grayscale so an element
+     that is focused before the script runs still looks neutral. */
+  --hover-accent: #ededed;
+  --radius: 10px;
+}
+
+html {
+  min-height: 100%;
+  background: var(--bg);
+  color-scheme: dark;
+  font-family: var(--font-sans);
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  isolation: isolate;
+  touch-action: pan-y pinch-zoom;
+  background: linear-gradient(145deg, #0a0a0a 0%, #101010 52%, #070707 100%);
+  color: var(--text);
+  font-family: var(--font-sans);
+}
+
+body::before {
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  background:
+    repeating-linear-gradient(11deg, transparent 0 6px, rgba(255, 255, 255, 0.008) 7px, transparent 8px 13px),
+    radial-gradient(ellipse at 50% 115%, rgba(4, 8, 10, 0.72), transparent 60%);
+  content: '';
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+
+.paint-background {
+  position: fixed;
+  z-index: -2;
+  inset: -32px;
+  width: calc(100% + 64px);
+  height: calc(100% + 64px);
+  filter: saturate(0.94) contrast(1.08);
+  /* Off by default; the hidden footer switch adds .paint-on to reveal it. */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 700ms ease;
+}
+
+body.paint-on .paint-background {
+  opacity: 0.9;
+}
+
+.background-reset {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 3;
+  /* The background controls only exist while the animation is on. */
+  display: none;
+  width: 2.6rem;
+  height: 2.6rem;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  transition: border-color 120ms linear, background-color 120ms linear, color 120ms linear;
+}
+
+.background-force-controls {
+  position: fixed;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  z-index: 3;
+  display: none;
+  gap: 0.35rem;
+  width: 10.5rem;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--muted);
+  font-family: var(--font-sans);
+  font-size: 0.63rem;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  backdrop-filter: blur(12px);
+}
+
+.background-force-controls label {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.background-force {
+  width: 100%;
+  accent-color: var(--accent-strong);
+  cursor: ew-resize;
+}
+
+body.paint-on .background-reset {
+  display: grid;
+}
+
+body.paint-on .background-force-controls {
+  display: grid;
+}
+
+.background-reset svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.background-reset:hover,
+.background-reset:focus-visible {
+  border-color: var(--hover-accent);
+  background: var(--hover-accent);
+  color: var(--bg);
+}
+
+::selection {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--text);
+}
+
+:focus-visible {
+  border-radius: 3px;
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.wrap {
+  width: min(100%, var(--w, 744px));
+  margin-inline: auto;
+  padding-inline: 32px;
+}
+
+.site-main {
+  min-height: calc(100vh - 13rem);
+  padding-block: clamp(2.75rem, 8vw, 4.5rem) 4rem;
+}
+
+.site-header-row {
+  display: flex;
+  align-items: center;
+  min-height: 4.75rem;
+  gap: 1.5rem;
+}
+
+.site-nav {
+  margin-left: auto;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.6rem;
+  padding-inline: 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 1rem;
+  text-decoration: none;
+  backdrop-filter: blur(12px);
+  transition: border-color 120ms linear, background-color 120ms linear, color 120ms linear;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  border-color: var(--hover-accent);
+  background: var(--hover-accent);
+  color: var(--bg);
+}
+
+.nav-link[aria-current='page'] {
+  border-color: var(--text);
+  background: var(--text);
+  color: var(--bg);
+}
+
+.hero-row {
+  display: grid;
+  grid-template-columns: 168px minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(1.5rem, 5vw, 2.5rem);
+  margin-block: 0;
+}
+
+.home-avatar {
+  width: 168px;
+  aspect-ratio: 1;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  object-fit: cover;
+  filter: saturate(0.82) contrast(1.03);
+}
+
+.hero-text {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.hero-text > * {
+  margin: 0;
+}
+
+.not-found {
+  display: grid;
+  min-height: 50vh;
+  place-content: center;
+  justify-items: center;
+  gap: 1.5rem;
+}
+
+.not-found h1 {
+  margin: 0;
+  font-size: clamp(5rem, 18vw, 8rem);
+  line-height: 1;
+}
+
+/* Scoped to .hero-text so it outranks the theme's .prose h1 rules. */
+.hero-text .hero-name {
+  color: var(--text);
+  font-size: clamp(1.6rem, 4vw, 2.1rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.info-box {
+  width: 100%;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  line-height: 1.75;
+  backdrop-filter: blur(12px);
+}
+
+.info-box a {
+  color: var(--text);
+  text-decoration-color: transparent;
+  text-underline-offset: 0.2em;
+  transition: color 180ms ease, text-decoration-color 180ms ease;
+}
+
+.info-box a:hover,
+.info-box a:focus-visible {
+  color: var(--hover-accent);
+  text-decoration-color: currentColor;
+}
+
+.prose {
+  --tw-prose-body: var(--muted);
+  --tw-prose-headings: var(--text);
+  --tw-prose-bold: var(--text);
+}
+
+.prose h1,
+.prose h2 {
+  letter-spacing: -0.025em;
+}
+
+.prose pre {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.pub-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  margin: 0.18rem 0.18rem 0.18rem 0;
+  padding-inline: 0.35rem;
+  border-radius: 5px;
+  font-weight: 600;
+  text-decoration: none;
+  text-underline-offset: 0.2em;
+}
+
+.pub-link:hover,
+.pub-link:focus-visible {
+  background: rgba(255, 255, 255, 0.06);
+  text-decoration: underline;
+}
+
+/* Wider reading column for the publication list; header and footer keep the
+   default width so the nav doesn't shift between pages. */
+body[data-page='publications'] .site-main {
+  --w: 960px;
+}
+
+body[data-page='publications'] .site-main article > header,
+body[data-page='publications'] .site-main article > section > h2 {
+  padding-inline: 0.15rem;
+}
+
+body[data-page='publications'] .site-main article > section > p {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  margin-block: 1rem;
+  padding: 1.2rem 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(12px);
+  transition: border-color 180ms ease, background-color 180ms ease, transform 180ms ease;
+  overflow-wrap: anywhere;
+}
+
+body[data-page='publications'] .site-main article > section > p:hover,
+body[data-page='publications'] .site-main article > section > p:focus-within {
+  border-color: var(--text);
+  background: var(--surface-hover);
+}
+
+body[data-page='publications'] .site-main article > section > p > em:first-child strong {
+  color: var(--text);
+}
+
+.publication-pager {
+  display: none;
+}
+
+.link-paper,
+.link-biorxiv,
+.link-github {
+  color: var(--text);
+}
+
+.author-highlight {
+  color: var(--text);
+  text-decoration-color: rgba(255, 255, 255, 0.4);
+  text-underline-offset: 0.16em;
+}
+
+.author-highlight:hover,
+.author-highlight:focus-visible {
+  color: var(--hover-accent);
+  text-decoration-color: currentColor;
+}
+
+.site-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 1.75rem 2.25rem;
+  color: var(--muted);
+}
+
+.social-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 1.15rem;
+}
+
+.social-icon {
+  position: relative;
+  display: grid;
+  width: 4rem;
+  height: 4rem;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--muted);
+  transition: border-color 120ms linear, background-color 120ms linear, color 120ms linear;
+}
+
+.social-icon::after {
+  position: absolute;
+  bottom: calc(100% + 0.4rem);
+  left: 50%;
+  z-index: 2;
+  padding: 0.28rem 0.48rem;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: rgba(9, 15, 17, 0.96);
+  color: var(--text);
+  content: attr(aria-label);
+  font-size: 0.66rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  opacity: 0;
+  pointer-events: none;
+  text-transform: none;
+  transform: translate(-50%, 3px);
+  transition: opacity 80ms ease 35ms, transform 100ms ease 35ms;
+  white-space: nowrap;
+}
+
+.social-icon svg {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.social-icon:hover,
+.social-icon:focus-visible {
+  border-color: var(--hover-accent);
+  background: var(--hover-accent);
+  color: var(--bg);
+}
+
+.social-icon:hover::after,
+.social-icon:focus-visible::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.site-copy {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  /* Doubles as the hidden switch: double click / double tap toggles the paint
+     background. Suppress selection highlight and the mobile double-tap zoom. */
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+@media (max-width: 640px) {
+  html,
+  body {
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .wrap {
+    padding-inline: 22px;
+  }
+
+  body > header {
+    flex: 0 0 auto;
+  }
+
+  .site-header-row {
+    min-height: 3.75rem;
+    justify-content: space-between;
+  }
+
+  .site-nav {
+    flex: 0 0 auto;
+    gap: 1.25rem;
+  }
+
+  .site-main article,
+  .site-main article > section {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .site-main {
+    display: grid;
+    min-height: 0;
+    flex: 1 1 auto;
+    align-items: center;
+    padding-block: 0.75rem;
+    overflow: hidden;
+  }
+
+  .hero-row {
+    width: 100%;
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
+  .hero-text {
+    width: 100%;
+  }
+
+  .home-avatar {
+    width: 144px;
+  }
+
+  body[data-page='publications'] .site-main article > section > p {
+    max-height: min(48dvh, 24rem);
+    margin-block: 0;
+    padding: 1rem;
+    font-size: 0.94rem;
+    line-height: 1.65;
+    overflow: auto;
+    overscroll-behavior: contain;
+  }
+
+  body[data-page='publications'] .site-main {
+    align-items: stretch;
+  }
+
+  body[data-page='publications'] .site-main article {
+    display: flex;
+    height: 100%;
+    min-height: 0;
+    flex-direction: column;
+  }
+
+  body[data-page='publications'] .site-main article > header h1 {
+    margin-block: 0 0.4rem;
+    font-size: clamp(1.75rem, 8vw, 2.25rem);
+  }
+
+  body[data-page='publications'] .site-main article > section {
+    display: flex;
+    min-height: 0;
+    flex: 1;
+    flex-direction: column;
+  }
+
+  body[data-page='publications'] .site-main article > section > h2 {
+    display: none;
+  }
+
+  .publication-pager {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-top: 0.65rem;
+  }
+
+  .publication-pager button {
+    min-width: 4.5rem;
+    min-height: 2.5rem;
+    padding-inline: 0.75rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+    color: var(--text);
+    font: inherit;
+    cursor: pointer;
+    backdrop-filter: blur(12px);
+  }
+
+  .publication-pager button:disabled {
+    cursor: default;
+    opacity: 0.38;
+  }
+
+  .publication-status {
+    color: var(--muted);
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+  }
+
+  .site-footer {
+    flex: 0 0 auto;
+    padding-block: 0.35rem 0.6rem;
+  }
+
+  .social-row {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    flex-wrap: nowrap;
+    gap: 0.2rem;
+    margin-bottom: 0.25rem;
+  }
+
+  /* Icons shrink to share the single row on narrow phones, capped at 2.75rem. */
+  .social-icon {
+    flex: 0 1 2.75rem;
+    min-width: 0;
+    width: auto;
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  .social-icon svg {
+    width: 72%;
+    height: 72%;
+  }
+
+  .background-reset {
+    right: 0.75rem;
+    bottom: 0.75rem;
+  }
+
+  .background-force-controls {
+    bottom: 0.75rem;
+    left: 0.75rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .site-header-row {
+    gap: 0.5rem;
+  }
+
+  .nav-link {
+    min-height: 2.4rem;
+    padding-inline: 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 640px) and (max-height: 700px) {
+  .site-main {
+    padding-block: 0.35rem;
+  }
+
+  .home-avatar {
+    width: 118px;
+  }
+
+  .hero-row {
+    gap: 0.75rem;
+  }
+
+  .info-box {
+    padding: 0.75rem 0.85rem;
+    line-height: 1.55;
+  }
+
+  body[data-page='publications'] .site-main article > section > p {
+    max-height: 42dvh;
+    padding: 0.8rem;
+    font-size: 0.86rem;
+    line-height: 1.5;
+  }
+
+  .site-copy {
+    display: none;
+  }
+}
+
+@media (hover: none) {
+  .social-icon::after {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
